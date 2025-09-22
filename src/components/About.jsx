@@ -21,7 +21,7 @@ const About = () => {
     <section className="w-full bg-black text-white px-6 md:px-16 lg:px-24 py-16">
       <div className="max-w-6xl mx-auto space-y-20">
         
-        {/* Spirit + Legacy Combined Section */}
+     
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <motion.div
@@ -48,7 +48,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* Image */}
+          
           <motion.div
             variants={fadeRight}
             initial="hidden"
@@ -66,7 +66,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Institution Section */}
+      
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <motion.div
             variants={fadeLeft}
@@ -109,7 +109,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Department Section */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"

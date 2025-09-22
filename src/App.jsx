@@ -18,7 +18,7 @@ export default function App() {
         <About/>
         <Events/>
        
-         {/* This renders the active page */}
+        
       </main>
      
     </div>

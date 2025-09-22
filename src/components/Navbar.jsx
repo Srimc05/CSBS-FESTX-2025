@@ -31,7 +31,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
+  
         <button
           className="md:hidden text-white"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -40,7 +40,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
       {menuOpen && (
         <div className="md:hidden bg-black/95 px-6 py-4">
           <ul className="flex flex-col space-y-4">
@@ -49,7 +48,7 @@ export function Navbar() {
                 key={link}
                 onClick={() => {
                   setActive(link);
-                  setMenuOpen(false); // close menu on click
+                  setMenuOpen(false); 
                 }}
                 className={`px-4 py-2 rounded-lg cursor-pointer transition-all duration-300
                   ${

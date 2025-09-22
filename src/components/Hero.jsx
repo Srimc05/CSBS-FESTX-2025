@@ -14,7 +14,7 @@ export function VortexDemo() {
 
 
 
-        {/* Sub-title */}
+        
         <h2 className="text-white text-lg md:text-2xl mt-3 font-medium">
           From
         </h2>
@@ -38,7 +38,6 @@ export function VortexDemo() {
          
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
           <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white font-semibold shadow-lg">
             Register Now
