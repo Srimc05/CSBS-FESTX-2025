@@ -2,3 +2,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
 @import "tailwindcss";
+
+
+body{
+    cursor: none;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    background-image: url("./treasureimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+  }
+  
+  /* Force-hide system cursor globally (except inside cross-origin iframes) */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .custom-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.1s ease;
+  }
+  
+  .custom-cursor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    rotate: -30px;
+    transform: scaleX(-1);
+  }
+  
+  .ship-container {
+    position: fixed;
+    top: 20px;
+    right: -5px;
+    z-index: 100;
+  }
+  
+  .ship {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  
+  .treasure-container {
+    position: fixed;
+    bottom: 20px;
+    right: 1px;
+    z-index: 100;
+  }
+  
+  .treasure {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .anchor-container {
+    position: fixed;
+    top: 85px;
+    right: 30px;
+    z-index: 99;
+  }
+  
+  .rope {
+    width: 4px;
+    background: linear-gradient(to bottom, #a15926, #805225);
+    position: absolute;
+    top: 0;
+    left: 60%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  }
+  
+  .anchor {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    position: absolute;
+    left: 60%;
+    transform: translateX(-50%);
+    transition: none;
+    z-index: 1000;
+    min-width: 40px;
+    min-height: 40px;
+  }
