@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // for hamburger & close icons
 
-export function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+export function Navbar({ menuOpen, setMenuOpen }) {
   const location = useLocation();
 
   const links = [
@@ -38,13 +36,6 @@ export function Navbar() {
             );
           })}
         </ul>
-
-        <button
-          className="md:hidden text-white"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       {menuOpen && (
