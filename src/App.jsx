@@ -10,6 +10,7 @@ export default function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const updateCursorPosition = (e) => {
@@ -55,7 +56,12 @@ export default function App() {
 
       {/* Ship at top right */}
       <div className="ship-container">
-        <img src="/ship1.png" alt="Ship" className="ship" />
+        <img
+          src="/ship1.png"
+          alt="Ship"
+          className="ship cursor-pointer hover:scale-105 transition-transform duration-200"
+          onClick={() => setMenuOpen(!menuOpen)}
+        />
       </div>
 
       {/* Treasure at bottom right */}
@@ -67,7 +73,7 @@ export default function App() {
       <div className="anchor-container">
         {(() => {
           const anchorBaseOffset = 50;
-          const anchorTravel = window.innerHeight - 250;
+          const anchorTravel = window.innerHeight - 200;
           const anchorTop = anchorBaseOffset + scrollProgress * anchorTravel;
           const ropeHeight = anchorTop;
           return (
@@ -103,7 +109,7 @@ export default function App() {
         })()}
       </div>
       <div className="flex flex-col min-h-screen">
-        <Navbar />
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
