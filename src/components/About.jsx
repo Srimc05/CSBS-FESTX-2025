@@ -20,8 +20,6 @@ const About = () => {
   return (
     <section className="w-full bg-black text-white px-6 md:px-16 lg:px-24 py-16">
       <div className="max-w-6xl mx-auto space-y-20">
-        
-     
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <motion.div
@@ -36,19 +34,21 @@ const About = () => {
             </h1>
             <p className="text-neutral-300 leading-relaxed text-center">
               FESTX is an annual symposium hosted by the Department of{" "}
-              <span className="text-yellow-400 font-semibold">Computer Science and Business Systems</span> 
-              at Sri Sairam Engineering College to promote entrepreneurship and 
-              explore the latest tech trends. <br /><br />
+              <span className="text-yellow-400 font-semibold">
+                Computer Science and Business Systems
+              </span>{" "}
+              at Sri Sairam Engineering College to promote entrepreneurship and
+              explore the latest tech trends. <br />
+              <br />
               FESTX&apos;24 featured{" "}
               <span className="text-yellow-400 font-semibold">
-                8 unique inter-collegiate events
+                9 unique inter-collegiate events
               </span>{" "}
-              designed to challenge creativity, problem-solving, and innovation 
+              designed to challenge creativity, problem-solving, and innovation
               — making it an unforgettable experience.
             </p>
           </motion.div>
 
-          
           <motion.div
             variants={fadeRight}
             initial="hidden"
@@ -66,7 +66,6 @@ const About = () => {
           </motion.div>
         </div>
 
-      
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <motion.div
             variants={fadeLeft}
@@ -108,7 +107,6 @@ const About = () => {
             </p>
           </motion.div>
         </div>
-
 
         <motion.div
           variants={fadeUp}

@@ -2,7 +2,7 @@ import React from "react";
 
 export function HeroSection() {
   return (
-    <div className="h-screen w-full relative overflow-hidden">
+    <div className="h-screen w-full relative overflow-hidden hero-bg">
       <div className="relative z-10 h-full w-full flex items-center justify-center">
         <div className="mx-4 sm:mx-8">
           <div className="p-0">

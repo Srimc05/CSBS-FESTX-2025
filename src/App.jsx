@@ -28,16 +28,66 @@ export default function App() {
     const handleMouseDown = () => setIsClicked(true);
     const handleMouseUp = () => setIsClicked(false);
 
+    // Mobile horizontal swipe panning for background image
+    let touchStartX = null;
+    let startBgX = 50;
+    let rafId = null;
+    const getBgX = () => {
+      const bg = getComputedStyle(document.body).backgroundPositionX;
+      const num = parseFloat(bg);
+      return isNaN(num) ? 50 : num;
+    };
+    const setBgX = (xPercent) => {
+      document.body.style.backgroundPosition = `${xPercent}% center`;
+    };
+    const onTouchStart = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        touchStartX = e.touches[0].clientX;
+        startBgX = getBgX();
+      }
+    };
+    const onTouchMove = (e) => {
+      if (touchStartX == null) return;
+      const dx = e.touches[0].clientX - touchStartX; // right swipe => positive
+      const viewportW = Math.max(window.innerWidth, 1);
+      const deltaPercent = (dx / viewportW) * 100 * 1.5; // sensitivity
+      const target = Math.max(0, Math.min(100, startBgX - deltaPercent));
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setBgX(target));
+    };
+    const onTouchEnd = () => {
+      touchStartX = null;
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = null;
+    };
+
     document.addEventListener("mousemove", updateCursorPosition);
     document.addEventListener("mousedown", handleMouseDown);
     document.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("scroll", handleScroll);
+    // Attach touch only on small screens
+    if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) {
+      document.body.addEventListener("touchstart", onTouchStart, {
+        passive: true,
+      });
+      document.body.addEventListener("touchmove", onTouchMove, {
+        passive: true,
+      });
+      document.body.addEventListener("touchend", onTouchEnd, { passive: true });
+      document.body.addEventListener("touchcancel", onTouchEnd, {
+        passive: true,
+      });
+    }
 
     return () => {
       document.removeEventListener("mousemove", updateCursorPosition);
       document.removeEventListener("mousedown", handleMouseDown);
       document.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("scroll", handleScroll);
+      document.body.removeEventListener("touchstart", onTouchStart);
+      document.body.removeEventListener("touchmove", onTouchMove);
+      document.body.removeEventListener("touchend", onTouchEnd);
+      document.body.removeEventListener("touchcancel", onTouchEnd);
     };
   }, []);
 
