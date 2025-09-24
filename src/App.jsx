@@ -48,10 +48,10 @@ export default function App() {
         style={{
           left: cursorPosition.x - 16,
           top: cursorPosition.y - 16,
-          transform: `rotate(${isClicked ? 15 : 20}deg)`,
+          transform: `rotate(${isClicked ? -25 : -20}deg)`,
         }}
       >
-        <img src="/hook.png" alt="Custom cursor" />
+        <img src="/hook.webp" alt="Custom cursor" />
       </div>
 
       {/* Ship at top right */}

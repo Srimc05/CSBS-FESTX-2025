@@ -1,7 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 @import "tailwindcss";
+
+/* Font utility classes to ensure reliable application */
+.font-fell-english {
+  font-family: 'IM Fell English', 'IM Fell English SC', serif;
+}
+
+.font-pirata {
+  font-family: 'Pirata One', cursive;
+}
 
 
 body{
@@ -10,7 +21,7 @@ body{
     padding: 0;
     scrollbar-width: none; 
     -ms-overflow-style: none; 
-    background-image: url("./treasureimage.jpg");
+    background-image: url("./treasureimage.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,8 +68,162 @@ body{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    rotate: -30px;
-    transform: scaleX(-1);
+  }
+
+  .nav-pirate {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(18, 12, 6, 0.6);
+    border: 1.5px solid rgba(214, 163, 64, 0.55);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      0 6px 18px rgba(0,0,0,0.45),
+      0 0 18px rgba(214, 163, 64, 0.25);
+    z-index: 50;
+  }
+
+  @media (max-width: 767px) {
+    .nav-pirate { display: none !important; }
+  }
+
+  .nav-pirate__list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-pirate__link {
+    position: relative;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: color 160ms ease, background 160ms ease, transform 120ms ease;
+  }
+
+  .nav-pirate__link::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0,0,0,0), #ffd464, rgba(0,0,0,0));
+    opacity: 0;
+    transform: scaleX(0.6);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .nav-pirate__link:hover::after,
+  .nav-pirate__link--active::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .nav-pirate__link--active {
+    color: #ffd464;
+    background: rgba(214, 163, 64, 0.10);
+    box-shadow: inset 0 0 10px rgba(214, 163, 64, 0.18);
+  }
+
+  /* Mobile dropdown panel themed */
+  .nav-pirate__panel {
+    position: fixed;
+    top: 58px;
+    right: 8px;
+    background: rgba(18, 12, 6, 0.85);
+    border: 1.5px solid rgba(214, 163, 64, 0.5);
+    border-radius: 16px;
+    padding: 10px 10px;
+    width: min(78vw, 280px);
+    box-shadow: 0 16px 28px rgba(0,0,0,0.5), 0 0 24px rgba(214,163,64,0.25);
+    backdrop-filter: blur(8px);
+    z-index: 60;
+  }
+
+  .nav-pirate__panel ul { list-style: none; margin: 0; padding: 0; }
+  .nav-pirate__panel li { margin: 6px 0; }
+  .nav-pirate__panel a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 160ms ease, color 160ms ease, transform 120ms ease;
+  }
+  .nav-pirate__panel a:hover { color: #ffd464; background: rgba(214,163,64,0.10); transform: translateX(2px); }
+
+  .treasure-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 14px;
+    border: 2px solid #6e3f16;
+    background: linear-gradient(180deg, #ffd35a 0%, #ffbf2b 45%, #d89b16 100%);
+    color: #1a1207;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,255,0.6),
+      inset 0 -3px 0 rgba(0,0,0,0.25),
+      0 8px 18px rgba(0,0,0,0.35),
+      0 0 18px rgba(255, 200, 60, 0.35);
+    transition: transform 120ms ease, box-shadow 200ms ease, filter 200ms ease;
+    overflow: hidden;
+  }
+
+  .treasure-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,255,0.65),
+      inset 0 -3px 0 rgba(0,0,0,0.28),
+      0 12px 24px rgba(0,0,0,0.4),
+      0 0 28px rgba(255, 210, 80, 0.45);
+    filter: saturate(1.08);
+  }
+
+  .treasure-btn:active {
+    transform: translateY(0);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.55),
+      inset 0 -2px 0 rgba(0,0,0,0.28),
+      0 6px 12px rgba(0,0,0,0.35);
+  }
+
+  .treasure-btn::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -50%;
+    width: 60%;
+    height: 160%;
+    transform: rotate(25deg) translateX(-120%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 100%);
+    filter: blur(4px);
+    transition: transform 600ms ease;
+    pointer-events: none;
+  }
+
+  .treasure-btn:hover::before {
+    transform: rotate(25deg) translateX(180%);
+  }
+
+  .treasure-btn__icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35));
   }
   
   .ship-container {
