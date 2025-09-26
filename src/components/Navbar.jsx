@@ -13,7 +13,7 @@ export function Navbar({ menuOpen, setMenuOpen }) {
   return (
     <nav>
       {/* Compact centered pill navbar for desktop */}
-      <div className="hidden md:flex nav-pirate">
+      <div className="hidden sm:flex nav-pirate">
         <ul className="nav-pirate__list">
           {links.map((link) => {
             const isActive = location.pathname === link.to;
@@ -35,7 +35,7 @@ export function Navbar({ menuOpen, setMenuOpen }) {
 
       {/* Themed mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden nav-pirate__panel">
+        <div className="sm:hidden nav-pirate__panel">
           <ul>
             {links.map((link) => {
               const isActive = location.pathname === link.to;

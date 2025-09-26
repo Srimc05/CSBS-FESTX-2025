@@ -11,27 +11,54 @@ export default function App() {
   const [isClicked, setIsClicked] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showCustomCursor, setShowCustomCursor] = useState(true);
 
   useEffect(() => {
     const updateCursorPosition = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const documentHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min(scrollTop / documentHeight, 1);
-      setScrollProgress(progress);
+    // New, robust scroll progress calculation (desktop + mobile)
+    const getViewportHeight = () =>
+      (window.visualViewport && window.visualViewport.height) ||
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      0;
+
+    const computeProgress = () => {
+      const el = document.scrollingElement || document.documentElement;
+      const viewportH = getViewportHeight();
+      const totalScrollable = Math.max((el.scrollHeight || 0) - viewportH, 0);
+      const top = el.scrollTop || window.pageYOffset || 0;
+      if (totalScrollable <= 0) return 0;
+      const ratio = top / totalScrollable;
+      return Math.min(Math.max(ratio, 0), 1);
+    };
+
+    let rafId = 0;
+    const updateProgress = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setScrollProgress(computeProgress()));
     };
 
     const handleMouseDown = () => setIsClicked(true);
     const handleMouseUp = () => setIsClicked(false);
 
+    // Hide custom cursor when pointer leaves the window; show on re-enter
+    const handleDocMouseLeave = (e) => {
+      // When leaving the document, relatedTarget is often null
+      if (!e.relatedTarget && !e.toElement) {
+        setShowCustomCursor(false);
+      }
+    };
+    const handleDocMouseEnter = () => setShowCustomCursor(true);
+    const handleWindowBlur = () => setShowCustomCursor(false);
+    const handleWindowFocus = () => setShowCustomCursor(true);
+
     // Mobile horizontal swipe panning for background image
     let touchStartX = null;
     let startBgX = 50;
-    let rafId = null;
+    let bgRafId = null;
     const getBgX = () => {
       const bg = getComputedStyle(document.body).backgroundPositionX;
       const num = parseFloat(bg);
@@ -52,19 +79,36 @@ export default function App() {
       const viewportW = Math.max(window.innerWidth, 1);
       const deltaPercent = (dx / viewportW) * 100 * 1.5; // sensitivity
       const target = Math.max(0, Math.min(100, startBgX - deltaPercent));
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => setBgX(target));
+      if (bgRafId) cancelAnimationFrame(bgRafId);
+      bgRafId = requestAnimationFrame(() => setBgX(target));
     };
     const onTouchEnd = () => {
       touchStartX = null;
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = null;
+      if (bgRafId) cancelAnimationFrame(bgRafId);
+      bgRafId = null;
     };
 
     document.addEventListener("mousemove", updateCursorPosition);
     document.addEventListener("mousedown", handleMouseDown);
     document.addEventListener("mouseup", handleMouseUp);
-    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mouseleave", handleDocMouseLeave);
+    document.addEventListener("mouseenter", handleDocMouseEnter);
+    window.addEventListener("blur", handleWindowBlur);
+    window.addEventListener("focus", handleWindowFocus);
+    // Attach listeners
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress, { passive: true });
+    window.addEventListener("orientationchange", updateProgress);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", updateProgress, {
+        passive: true,
+      });
+      window.visualViewport.addEventListener("scroll", updateProgress, {
+        passive: true,
+      });
+    }
+    // Initialize on mount
+    updateProgress();
     // Attach touch only on small screens
     if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) {
       document.body.addEventListener("touchstart", onTouchStart, {
@@ -83,7 +127,18 @@ export default function App() {
       document.removeEventListener("mousemove", updateCursorPosition);
       document.removeEventListener("mousedown", handleMouseDown);
       document.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mouseleave", handleDocMouseLeave);
+      document.removeEventListener("mouseenter", handleDocMouseEnter);
+      window.removeEventListener("blur", handleWindowBlur);
+      window.removeEventListener("focus", handleWindowFocus);
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+      window.removeEventListener("orientationchange", updateProgress);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", updateProgress);
+        window.visualViewport.removeEventListener("scroll", updateProgress);
+      }
+      if (rafId) cancelAnimationFrame(rafId);
       document.body.removeEventListener("touchstart", onTouchStart);
       document.body.removeEventListener("touchmove", onTouchMove);
       document.body.removeEventListener("touchend", onTouchEnd);
@@ -98,6 +153,7 @@ export default function App() {
         style={{
           left: cursorPosition.x - 16,
           top: cursorPosition.y - 16,
+          display: showCustomCursor ? "block" : "none",
           transform: `rotate(${isClicked ? -25 : -20}deg)`,
         }}
       >
@@ -122,8 +178,8 @@ export default function App() {
       {/* Anchor with rope */}
       <div className="anchor-container">
         {(() => {
-          const anchorBaseOffset = 50;
-          const anchorTravel = window.innerHeight - 200;
+          const anchorBaseOffset = 5;
+          const anchorTravel = window.innerHeight - 160;
           const anchorTop = anchorBaseOffset + scrollProgress * anchorTravel;
           const ropeHeight = anchorTop;
           return (
