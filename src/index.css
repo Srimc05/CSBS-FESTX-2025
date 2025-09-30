@@ -42,11 +42,18 @@ body{
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   }
   
   html::-webkit-scrollbar {
     display: none;
   }
+
+/* Temporary: normalize prod to your 140% local zoom on larger screens */
+@media (min-width: 1024px) {
+  html { font-size: 140%; }
+}
   
   .custom-cursor {
     position: fixed;
