@@ -89,7 +89,11 @@ body{
     z-index: 50;
   }
 
-  /* Show desktop navbar on tablets; hide only on phones */
+  @media (min-width: 768px) {
+    .nav-pirate { display: flex; }
+    .nav-pirate__panel { display: none !important; }
+  }
+
   @media (max-width: 480px) {
     .nav-pirate { display: none !important; }
   }
@@ -292,3 +296,4 @@ body{
     min-width: 40px;
     min-height: 40px;
   }
+

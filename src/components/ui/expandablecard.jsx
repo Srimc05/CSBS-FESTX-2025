@@ -30,6 +30,8 @@ export function ExpandableCardDemo() {
 
   return (
     <>
+      {/* reference motion to satisfy linter */}
+      {Boolean(motion) && null}
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -130,7 +132,7 @@ export function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer border border-yellow-500"
           >
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -199,11 +201,11 @@ const cards = [
       <p>
         Lana Del Rey, an iconic American singer-songwriter, is celebrated for
         her melancholic and cinematic music style. Born Elizabeth Woolridge
-        Grant in New York City, she has captivated audiences worldwide with
-        her haunting voice and introspective lyrics. <br /> <br />
+        Grant in New York City, she has captivated audiences worldwide with her
+        haunting voice and introspective lyrics. <br /> <br />
         Her songs often explore themes of tragic romance, glamour, and
-        melancholia, drawing inspiration from both contemporary and vintage
-        pop culture.
+        melancholia, drawing inspiration from both contemporary and vintage pop
+        culture.
       </p>
     ),
   },
@@ -215,10 +217,10 @@ const cards = [
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => (
       <p>
-        Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-        voice and profound lyrics that resonate deeply with his audience. Born
-        in the village of Khant Maanpur in Punjab, India, he has become a
-        cultural icon in the Punjabi music industry. <br /> <br />
+        Babu Maan, a legendary Punjabi singer, is renowned for his soulful voice
+        and profound lyrics that resonate deeply with his audience. Born in the
+        village of Khant Maanpur in Punjab, India, he has become a cultural icon
+        in the Punjabi music industry. <br /> <br />
         His songs often reflect the struggles and triumphs of everyday life,
         capturing the essence of Punjabi culture and traditions.
       </p>
@@ -249,10 +251,10 @@ const cards = [
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => (
       <p>
-        Himesh Reshammiya, a renowned Indian music composer, singer, and
-        actor, is celebrated for his distinctive voice and innovative
-        compositions. Born in Mumbai, India, he has become a prominent figure
-        in the Bollywood music industry.
+        Himesh Reshammiya, a renowned Indian music composer, singer, and actor,
+        is celebrated for his distinctive voice and innovative compositions.
+        Born in Mumbai, India, he has become a prominent figure in the Bollywood
+        music industry.
       </p>
     ),
   },
@@ -265,10 +267,10 @@ const cards = [
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => (
       <p>
-        Taylor Swift, a globally acclaimed American singer-songwriter, is
-        known for her narrative songwriting and genre versatility. Starting
-        with country music, she later transitioned to pop and indie-folk,
-        winning numerous awards including multiple Grammys. <br /> <br />
+        Taylor Swift, a globally acclaimed American singer-songwriter, is known
+        for her narrative songwriting and genre versatility. Starting with
+        country music, she later transitioned to pop and indie-folk, winning
+        numerous awards including multiple Grammys. <br /> <br />
         Her albums like <i>Fearless</i>, <i>1989</i>, and <i>Folklore</i> have
         shaped modern music and connected deeply with fans across generations.
       </p>
@@ -285,12 +287,11 @@ const cards = [
       <p>
         Arijit Singh, one of India’s most beloved playback singers, is
         recognized for his soulful and versatile voice. His breakout song{" "}
-        <i>Tum Hi Ho</i> became a sensation, making him a household name.{" "}
-        <br /> <br />
-        Known for delivering heartfelt melodies in Bollywood films, Arijit
-        Singh has become the voice of romance and emotion in Indian cinema.
+        <i>Tum Hi Ho</i> became a sensation, making him a household name. <br />{" "}
+        <br />
+        Known for delivering heartfelt melodies in Bollywood films, Arijit Singh
+        has become the voice of romance and emotion in Indian cinema.
       </p>
     ),
   },
 ];
-

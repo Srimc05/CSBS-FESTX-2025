@@ -35,28 +35,36 @@ export function Navbar({ menuOpen, setMenuOpen }) {
 
       {/* Themed mobile dropdown */}
       {menuOpen && (
-        <div className="sm:hidden nav-pirate__panel">
-          <ul>
-            {links.map((link) => {
-              const isActive = location.pathname === link.to;
-              return (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    onClick={() => setMenuOpen(false)}
-                    className={
-                      isActive
-                        ? "nav-pirate__link nav-pirate__link--active"
-                        : "nav-pirate__link"
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <>
+          <div
+            className="fixed inset-0 sm:hidden"
+            style={{ zIndex: 55, background: "transparent" }}
+            onClick={() => setMenuOpen(false)}
+            aria-hidden
+          />
+          <div className="sm:hidden nav-pirate__panel">
+            <ul>
+              {links.map((link) => {
+                const isActive = location.pathname === link.to;
+                return (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      onClick={() => setMenuOpen(false)}
+                      className={
+                        isActive
+                          ? "nav-pirate__link nav-pirate__link--active"
+                          : "nav-pirate__link"
+                      }
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </>
       )}
     </nav>
   );

@@ -1,6 +1,6 @@
 // App.jsx
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home";
 import EventsPage from "./pages/Events";
@@ -14,8 +14,19 @@ export default function App() {
   const [showCustomCursor, setShowCustomCursor] = useState(true);
 
   useEffect(() => {
+    const isCoarsePointer =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(pointer: coarse)").matches;
+
+    if (isCoarsePointer) {
+      setShowCustomCursor(false);
+    }
+
     const updateCursorPosition = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
+      // Ensure custom cursor becomes visible again after leaving cross-origin iframes
+      setShowCustomCursor(true);
     };
 
     // New, robust scroll progress calculation (desktop + mobile)
@@ -45,15 +56,7 @@ export default function App() {
     const handleMouseUp = () => setIsClicked(false);
 
     // Hide custom cursor when pointer leaves the window; show on re-enter
-    const handleDocMouseLeave = (e) => {
-      // When leaving the document, relatedTarget is often null
-      if (!e.relatedTarget && !e.toElement) {
-        setShowCustomCursor(false);
-      }
-    };
-    const handleDocMouseEnter = () => setShowCustomCursor(true);
-    const handleWindowBlur = () => setShowCustomCursor(false);
-    const handleWindowFocus = () => setShowCustomCursor(true);
+    // Remove blur/focus and mouseenter/leave based hiding to avoid sticky hidden state after iframes
 
     // Mobile horizontal swipe panning for background image
     let touchStartX = null;
@@ -88,13 +91,12 @@ export default function App() {
       bgRafId = null;
     };
 
-    document.addEventListener("mousemove", updateCursorPosition);
-    document.addEventListener("mousedown", handleMouseDown);
-    document.addEventListener("mouseup", handleMouseUp);
-    document.addEventListener("mouseleave", handleDocMouseLeave);
-    document.addEventListener("mouseenter", handleDocMouseEnter);
-    window.addEventListener("blur", handleWindowBlur);
-    window.addEventListener("focus", handleWindowFocus);
+    // Only attach mouse-related listeners on non-touch (fine pointer) devices
+    if (!isCoarsePointer) {
+      document.addEventListener("mousemove", updateCursorPosition);
+      document.addEventListener("mousedown", handleMouseDown);
+      document.addEventListener("mouseup", handleMouseUp);
+    }
     // Attach listeners
     window.addEventListener("scroll", updateProgress, { passive: true });
     window.addEventListener("resize", updateProgress, { passive: true });
@@ -124,13 +126,11 @@ export default function App() {
     }
 
     return () => {
-      document.removeEventListener("mousemove", updateCursorPosition);
-      document.removeEventListener("mousedown", handleMouseDown);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("mouseleave", handleDocMouseLeave);
-      document.removeEventListener("mouseenter", handleDocMouseEnter);
-      window.removeEventListener("blur", handleWindowBlur);
-      window.removeEventListener("focus", handleWindowFocus);
+      if (!isCoarsePointer) {
+        document.removeEventListener("mousemove", updateCursorPosition);
+        document.removeEventListener("mousedown", handleMouseDown);
+        document.removeEventListener("mouseup", handleMouseUp);
+      }
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
       window.removeEventListener("orientationchange", updateProgress);
@@ -148,17 +148,19 @@ export default function App() {
 
   return (
     <>
-      <div
-        className="custom-cursor"
-        style={{
-          left: cursorPosition.x - 16,
-          top: cursorPosition.y - 16,
-          display: showCustomCursor ? "block" : "none",
-          transform: `rotate(${isClicked ? -25 : -20}deg)`,
-        }}
-      >
-        <img src="/hook.webp" alt="Custom cursor" />
-      </div>
+      <ScrollToTop />
+      {showCustomCursor && (
+        <div
+          className="custom-cursor"
+          style={{
+            left: cursorPosition.x - 16,
+            top: cursorPosition.y - 16,
+            transform: `rotate(${isClicked ? -25 : -20}deg)`,
+          }}
+        >
+          <img src="/hook.webp" alt="Custom cursor" />
+        </div>
+      )}
 
       {/* Ship at top right */}
       <div className="ship-container">
@@ -226,4 +228,14 @@ export default function App() {
       </div>
     </>
   );
+}
+
+function ScrollToTop() {
+  const location = useLocation();
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  }, [location.pathname]);
+  return null;
 }
