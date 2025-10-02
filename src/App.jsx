@@ -5,6 +5,8 @@ import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home";
 import EventsPage from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
+import Footer from "./components/Footer";
+import { CountdownBanner } from "./components/ui/countdown";
 
 export default function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -56,7 +58,8 @@ export default function App() {
     const handleMouseUp = () => setIsClicked(false);
 
     // Hide custom cursor when pointer leaves the window; show on re-enter
-    // Remove blur/focus and mouseenter/leave based hiding to avoid sticky hidden state after iframes
+    const handleMouseLeave = () => setShowCustomCursor(false);
+    const handleMouseEnter = () => setShowCustomCursor(true);
 
     // Mobile horizontal swipe panning for background image
     let touchStartX = null;
@@ -96,6 +99,8 @@ export default function App() {
       document.addEventListener("mousemove", updateCursorPosition);
       document.addEventListener("mousedown", handleMouseDown);
       document.addEventListener("mouseup", handleMouseUp);
+      document.addEventListener("mouseleave", handleMouseLeave);
+      document.addEventListener("mouseenter", handleMouseEnter);
     }
     // Attach listeners
     window.addEventListener("scroll", updateProgress, { passive: true });
@@ -130,6 +135,8 @@ export default function App() {
         document.removeEventListener("mousemove", updateCursorPosition);
         document.removeEventListener("mousedown", handleMouseDown);
         document.removeEventListener("mouseup", handleMouseUp);
+        document.removeEventListener("mouseleave", handleMouseLeave);
+        document.removeEventListener("mouseenter", handleMouseEnter);
       }
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
@@ -149,6 +156,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <CountdownBanner />
       {showCustomCursor && (
         <div
           className="custom-cursor"
@@ -225,6 +233,7 @@ export default function App() {
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </>
   );

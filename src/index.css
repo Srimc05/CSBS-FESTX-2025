@@ -49,11 +49,6 @@ body{
   html::-webkit-scrollbar {
     display: none;
   }
-
-/* Temporary: normalize prod to your 140% local zoom on larger screens */
-@media (min-width: 1024px) {
-  html { font-size: 140%; }
-}
   
   .custom-cursor {
     position: fixed;
@@ -77,9 +72,14 @@ body{
     object-fit: contain;
   }
 
+  /* Hide custom cursor when over iframe */
+  body.hide-custom-cursor .custom-cursor {
+    display: none;
+  }
+
   .nav-pirate {
     position: fixed;
-    top: 12px;
+    top: 48px;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
@@ -149,7 +149,7 @@ body{
   /* Mobile dropdown panel themed */
   .nav-pirate__panel {
     position: fixed;
-    top: 58px;
+    top: 94px;
     right: 8px;
     background: rgba(18, 12, 6, 0.85);
     border: 1.5px solid rgba(214, 163, 64, 0.5);
@@ -241,7 +241,7 @@ body{
   .ship-container {
     padding: 0;
     position: fixed;
-    top: 5px;
+    top: 41px;
     right: 1px;
     z-index: 100;
   }
@@ -267,7 +267,7 @@ body{
   
   .anchor-container {
     position: fixed;
-    top: 80px;
+    top: 116px;
     right: 30px;
     z-index: 1000;
   }

@@ -15,11 +15,14 @@ const fadeRight = {
   hidden: { opacity: 0, x: 50 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
+var moton = motion.dd;
+moton.bind;
 
 const About = () => {
   return (
     <section className="w-full bg-black text-white px-6 md:px-16 lg:px-24 py-16">
       <div className="max-w-6xl mx-auto space-y-20">
+        {/* First Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <motion.div
@@ -29,10 +32,10 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h1 className="ttext-2xl md:text-3xl font-bold text-yellow-400 text-center">
+            <h1 className="text-2xl md:text-3xl font-bold text-yellow-400 font-fell-english">
               The Spirit of FESTX
             </h1>
-            <p className="text-neutral-300 leading-relaxed text-center">
+            <p className="text-neutral-300 leading-relaxed text-justify font-fell-english">
               FESTX is an annual symposium hosted by the Department of{" "}
               <span className="text-yellow-400 font-semibold">
                 Computer Science and Business Systems
@@ -49,6 +52,7 @@ const About = () => {
             </p>
           </motion.div>
 
+          {/* Image */}
           <motion.div
             variants={fadeRight}
             initial="hidden"
@@ -66,7 +70,9 @@ const About = () => {
           </motion.div>
         </div>
 
+        {/* Second Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Image */}
           <motion.div
             variants={fadeLeft}
             initial="hidden"
@@ -75,7 +81,7 @@ const About = () => {
             className="rounded-2xl overflow-hidden shadow-lg order-2 md:order-1"
           >
             <motion.img
-              src="https://ik.imagekit.io/sri05/image%202.png?updatedAt=1726983892249"
+              src="https://ik.imagekit.io/sri05/sec.png"
               alt="Sri Sairam Engineering College"
               className="object-contain w-full h-64 md:h-80"
               whileHover={{ scale: 1.05, rotate: -1 }}
@@ -83,6 +89,7 @@ const About = () => {
             />
           </motion.div>
 
+          {/* Text */}
           <motion.div
             variants={fadeRight}
             initial="hidden"
@@ -90,10 +97,10 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-4 order-1 md:order-2"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-yellow-400 text-center">
+            <h2 className="text-2xl md:text-3xl font-fell-english font-bold text-yellow-400">
               About Our Institution
             </h2>
-            <p className="text-neutral-300 leading-relaxed text-center">
+            <p className="text-neutral-300 font-fell-english leading-relaxed text-justify">
               Sri Sairam Engineering College, Chennai, was established in 1995
               by{" "}
               <span className="text-yellow-400 font-semibold">
@@ -108,17 +115,18 @@ const About = () => {
           </motion.div>
         </div>
 
+        {/* Third Section */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-center space-y-6"
+          className="text-justify space-y-6"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-yellow-400">
+          <h2 className="text-2xl text-center md:text-3xl font-fell-english font-bold text-yellow-400">
             Department of CSBS
           </h2>
-          <p className="text-neutral-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-neutral-300 max-w-4xl font-fell-english mx-auto leading-relaxed text-justify">
             The Department of Computer Science and Business Systems (CSBS) is a
             steadily growing discipline that blends{" "}
             <span className="text-yellow-400 font-semibold">
