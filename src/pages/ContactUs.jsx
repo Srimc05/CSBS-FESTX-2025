@@ -3,12 +3,12 @@ import ContactCard from "../components/ui/contact-card";
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen mt-12 py-12 px-6">
+    <div className="my-24 py-12 px-6 ">
       <h2 className="text-4xl font-semibold text-gray-200 mb-12 text-center font-fell-english">
         Association Members
       </h2>
-      <div className="max-w-3xl mx-auto">
-        <div className="flex flex-col gap-6 justify-center">
+      <div className="max-w-7xl mx-auto pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
           <ContactCard
             name="Arun S"
             role="ChairPerson"

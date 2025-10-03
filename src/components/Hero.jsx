@@ -1,11 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function HeroSection() {
   return (
     <div className="h-screen w-full relative overflow-hidden hero-bg flex items-center justify-center">
-      {/* Overlay for better text contrast */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] z-0"></div>
-
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-8">
         {/* College Info */}
@@ -41,9 +39,9 @@ export function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="mt-8 flex items-center justify-center gap-4">
-          <button className="treasure-btn px-6 py-2 text-lg">
+          <Link to="/events" className="treasure-btn px-6 py-2 text-lg">
             Register Now
-          </button>
+          </Link>
           <a
             href="https://www.instagram.com/reel/DPMCzDmEcbp/?igsh=bHF6c2J0cmxsc2cx"
             target="_blank" // opens in new tab

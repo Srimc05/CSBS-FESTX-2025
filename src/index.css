@@ -242,7 +242,7 @@ body{
     padding: 0;
     position: fixed;
     top: 41px;
-    right: 1px;
+  right: -10px;
     z-index: 100;
   }
   
@@ -268,8 +268,8 @@ body{
   .anchor-container {
     position: fixed;
     top: 116px;
-    right: 30px;
-    z-index: 1000;
+  right: 16px;
+  z-index: 5;
   }
   
 .rope {
@@ -279,7 +279,7 @@ body{
     left: 60%;
     transform: translateX(-50%);
     border-radius: 3px;
-    z-index: 1000;
+    z-index: 5;
     background-image:
       linear-gradient(to bottom, rgba(255,255,255,0.22), rgba(0,0,0,0.22)),
       repeating-linear-gradient(45deg, #b07a39 0 6px, #8e5927 6px 12px);
@@ -299,7 +299,7 @@ body{
     left: 60%;
     transform: translateX(-50%);
     transition: none;
-    z-index: 1000;
+    z-index: 5;
     min-width: 40px;
     min-height: 40px;
   }

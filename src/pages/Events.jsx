@@ -3,7 +3,7 @@ import Events from "../components/Events";
 
 const EventsPage = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-24 mt-16">
       <Events />
     </div>
   );
