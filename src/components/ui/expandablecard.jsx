@@ -66,7 +66,7 @@ export function ExpandableCardDemo() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-auto max-h-[60vh] sm:rounded-tr-lg sm:rounded-tl-lg object-contain"
                 />
               </motion.div>
 
@@ -135,7 +135,7 @@ export function ExpandableCardDemo() {
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-60 w-full object-cover object-top"
+                  className="w-full h-auto object-contain"
                 />
               </motion.div>
               <div className="flex flex-col items-center mt-2 p-4">
@@ -186,30 +186,37 @@ const cards = [
   {
     description: "Lana Del Rey",
     title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/anonymous.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
       return (
-        <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
-        </p>
+        <>
+          <p>
+            Lana Del Rey, an iconic American singer-songwriter, is celebrated
+            for her melancholic and cinematic music style. Born Elizabeth
+            Woolridge Grant in New York City, she has captivated audiences
+            worldwide with her haunting voice and introspective lyrics. <br />
+            <br /> Her songs often explore themes of tragic romance, glamour,
+            and melancholia, drawing inspiration from both contemporary and
+            vintage pop culture. With a career that has seen numerous critically
+            acclaimed albums, Lana Del Rey has established herself as a unique
+            and influential figure in the music industry, earning a dedicated
+            fan base and numerous accolades.
+          </p>
+          <div className="mt-4 grid grid-cols-1 gap-3">
+            <img src="/1.webp" alt="Preview 1" className="w-full rounded-md" />
+            <img src="/2.webp" alt="Preview 2" className="w-full rounded-md" />
+            <img src="/3.webp" alt="Preview 3" className="w-full rounded-md" />
+          </div>
+        </>
       );
     },
   },
   {
     description: "Babbu Maan",
     title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
+    src: "/code_heist.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -232,7 +239,7 @@ const cards = [
   {
     description: "Metallica",
     title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
+    src: "/gbu.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -254,7 +261,7 @@ const cards = [
   {
     description: "Led Zeppelin",
     title: "Stairway To Heaven",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
+    src: "/lootopoly.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -275,7 +282,7 @@ const cards = [
   {
     description: "Mustafa Zahid",
     title: "Toh Phir Aao",
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
+    src: "/pitchers_gold.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -297,7 +304,7 @@ const cards = [
   {
     description: "Adele",
     title: "Hello",
-    src: "https://ik.imagekit.io/sri05/WhatsApp%20Image%202025-07-02%20at%2010.09.17_81a20a33.jpg?updatedAt=1751431248118",
+    src: "/stellar_quest.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -317,7 +324,7 @@ const cards = [
   {
     description: "Ed Sheeran",
     title: "Shape of You",
-    src: "https://ik.imagekit.io/sri05/aron-visuals-4zxSWESyZio-unsplash.jpg?updatedAt=1751130477278",
+    src: "/unlockx.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -336,7 +343,7 @@ const cards = [
   {
     description: "Coldplay",
     title: "Yellow",
-    src: "https://ik.imagekit.io/sri05/treasureimage.jpg?updatedAt=1758644717212",
+    src: "/wolf_gambit.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {
@@ -354,7 +361,7 @@ const cards = [
   {
     description: "Taylor Swift",
     title: "Love Story",
-    src: "https://ik.imagekit.io/sri05/Depth%204,%20Frame%200.png?updatedAt=1750772911963",
+    src: "/pitchers_gold.webp",
     ctaText: "Play",
     ctaLink: "https://pplx.ai/AZ2",
     content: () => {

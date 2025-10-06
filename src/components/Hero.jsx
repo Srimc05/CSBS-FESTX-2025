@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CountdownBanner } from "./ui/countdown";
 
 export function HeroSection() {
   return (
@@ -8,9 +9,9 @@ export function HeroSection() {
       <div className="relative z-10 text-center px-4 sm:px-8">
         {/* College Info */}
         <div className="text-white font-fell-english tracking-wide text-shadow-contrast space-y-1">
-          <p className="text-sm md:text-lg">SRI SAIRAM ENGINEERING COLLEGE</p>
-          <p className="text-sm md:text-lg">DEPARTMENT OF COMPUTER</p>
-          <p className="text-sm md:text-lg">SCIENCE AND BUSINESS SYSTEMS</p>
+          <p className="text-md md:text-2xl">SRI SAIRAM ENGINEERING COLLEGE</p>
+          <p className="text-md md:text-2xl">DEPARTMENT OF COMPUTER</p>
+          <p className="text-md md:text-2xl">SCIENCE AND BUSINESS SYSTEMS</p>
         </div>
 
         {/* Presents */}
@@ -51,6 +52,7 @@ export function HeroSection() {
             Watch Trailer
           </a>
         </div>
+        <CountdownBanner inline />
       </div>
     </div>
   );

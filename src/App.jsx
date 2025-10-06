@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 import EventsPage from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
-import { CountdownBanner } from "./components/ui/countdown";
 
 export default function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -156,7 +155,6 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <CountdownBanner />
       {showCustomCursor && (
         <div
           className="custom-cursor"
