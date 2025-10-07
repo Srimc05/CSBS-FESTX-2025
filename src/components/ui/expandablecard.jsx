@@ -117,7 +117,7 @@ export function ExpandableCardDemo() {
                   key={card.title}
                   data-index={index}
                   ref={(el) => (refs.current[index] = el)}
-                  className="relative h-[460px] sm:h-[500px] lg:h-[480px] perspective-1000"
+                  className="relative h-[430px] sm:h-[500px] lg:h-[480px] perspective-1000"
                 >
                   <div
                     className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d cursor-pointer ${
