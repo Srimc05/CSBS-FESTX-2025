@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-white bg-gradient-to-br from-[#0b0b0c] to-[#151414] py-8">
+    <footer className="text-white bg-gradient-to-br from-[#0b0b0c] to-[#151414] py-8 relative z-30">
       <div className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left section */}
         <div>
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
 
         {/* Right section */}
-        <div className="flex flex-col justify-center font-fell-english gap-6">
+        <div className="flex flex-col justify-center font-fell-english gap-6 relative z-10">
           {/* Social Links */}
           <div>
             <h2 className="text-2xl font-semibold text-yellow-400 mb-4">

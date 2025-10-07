@@ -1,186 +1,131 @@
 "use client";
 
-import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { useOutsideClick } from "../hooks/use-outside-click";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function ExpandableCardDemo() {
-  const [active, setActive] = useState(null);
-  const id = useId();
-  const ref = useRef(null);
-  var moton = motion.dd;
-  moton.bind;
+  const navigate = useNavigate();
+  const [inViewCards, setInViewCards] = useState(new Set());
+  const cardRefs = React.useRef([]);
 
+  const handleCardClick = (card) => {
+    // Map event titles to their corresponding routes
+    const routeMap = {
+      "Summertime Sadness": "/anonymous",
+      "Mitran Di Chhatri": "/code-heist",
+      GBU: "/gbu",
+      "Stairway To Heaven": "/lootopoly",
+      "Toh Phir Aao": "/pitchers-gold",
+      Hello: "/stellar-quest",
+      "Shape of You": "/unlockx",
+      Yellow: "/wolf-gambit",
+      "Love Story": "/event9",
+    };
+
+    const route = routeMap[card.title];
+    if (route) {
+      navigate(route);
+    }
+  };
+
+  // Intersection Observer for viewport detection
   useEffect(() => {
-    function onKeyDown(event) {
-      if (event.key === "Escape") setActive(null);
-    }
-    if (active && typeof active === "object") {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [active]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const cardIndex = parseInt(entry.target.dataset.index);
+          console.log(
+            `Card ${cardIndex} intersection:`,
+            entry.isIntersecting,
+            entry.intersectionRatio
+          );
+          setInViewCards((prev) => {
+            const newSet = new Set(prev);
+            if (entry.isIntersecting) {
+              newSet.add(cardIndex);
+            } else {
+              newSet.delete(cardIndex);
+            }
+            console.log("In view cards:", Array.from(newSet));
+            return newSet;
+          });
+        });
+      },
+      {
+        threshold: 0.1, // Card is considered in view when 10% is visible
+        rootMargin: "0px 0px 0px 0px",
+      }
+    );
 
-  useOutsideClick(ref, () => setActive(null));
+    // Observe all card refs after they're rendered
+    const timeoutId = setTimeout(() => {
+      cardRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref);
+      });
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      cardRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
   return (
-    <>
-      {/* Overlay */}
-      <AnimatePresence>
-        {active && typeof active === "object" && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
-          />
-        )}
-      </AnimatePresence>
+    <div className="max-w-7xl mx-auto mt-8 px-2 sm:px-4">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 lg:gap-12">
+        {cards.map((card, index) => {
+          const isFlipped = inViewCards.has(index);
+          console.log(`Card ${index} isFlipped:`, isFlipped);
 
-      {/* Expanded card */}
-      <AnimatePresence>
-        {active && typeof active === "object" && (
-          <div className="fixed inset-0 grid place-items-center z-[100]">
-            <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="relative w-full max-w-[500px] max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-y-auto"
-            >
-              <motion.button
-                key={`button-${active.title}-${id}`}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 0.05 } }}
-                className="flex absolute top-2 right-2 items-center justify-center bg-white rounded-full h-6 w-6 shadow-md"
-                onClick={() => setActive(null)}
-              >
-                <CloseIcon />
-              </motion.button>
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                <img
-                  width={200}
-                  height={200}
-                  src={active.src}
-                  alt={active.title}
-                  className="w-full h-auto max-h-[60vh] sm:rounded-tr-lg sm:rounded-tl-lg object-contain"
-                />
-              </motion.div>
-
-              <div>
-                <div className="flex justify-between items-start p-4">
-                  <div>
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
-                    >
-                      {active.title}
-                    </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-base"
-                    >
-                      {active.description}
-                    </motion.p>
-                  </div>
-
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
-                  >
-                    {active.ctaText}
-                  </motion.a>
-                </div>
-
-                <div className="pt-4 relative px-4">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base pb-10 flex flex-col items-start gap-4 dark:text-neutral-400"
-                  >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* Static 3×3 Grid */}
-      <div className="max-w-6xl mx-auto mt-8 px-4">
-        <motion.ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((card) => (
-            <motion.li
-              layoutId={`card-${card.title}-${id}`}
+          return (
+            <li
               key={card.title}
-              onClick={() => setActive(card)}
-              className="flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer overflow-hidden shadow-md"
+              ref={(el) => {
+                cardRefs.current[index] = el;
+                console.log(`Card ${index} ref set:`, el);
+              }}
+              data-index={index}
+              className="relative h-[460px] sm:h-[500px] lg:h-[600px] perspective-1000"
             >
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="w-full h-auto object-contain"
-                />
-              </motion.div>
-              <div className="flex flex-col items-center mt-2 p-4">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center"
-                >
-                  {card.description}
-                </motion.p>
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d cursor-pointer ${
+                  isFlipped ? "rotate-y-180" : ""
+                }`}
+                onClick={() => handleCardClick(card)}
+              >
+                {/* Card Front (Back of card) */}
+                <div className="absolute inset-0 w-full h-full backface-hidden bg-black rounded-xl border-2 border-yellow-400 shadow-2xl"></div>
+
+                {/* Card Back (Front of card) */}
+                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-yellow-400 shadow-2xl overflow-hidden">
+                  <div className="h-full flex flex-col">
+                    <div className="flex-1 relative p-0">
+                      <img
+                        src={card.src}
+                        alt={card.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-col items-center p-6 bg-gradient-to-t from-black/90 to-transparent">
+                      <h3 className="font-medium text-yellow-400 text-center font-pirata text-xl lg:text-2xl mb-2">
+                        {card.title}
+                      </h3>
+                      <p className="text-gray-300 text-center text-sm lg:text-base">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </div>
-    </>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
-
-export const CloseIcon = () => (
-  <motion.svg
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0, transition: { duration: 0.05 } }}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-4 w-4 text-black"
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M18 6l-12 12" />
-    <path d="M6 6l12 12" />
-  </motion.svg>
-);
 
 const cards = [
   {
@@ -204,11 +149,6 @@ const cards = [
             and influential figure in the music industry, earning a dedicated
             fan base and numerous accolades.
           </p>
-          <div className="mt-4 grid grid-cols-1 gap-3">
-            <img src="/1.webp" alt="Preview 1" className="w-full rounded-md" />
-            <img src="/2.webp" alt="Preview 2" className="w-full rounded-md" />
-            <img src="/3.webp" alt="Preview 3" className="w-full rounded-md" />
-          </div>
         </>
       );
     },
@@ -237,11 +177,12 @@ const cards = [
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
+    description: "GBU Event",
+    title: "GBU",
     src: "/gbu.webp",
-    ctaText: "Play",
-    ctaLink: "https://pplx.ai/AZ2",
+    eventSlug: "gbu",
+    ctaText: "View Poster",
+    ctaLink: "/event/gbu",
     content: () => {
       return (
         <p>

@@ -4,7 +4,15 @@ import { CountdownBanner } from "./ui/countdown";
 
 export function HeroSection() {
   return (
-    <div className="h-screen w-full relative overflow-hidden hero-bg flex items-center justify-center">
+    <div
+      className="h-screen w-full relative overflow-hidden flex items-center justify-center"
+      style={{
+        backgroundImage: "url(/bg2.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-8">
         {/* College Info */}

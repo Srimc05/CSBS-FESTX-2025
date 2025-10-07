@@ -5,6 +5,15 @@ import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home";
 import EventsPage from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
+import Anonymous from "./pages/Anonymous";
+import CodeHeist from "./pages/CodeHeist";
+import GBU from "./pages/GBU";
+import Lootopoly from "./pages/Lootopoly";
+import PitchersGold from "./pages/PitchersGold";
+import StellarQuest from "./pages/StellarQuest";
+import UnlockX from "./pages/UnlockX";
+import WolfGambit from "./pages/WolfGambit";
+import Event9 from "./pages/Event9";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -229,6 +238,15 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/anonymous" element={<Anonymous />} />
+            <Route path="/code-heist" element={<CodeHeist />} />
+            <Route path="/gbu" element={<GBU />} />
+            <Route path="/lootopoly" element={<Lootopoly />} />
+            <Route path="/pitchers-gold" element={<PitchersGold />} />
+            <Route path="/stellar-quest" element={<StellarQuest />} />
+            <Route path="/unlockx" element={<UnlockX />} />
+            <Route path="/wolf-gambit" element={<WolfGambit />} />
+            <Route path="/event9" element={<Event9 />} />
           </Routes>
         </main>
         <Footer />

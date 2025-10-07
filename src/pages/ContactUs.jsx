@@ -3,8 +3,16 @@ import ContactCard from "../components/ui/contact-card";
 
 const ContactUs = () => {
   return (
-    <div className="my-24 py-12 px-6 ">
-      <h2 className="text-4xl font-semibold text-gray-200 mb-12 text-center font-fell-english">
+    <div
+      className="pt-24 min-h-screen px-6 pb-0"
+      style={{
+        backgroundImage: "url(/bg2.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <h2 className="text-4xl font-semibold text-gray-200 mt-6 mb-8 text-center font-fell-english">
         Association Members
       </h2>
       <div className="max-w-7xl mx-auto pt-12">
