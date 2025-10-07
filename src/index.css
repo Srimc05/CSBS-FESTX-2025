@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=IM+Fell+English+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* Font utility classes to ensure reliable application */
@@ -12,6 +13,42 @@
 
 .font-pirata {
   font-family: 'Pirata One', cursive;
+}
+
+/* Futuristic / code fonts */
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+.font-jetbrains { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* Space/Cyber theme tokens */
+:root {
+  --space-bg-top: #0e1a2b;
+  --space-bg-bottom: #000000;
+  --neon-cyan: #22d3ee;
+  --neon-purple: #a78bfa;
+  --neon-yellow: #ffd464;
+  --glass-bg: rgba(10, 12, 24, 0.55);
+  --glass-border: rgba(168, 85, 247, 0.35);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 0 32px rgba(34,211,238,0.15);
+}
+
+.neon-title {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 6px 22px rgba(34,211,238,0.25);
+}
+
+.neon-chip {
+  background: linear-gradient(90deg, rgba(34,211,238,0.15), rgba(167,139,250,0.15));
+  border: 1px solid rgba(34,211,238,0.35);
+  color: #e5f6ff;
 }
 
 

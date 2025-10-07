@@ -8,7 +8,7 @@ const GBU = () => {
         {/* Back button */}
         <Link
           to="/events"
-          className="fixed z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-10 left-3 md:left-6  lg:left-1/2 lg:-translate-x-[420px]"
+          className="fixed z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-5 md:top-7 left-3 md:left-6"
         >
           <svg
             className="w-5 h-5"
