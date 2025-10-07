@@ -36,7 +36,7 @@ export function HeroSection() {
             Heist On
           </h2>
           <p className="font-pirata text-yellow-300 text-lg md:text-2xl">
-            October 25, 2025
+            October 27, 2025
           </p>
         </div>
 

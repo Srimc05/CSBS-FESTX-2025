@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TARGET_DATE = new Date("2025-10-25T00:00:00").getTime();
+const TARGET_DATE = new Date("2025-10-27T00:00:00").getTime();
 
 export function CountdownBanner({ inline = false }) {
   const [timeLeft, setTimeLeft] = useState({

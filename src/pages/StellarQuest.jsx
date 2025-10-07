@@ -120,7 +120,7 @@ const StellarQuest = () => {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-7xl font-extrabold neon-title font-orbitron tracking-wide mb-4">
-            🌌 The Stellar Quest
+            The Stellar Quest
           </h1>
           <p className="text-xl md:text-2xl text-cyan-300 font-jetbrains mb-6">
             Your Cosmic Adventure Awaits! 🚀
@@ -202,7 +202,7 @@ const StellarQuest = () => {
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                <div className="inline-flex shrink-0 w-7 md:w-9 aspect-square bg-yellow-400 rounded-full items-center justify-center text-black font-extrabold text-base md:text-lg leading-none font-jetbrains">
                   1
                 </div>
                 <div>
@@ -218,7 +218,7 @@ const StellarQuest = () => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                <div className="inline-flex shrink-0 w-7 md:w-9 aspect-square bg-cyan-400 rounded-full items-center justify-center text-black font-extrabold text-base md:text-lg leading-none font-jetbrains">
                   2
                 </div>
                 <div>
@@ -233,7 +233,7 @@ const StellarQuest = () => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-purple-400 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                <div className="inline-flex shrink-0 w-7 md:w-9 aspect-square bg-purple-400 rounded-full items-center justify-center text-black font-extrabold text-base md:text-lg leading-none font-jetbrains">
                   3
                 </div>
                 <div>
