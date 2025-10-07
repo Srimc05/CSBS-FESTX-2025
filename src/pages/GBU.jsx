@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const GBU = () => {
   return (
-    <div className="min-h-screen py-12 px-6">
+    <div className="min-h-screen pt-28 pb-12 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Back button */}
         <Link
           to="/events"
-          className="inline-flex items-center text-yellow-400 hover:text-yellow-300 mb-8 transition-colors fixed top-24 left-6 z-40"
+          className="fixed z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-10 left-3 md:left-6  lg:left-1/2 lg:-translate-x-[420px]"
         >
           <svg
-            className="w-5 h-5 mr-2"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

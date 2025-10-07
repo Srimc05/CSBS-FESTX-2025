@@ -4,15 +4,9 @@ import { CountdownBanner } from "./ui/countdown";
 
 export function HeroSection() {
   return (
-    <div
-      className="h-screen w-full relative overflow-hidden flex items-center justify-center"
-      style={{
-        backgroundImage: "url(/bg2.webp)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="h-screen w-full relative overflow-hidden flex items-center justify-center">
+      {/* Animated background only for Hero (scoped to hero) */}
+      <div className="kenburns-hero" aria-hidden="true"></div>
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-8">
         {/* College Info */}

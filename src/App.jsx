@@ -238,14 +238,14 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/anonymous" element={<Anonymous />} />
             <Route path="/code-heist" element={<CodeHeist />} />
             <Route path="/gbu" element={<GBU />} />
-            <Route path="/lootopoly" element={<Lootopoly />} />
             <Route path="/pitchers-gold" element={<PitchersGold />} />
             <Route path="/stellar-quest" element={<StellarQuest />} />
             <Route path="/unlockx" element={<UnlockX />} />
             <Route path="/wolf-gambit" element={<WolfGambit />} />
+            <Route path="/anonymous" element={<Anonymous />} />
+            <Route path="/lootopoly" element={<Lootopoly />} />
             <Route path="/event9" element={<Event9 />} />
           </Routes>
         </main>

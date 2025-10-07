@@ -43,7 +43,7 @@ const About = () => {
               at Sri Sairam Engineering College to promote entrepreneurship and
               explore the latest tech trends. <br />
               <br />
-              FESTX&apos;24 featured{" "}
+              FESTX&apos;25 featured{" "}
               <span className="text-yellow-400 font-semibold">
                 9 unique inter-collegiate events
               </span>{" "}
