@@ -295,6 +295,12 @@ const Lootopoly = () => {
             </div>
           </div>
         </section>
+        {/* Call to Action */}
+        <div className="text-center">
+          <Link to="#" className="treasure-btn px-6 py-2 text-lg mt-8">
+            Register Now
+          </Link>
+        </div>
       </div>
     </div>
   );
