@@ -45,6 +45,321 @@
   text-shadow: 0 6px 22px rgba(34,211,238,0.25);
 }
 
+/* Glitch effect for tech/code theme */
+.glitch {
+  position: relative;
+  animation: glitch-skew 2s ease-in-out infinite alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitch::before {
+  animation: glitch-anim-1 0.6s ease-in-out infinite alternate-reverse;
+  color: var(--neon-purple);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-anim-2 0.6s ease-in-out infinite alternate-reverse;
+  color: var(--neon-cyan);
+  z-index: -2;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  5% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(2px, -2px);
+  }
+  10% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  15% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  20% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  25% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(2px, -2px);
+  }
+  30% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  35% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  40% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  45% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(2px, -2px);
+  }
+  50% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  55% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  60% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  65% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(2px, -2px);
+  }
+  70% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  80% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  85% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(2px, -2px);
+  }
+  90% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  95% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+  5% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, -2px);
+  }
+  10% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(2px, 2px);
+  }
+  15% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+  25% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, -2px);
+  }
+  30% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(2px, 2px);
+  }
+  35% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-2px, -2px);
+  }
+  40% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+  45% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, -2px);
+  }
+  50% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(2px, 2px);
+  }
+  55% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+  65% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, -2px);
+  }
+  70% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(2px, 2px);
+  }
+  75% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+  85% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, -2px);
+  }
+  90% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(2px, 2px);
+  }
+  95% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(-2deg);
+  }
+  20% {
+    transform: skew(1deg);
+  }
+  30% {
+    transform: skew(-1deg);
+  }
+  40% {
+    transform: skew(2deg);
+  }
+  50% {
+    transform: skew(-1deg);
+  }
+  60% {
+    transform: skew(1deg);
+  }
+  70% {
+    transform: skew(-2deg);
+  }
+  80% {
+    transform: skew(1deg);
+  }
+  90% {
+    transform: skew(-1deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* 3D Triangle Styles */
+.perspective-1000 { perspective: none; }
+
+.triangle-3d { transform: none; animation: none; }
+
+/* hover pause disabled - no rotation */
+
+@media (max-width: 768px) { .triangle-3d { transform: none; } }
+
+.triangle-face {
+  background: rgba(34, 211, 238, 0.1);
+  border: 2px solid rgba(34, 211, 238, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.triangle-face-1, .triangle-face-2, .triangle-face-3 { transform: none; }
+
+.triangle-content { transform: none; }
+
+/* Disable 3D transform for flat card usage */
+.not-3d {
+  transform: none !important;
+}
+
+/* --- Character card entrance animation --- */
+.slide-in-from-corner {
+  opacity: 0;
+  transform: translate(-80px, -80px) scale(0.9);
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 480ms ease-out;
+}
+
+.slide-in-from-corner.in-view {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* --- Interactive scanner line (hover/click) --- */
+.char-card::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  top: -6px;
+  opacity: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0), #67e8f9, rgba(0,0,0,0));
+  box-shadow: 0 0 14px #22d3ee, 0 0 24px rgba(34,211,238,0.5);
+  pointer-events: none;
+  z-index: 3;
+  will-change: top, opacity;
+}
+
+@keyframes scanY {
+  0% { top: -6px; opacity: 1; }
+  45% { top: calc(100% + 6px); opacity: 0.9; }
+  55% { top: calc(100% + 6px); opacity: 0.9; }
+  100% { top: -6px; opacity: 0; }
+}
+
+/* Runs on desktop hover and programmatic .scanning class (mobile click) */
+.char-card:hover::after,
+.char-card.scanning::after {
+  animation: scanY 1400ms cubic-bezier(0.2, 0.8, 0.2, 1) 1 forwards;
+}
+
+/* triangle-rotate keyframes no longer used */
+
 .neon-chip {
   background: linear-gradient(90deg, rgba(34,211,238,0.15), rgba(167,139,250,0.15));
   border: 1px solid rgba(34,211,238,0.35);
@@ -266,6 +581,9 @@ body{
     background: rgba(214, 163, 64, 0.10);
     box-shadow: inset 0 0 10px rgba(214, 163, 64, 0.18);
   }
+
+  /* Hide centered navbar on single event pages */
+  body.hide-centered-nav .nav-pirate { display: none !important; }
 
   /* Mobile dropdown panel themed */
   .nav-pirate__panel {
