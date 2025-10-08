@@ -30,16 +30,6 @@ export function HeroSection() {
           />
         </div>
 
-        {/* Event Date */}
-        {/* <div className="mt-6 space-y-1">
-          <h2 className="font-pirata text-yellow-400 text-2xl md:text-4xl tracking-wider drop-shadow-md">
-            Heist On
-          </h2>
-          <p className="font-pirata text-yellow-300 text-lg md:text-2xl">
-            October 27, 2025
-          </p>
-        </div> */}
-
         {/* CTA Buttons */}
         <div className="mt-8 flex items-center justify-center gap-4">
           <Link to="/events" className="treasure-btn px-6 py-2 text-lg">

@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=IM+Fell+English+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 /* Font utility classes to ensure reliable application */
@@ -18,6 +19,7 @@
 /* Futuristic / code fonts */
 .font-orbitron { font-family: 'Orbitron', sans-serif; }
 .font-jetbrains { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.font-money-body { font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif; }
 
 /* Space/Cyber theme tokens */
 :root {
@@ -43,6 +45,232 @@
   background-clip: text;
   color: transparent;
   text-shadow: 0 6px 22px rgba(34,211,238,0.25);
+}
+
+/* Gold text with soft glow */
+.gold-glow {
+  color: #facc15; /* tailwind amber-300 */
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.55), 0 0 22px rgba(250, 204, 21, 0.35);
+}
+
+/* Stronger glow for logo */
+.logo-glow {
+  filter: drop-shadow(0 0 14px rgba(250, 204, 21, 0.75)) drop-shadow(0 0 30px rgba(250, 204, 21, 0.45));
+  animation: logoPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.60)) drop-shadow(0 0 26px rgba(250, 204, 21, 0.35)); }
+  50% { filter: drop-shadow(0 0 22px rgba(250, 204, 21, 0.95)) drop-shadow(0 0 44px rgba(250, 204, 21, 0.55)); }
+}
+
+/* ---- Loot-O-Poly: Logo coin eruption ---- */
+.coin--logo {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff6b8 0%, #ffe074 28%, #f3b836 60%, #c98312 100%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.45);
+  transform: translate(-50%, -50%) rotate(0deg) scale(var(--sc,1));
+  will-change: transform, opacity;
+  z-index: -50; /* ensure behind content */
+}
+
+.coin--logo::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 30%, #fff3a3 0%, #ffd665 60%, #e0a832 100%);
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.25);
+}
+
+/* JS-driven coins: no keyframes, transform set via JS per frame */
+
+/* Loot-O-Poly typography helpers */
+.money-title {
+  font-family: 'Pirata One', cursive;
+  color: var(--cash-yellow);
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 10px rgba(251,191,36,0.45), 0 0 24px rgba(251,191,36,0.25);
+}
+
+.cash-highlight {
+  color: #111827;
+  background: linear-gradient(180deg, #fde68a 0%, #fbbf24 65%, #d97706 100%);
+  padding: 0 6px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(251,191,36,0.25);
+}
+
+.deed-heading {
+  font-family: 'IM Fell English', 'IM Fell English SC', serif;
+  color: var(--board-green);
+  letter-spacing: 0.06em;
+}
+
+/* Mystery card for Round 3 */
+.mystery-card {
+  background: linear-gradient(135deg, #251312 0%, #3D2118 30%, #5A2F23 70%, #6B3828 100%);
+  border: 2px solid #4A2C20;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 20px rgba(37, 19, 18, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  animation: cardGlow 3s ease-in-out infinite;
+}
+
+.mystery-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: cardShine 4s ease-in-out infinite;
+}
+
+@keyframes cardShine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.mystery-question {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f1f5f9;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(107, 56, 40, 0.4);
+  animation: mysteryWander 6s ease-in-out infinite;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes cardGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(37, 19, 18, 0.4),
+      0 4px 15px rgba(0, 0, 0, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(37, 19, 18, 0.6),
+      0 6px 20px rgba(0, 0, 0, 0.4),
+      inset 0 3px 6px rgba(255, 255, 255, 0.3),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes mysteryWander {
+  0% { 
+    top: 50%; 
+    left: 15%; 
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  16% { 
+    top: 25%; 
+    left: 85%; 
+    transform: translate(-50%, -50%) rotate(12deg) scale(1.1);
+  }
+  32% { 
+    top: 75%; 
+    left: 75%; 
+    transform: translate(-50%, -50%) rotate(-8deg) scale(0.9);
+  }
+  48% { 
+    top: 80%; 
+    left: 20%; 
+    transform: translate(-50%, -50%) rotate(18deg) scale(1.05);
+  }
+  64% { 
+    top: 35%; 
+    left: 10%; 
+    transform: translate(-50%, -50%) rotate(-6deg) scale(0.95);
+  }
+  80% { 
+    top: 60%; 
+    left: 90%; 
+    transform: translate(-50%, -50%) rotate(10deg) scale(1.08);
+  }
+  100% { 
+    top: 50%; 
+    left: 15%; 
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
+/* Round 1 Topic Cards */
+.topic-card {
+  background: linear-gradient(135deg, #251312 0%, #3D2118 50%, #5A2F23 100%);
+  border: 1px solid #4A2C20;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  color: #f1f5f9;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: topicWobble 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.topic-card:hover {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+  border-color: #D2B48C;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 15px rgba(139, 69, 19, 0.3),
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes topicWobble {
+  0%, 100% { 
+    transform: rotate(0deg) scale(1);
+  }
+  20% { 
+    transform: rotate(1deg) scale(1.02);
+  }
+  40% { 
+    transform: rotate(-0.5deg) scale(0.98);
+  }
+  60% { 
+    transform: rotate(0.8deg) scale(1.01);
+  }
+  80% { 
+    transform: rotate(-0.3deg) scale(0.99);
+  }
+}
+
+.topic-card:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+
+.topic-card:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+.topic-card:nth-child(4n) {
+  animation-delay: 1.5s;
 }
 
 /* Glitch effect for tech/code theme */
@@ -582,9 +810,6 @@ body{
     box-shadow: inset 0 0 10px rgba(214, 163, 64, 0.18);
   }
 
-  /* Hide centered navbar on single event pages */
-  body.hide-centered-nav .nav-pirate { display: none !important; }
-
   /* Mobile dropdown panel themed */
   .nav-pirate__panel {
     position: fixed;
@@ -612,6 +837,9 @@ body{
     transition: background 160ms ease, color 160ms ease, transform 120ms ease;
   }
   .nav-pirate__panel a:hover { color: #ffd464; background: rgba(214,163,64,0.10); transform: translateX(2px); }
+
+  /* Hide centered navbar on single event pages */
+  body.hide-centered-nav .nav-pirate { display: none !important; }
 
   .treasure-btn {
     position: relative;
