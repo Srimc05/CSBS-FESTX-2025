@@ -174,10 +174,10 @@ const Lootopoly = () => {
         </section>
         {/* Two-column: left content card, right video placeholder */}
         <section className="relative z-20 max-w-7xl mx-auto px-3 md:px-6 mt-12 md:mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:items-stretch">
             {/* Left: Content card */}
-            <div className="md:col-span-8 glass-panel rounded-2xl p-8">
-              <div className="font-money-body space-y-4 text-[1.06rem] leading-7">
+            <div className="md:col-span-8 glass-panel rounded-2xl p-8 flex flex-col">
+              <div className="font-money-body space-y-4 text-[1.06rem] leading-7 flex-grow">
                 <h3 className="font-bold text-center text-yellow-500  tracking-widest text-sm md:text-base uppercase">
                   Event Description
                 </h3>
@@ -205,17 +205,41 @@ const Lootopoly = () => {
               </div>
             </div>
 
-            {/* Right: Video placeholder styled like Stellar Quest */}
-            <div className="md:col-span-4 flex items-center justify-center">
-              <div className="triangle-face w-full md:w-full h-80 md:h-96 flex items-center justify-center">
-                <div className="text-center text-cyan-300 font-jetbrains">
-                  <div className="text-6xl mb-4">🎬</div>
-                  <h3 className="text-xl font-orbitron mb-2">
-                    Mission Briefing
-                  </h3>
-                  <p className="text-gray-400">
-                    YouTube video will be embedded here
-                  </p>
+            <div className="md:col-span-4 flex">
+              <div className="glass-panel rounded-2xl p-6 w-full flex flex-col justify-around">
+                <h3 className="font-bold text-center text-yellow-500 tracking-widest text-sm md:text-base uppercase mb-4">
+                  Team Details
+                </h3>
+                <div className="font-nikkyou space-y-4 text-gray-300">
+                  <div className="text-center">
+                    <p className="text-lg">
+                      <span className="font-semibold text-yellow-300">
+                        Team Size:
+                      </span>
+                      <br />
+                      <span className="text-yellow-200">
+                        2 participants per team 👯‍♂️
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="mt-6">
+                    <h4 className="font-bold text-yellow-500 text-center mb-3 underline decoration-yellow-400 decoration-2 underline-offset-4">
+                      Instructions
+                    </h4>
+                    <div className="space-y-3">
+                      <p className="text-yellow-200 text-center">
+                        <span className="font-semibold text-yellow-300">
+                          Mobile Phones:
+                        </span>
+                        <br />
+                        Not allowed during the event 🚫📱
+                      </p>
+                      <p className="text-yellow-200 text-center">
+                        Event organizers' decision is final – no arguments! ⚡
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

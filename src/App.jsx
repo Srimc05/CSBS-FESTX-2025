@@ -23,6 +23,7 @@ export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showCustomCursor, setShowCustomCursor] = useState(true);
+  const [cursorImageLoaded, setCursorImageLoaded] = useState(false);
 
   // Define individual event page paths
   const eventPages = [
@@ -48,6 +49,19 @@ export default function App() {
     if (isCoarsePointer) {
       setShowCustomCursor(false);
     }
+
+    // Preload cursor image and handle fallback
+    const cursorImg = new Image();
+    cursorImg.onload = () => {
+      setCursorImageLoaded(true);
+      document.body.classList.remove("show-default-cursor");
+    };
+    cursorImg.onerror = () => {
+      setCursorImageLoaded(false);
+      setShowCustomCursor(false);
+      document.body.classList.add("show-default-cursor");
+    };
+    cursorImg.src = "/hook.webp";
 
     const updateCursorPosition = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -180,7 +194,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      {showCustomCursor && (
+      {showCustomCursor && cursorImageLoaded && (
         <div
           className="custom-cursor"
           style={{
@@ -189,7 +203,15 @@ export default function App() {
             transform: `rotate(${isClicked ? -25 : -20}deg)`,
           }}
         >
-          <img src="/hook.webp" alt="Custom cursor" />
+          <img
+            src="/hook.webp"
+            alt="Custom cursor"
+            onError={() => {
+              setCursorImageLoaded(false);
+              setShowCustomCursor(false);
+              document.body.classList.add("show-default-cursor");
+            }}
+          />
         </div>
       )}
 

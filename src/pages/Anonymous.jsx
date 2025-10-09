@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const Anonymous = () => {
+export default function AnonymousEventPage() {
   return (
-    <div className="min-h-screen pt-28 pb-12 px-6">
-      <div className="max-w-4xl mx-auto">
+    <div
+      className="min-h-screen text-white bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      style={{
+        backgroundImage: "url('https://ik.imagekit.io/sri05/Group%20195.png')",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="bg-black/60 min-h-screen w-full relative z-10 flex items-center justify-center">
         {/* Back button */}
         <Link
           to="/events"
@@ -26,18 +33,95 @@ const Anonymous = () => {
           Back to Events
         </Link>
 
-        {/* Event title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-6 text-center font-fell-english">
-          Anonymous
-        </h1>
+        {/* ================= HERO SECTION ================= */}
+        <section className="relative w-full max-w-7xl flex flex-col md:flex-row items-center justify-center  py-10">
+          {/* Left Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 relative"
+          >
+            <img
+              src="https://ik.imagekit.io/sri05/Muthupandi_Ghilli-removebg-preview.png"
+              alt="Clint Eastwood"
+              className="w-full h-auto object-contain scale-105 " // 👈 increases size by 25%
+            />
+          </motion.div>
 
-        {/* Placeholder content */}
-        <div className="text-center text-gray-300">
-          <p className="text-lg">Event page coming soon...</p>
-        </div>
+          {/* Text Overlay */}
+          <div className="flex-1 text-center md:text-left mt-6 md:mt-0 md:ml-10 relative z-20">
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="text-5xl md:text-7xl text-[#D9B536] font-bold font-[ewert] drop-shadow-lg"
+            >
+              ANONYMOUS
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="mt-4 text-lg md:text-xl text-[#D97A36] font-light italic"
+            >
+              “Kathai Thiraikathai Vasanam Iyakkam”
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 1 }}
+              className="mt-4 text-[#F5F2E7] text-base md:text-lg font-[poppins] leading-7"
+            >
+              Hii Chellam! Step into ANONYMOUS — a wild ride through Kollywood’s
+              movies, music, and madness! Expect mind-bending games, mystery
+              rounds, and pure cinematic chaos. Relive iconic moments, laugh,
+              vibe, and feel the reel thrill like never before!
+            </motion.p>
+
+            {/* Buttons */}
+            <div className="flex gap-5 mt-6 justify-center md:justify-start">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfC_06ZxiqjjsI3SCduD0_pSe3PdsRks_73X5Z1d6iaC_809Q/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0px 0px 12px gold",
+                    boxShadow: "0px 0px 15px rgba(255,215,0,0.6)",
+                  }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  className="px-6 py-3 border-2 border-[#D9B536] text-[#D9B536] font-semibold rounded-full hover:bg-[#D9B536] hover:text-black transition-all duration-300"
+                >
+                  Register Now
+                </motion.button>
+              </a>
+
+              <a
+                href="https://your-trailer-link.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0px 0px 12px gold",
+                    boxShadow: "0px 0px 15px rgba(255,215,0,0.6)",
+                  }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  className="px-6 py-3 border-2 border-[#D9B536] text-[#D9B536] font-semibold rounded-full hover:bg-[#D9B536] hover:text-black transition-all duration-300"
+                >
+                  Watch Trailer
+                </motion.button>
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
-};
-
-export default Anonymous;
+}

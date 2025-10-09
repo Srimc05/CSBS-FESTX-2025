@@ -635,6 +635,14 @@ body{
   *, *::before, *::after {
     cursor: none !important;
   }
+
+  /* Show default cursor when custom cursor fails to load */
+  body.show-default-cursor,
+  body.show-default-cursor *,
+  body.show-default-cursor *::before,
+  body.show-default-cursor *::after {
+    cursor: auto !important;
+  }
   
   body::-webkit-scrollbar {
     display: none;
