@@ -11,7 +11,7 @@ export default function AnonymousEventPage() {
       }}
     >
       {/* Dark overlay */}
-      <div className="bg-black/60 min-h-screen w-full relative z-10 flex items-center justify-center">
+      <div className="bg-black/60 min-h-screen w-full relative z-10 flex flex-col items-center justify-center">
         {/* Back button */}
         <Link
           to="/events"
@@ -34,7 +34,7 @@ export default function AnonymousEventPage() {
         </Link>
 
         {/* ================= HERO SECTION ================= */}
-        <section className="relative w-full max-w-7xl flex flex-col md:flex-row items-center justify-center  py-10">
+        <section className="relative w-full max-w-7xl flex flex-col md:flex-row items-center justify-center py-10 px-4">
           {/* Left Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -84,7 +84,7 @@ export default function AnonymousEventPage() {
             {/* Buttons */}
             <div className="flex gap-5 mt-6 justify-center md:justify-start">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfC_06ZxiqjjsI3SCduD0_pSe3PdsRks_73X5Z1d6iaC_809Q/viewform"
+                href="https://forms.gle/h44ucxaFa49RRKqM6"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -101,11 +101,7 @@ export default function AnonymousEventPage() {
                 </motion.button>
               </a>
 
-              <a
-                href="https://your-trailer-link.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{
                     scale: 1.05,
@@ -118,6 +114,37 @@ export default function AnonymousEventPage() {
                   Watch Trailer
                 </motion.button>
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Coordinators Section - Right below hero content */}
+        <section className="relative w-full max-w-7xl mt-8 px-4 sm:px-6">
+          <div className="flex justify-center">
+            <div className="bg-black/60 backdrop-blur-sm border-2 border-[#D9B536] rounded-2xl p-6 shadow-2xl w-full max-w-md">
+              <h3 className="text-lg font-bold text-[#D9B536] mb-4 text-center font-nikkyou underline decoration-[#D9B536] decoration-2 underline-offset-4">
+                Event Coordinators
+              </h3>
+              <div className="space-y-3 font-nikkyou">
+                <div className="text-center">
+                  <p className="text-[#F5F2E7] text-lg">
+                    <span className="font-semibold text-[#D9B536]">
+                      Madhuvanti
+                    </span>
+                    <br />
+                    <span className="text-[#D9B536]">7358617488</span>
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-[#F5F2E7] text-lg">
+                    <span className="font-semibold text-[#D9B536]">
+                      Rithika
+                    </span>
+                    <br />
+                    <span className="text-[#D9B536]">6379739380</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

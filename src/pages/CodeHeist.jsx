@@ -87,12 +87,13 @@ const CodeHeist = () => {
             >
               <a
                 href="https://forms.gle/9SM5JsLB87sLmide8"
+                target="_blank"
                 className="px-4 md:px-8 py-4 bg-red-600 hover:bg-red-700 rounded-lg text-lg font-semibold shadow-lg transition-all duration-300 font-[poppins]"
               >
                 Join Heist
               </a>
               <a
-                href="#rules"
+                href="#"
                 className="px-4 md:px-8  font-[poppins] py-4 border border-red-600 hover:bg-red-600 hover:text-white rounded-lg text-lg font-semibold transition-all duration-300"
               >
                 Watch Heist
@@ -130,6 +131,32 @@ const CodeHeist = () => {
               </div>
             </div>
           </section>
+          {/* Coordinators Section */}
+          <div className="flex justify-center mb-16">
+            <div className="bg-black/60 backdrop-blur-sm border-2 border-red-500 rounded-2xl p-6 shadow-2xl md:w-96">
+              <h3 className="text-lg font-bold text-red-500 mb-4 text-center font-nikkyou underline decoration-red-500 decoration-2 underline-offset-4">
+                Event Coordinators
+              </h3>
+              <div className="space-y-3 font-nikkyou">
+                <div className="text-center">
+                  <p className="text-red-200 text-lg">
+                    <span className="font-semibold text-red-300">Tharun K</span>
+                    <br />
+                    <span className="text-red-400">9940868855</span>
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-red-200 text-lg">
+                    <span className="font-semibold text-red-300">
+                      Livinesh L
+                    </span>
+                    <br />
+                    <span className="text-red-400">94867685</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           {/* Money Heist Dialogue Section */}
           <section
             className="relative z-10 py-20 px-4 text-center bg-cover bg-center bg-no-repeat"

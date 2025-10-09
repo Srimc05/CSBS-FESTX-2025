@@ -386,21 +386,6 @@ const StellarQuest = () => {
               </div>
             </div>
 
-            {/* Video box below cards */}
-            <div className="flex items-center justify-center mb-16">
-              <div className="triangle-face w-full md:w-3/4 lg:w-2/3 h-72 md:h-96 flex items-center justify-center">
-                <div className="text-center text-cyan-300 font-jetbrains">
-                  <div className="text-6xl mb-4">🎬</div>
-                  <h3 className="text-xl font-orbitron mb-2">
-                    Mission Briefing
-                  </h3>
-                  <p className="text-gray-400">
-                    YouTube video will be embedded here
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Story Description */}
             <div className="mb-16">
               <div className="glass-panel rounded-2xl p-8">
