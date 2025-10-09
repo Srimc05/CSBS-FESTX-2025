@@ -34,7 +34,21 @@ const StellarQuest = () => {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobile =
       window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
-    const STAR_COUNT = prefersReduced ? 0 : isMobile ? 50 : 150;
+    const isLowEnd =
+      navigator.hardwareConcurrency <= 4 ||
+      navigator.deviceMemory <= 2 ||
+      isMobile;
+    const isVeryLowEnd =
+      navigator.hardwareConcurrency <= 2 || navigator.deviceMemory <= 1;
+    const STAR_COUNT = prefersReduced
+      ? 0
+      : isVeryLowEnd
+      ? 12
+      : isLowEnd
+      ? 25
+      : isMobile
+      ? 50
+      : 120;
 
     const stars = new Array(STAR_COUNT).fill(0).map(() => ({
       x: Math.random() * window.innerWidth,
@@ -50,6 +64,11 @@ const StellarQuest = () => {
     // Shooting stars array
     const shootingStars = [];
     let lastShootingStar = 0;
+
+    // Frame rate limiting for performance
+    let lastFrameTime = 0;
+    const targetFPS = isLowEnd ? 30 : 60;
+    const frameDuration = 1000 / targetFPS;
 
     const drawBg = () => {
       const w = window.innerWidth;
@@ -153,7 +172,14 @@ const StellarQuest = () => {
       };
     };
 
-    const tick = () => {
+    const tick = (currentTime) => {
+      // Frame rate limiting for performance
+      if (currentTime - lastFrameTime < frameDuration) {
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+      lastFrameTime = currentTime;
+
       drawBg();
       ctx.save();
       ctx.globalCompositeOperation = "lighter";
@@ -169,23 +195,39 @@ const StellarQuest = () => {
         const vh = window.innerHeight;
         if (s.y < -5) s.y = vh + 5;
         if (s.y > vh + 5) s.y = -5;
-        const alpha = 0.8 + 0.45 * Math.sin(s.tw);
-        ctx.globalAlpha = Math.max(0.25, Math.min(1, alpha));
-        ctx.fillStyle = "#f2f6ff";
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = "#dbeafe";
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
+        if (isLowEnd) {
+          // Simple rendering for low-end devices
+          ctx.globalAlpha = 0.8;
+          ctx.fillStyle = "#f2f6ff";
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // Full rendering for capable devices
+          const alpha = 0.8 + 0.45 * Math.sin(s.tw);
+          ctx.globalAlpha = Math.max(0.25, Math.min(1, alpha));
+          ctx.fillStyle = "#f2f6ff";
+          ctx.shadowBlur = 6;
+          ctx.shadowColor = "#dbeafe";
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
       }
 
-      // Create new shooting stars randomly
-      const now = Date.now();
-      if (now - lastShootingStar > 8000 + Math.random() * 12000) {
-        // 8-20 seconds
-        shootingStars.push(createShootingStar());
-        lastShootingStar = now;
+      // Create new shooting stars randomly (disabled for very low-end devices)
+      if (!isVeryLowEnd) {
+        const now = Date.now();
+        const shootingStarInterval = isLowEnd ? 20000 : 8000;
+        const shootingStarRandomness = isLowEnd ? 30000 : 12000;
+        if (
+          now - lastShootingStar >
+          shootingStarInterval + Math.random() * shootingStarRandomness
+        ) {
+          shootingStars.push(createShootingStar());
+          lastShootingStar = now;
+        }
       }
 
       // Update and draw shooting stars

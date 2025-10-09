@@ -71,7 +71,7 @@ const PitchersGold = () => {
                     />
                   </div>
                   <div className="text-center md:text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-cyan-400 mb-2 font-bento">
+                    <h3 className="text-xl md:text-2xl font-bold text-cyan-400 mb-2 font-nikkyou">
                       Technology & EdTech – Kaido
                     </h3>
                     <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
@@ -99,7 +99,7 @@ const PitchersGold = () => {
                     />
                   </div>
                   <div className="text-center md:text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-2 font-bento">
+                    <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-2 font-nikkyou">
                       Sports & Entertainment – Whitebeard
                     </h3>
                     <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
@@ -127,7 +127,7 @@ const PitchersGold = () => {
                     />
                   </div>
                   <div className="text-center md:text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-purple-400 mb-2 font-bento">
+                    <h3 className="text-xl md:text-2xl font-bold text-purple-400 mb-2 font-nikkyou">
                       Marketing & Media – Big Mom
                     </h3>
                     <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
@@ -155,7 +155,7 @@ const PitchersGold = () => {
                     />
                   </div>
                   <div className="text-center md:text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-red-400 mb-2 font-bento">
+                    <h3 className="text-xl md:text-2xl font-bold text-red-400 mb-2 font-nikkyou">
                       Business & Consumer Goods – Luffy
                     </h3>
                     <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">

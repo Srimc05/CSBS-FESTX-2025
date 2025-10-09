@@ -13,6 +13,9 @@
     "@react-three/fiber": "^9.3.0",
     "@tabler/icons-react": "^3.35.0",
     "@tailwindcss/vite": "^4.1.13",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.544.0",
     "motion": "^12.23.22",
@@ -23,7 +26,8 @@
     "simplex-noise": "^4.0.3",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
-    "three": "^0.180.0"
+    "three": "^0.180.0",
+    "tsparticles-engine": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

@@ -97,8 +97,106 @@ const Lootopoly = () => {
     };
   }, []);
   return (
-    <div className="min-h-screen pt-28 pb-12 px-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen pt-28 pb-12 px-6 relative">
+      {/* Thunderstorm Background Effect */}
+      <div className="thunderstorm-bg"></div>
+
+      {/* Bouncing Die */}
+      <div className="bouncing-die-container">
+        <div className="bouncing-die">
+          {/* Face 1 */}
+          <div className="die-face face-1">
+            <div className="die-dots">
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+            </div>
+          </div>
+
+          {/* Face 2 */}
+          <div className="die-face face-2">
+            <div className="die-dots">
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+            </div>
+          </div>
+
+          {/* Face 3 */}
+          <div className="die-face face-3">
+            <div className="die-dots">
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+            </div>
+          </div>
+
+          {/* Face 4 */}
+          <div className="die-face face-4">
+            <div className="die-dots">
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+            </div>
+          </div>
+
+          {/* Face 5 */}
+          <div className="die-face face-5">
+            <div className="die-dots">
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+            </div>
+          </div>
+
+          {/* Face 6 */}
+          <div className="die-face face-6">
+            <div className="die-dots">
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot invisible"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Back button */}
         <Link
           to="/events"
@@ -121,8 +219,8 @@ const Lootopoly = () => {
         </Link>
         {/* Centered hero with logo and tagline */}
         <section
-          className="relative overflow-visible min-h-screen -mt-28 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] flex items-center justify-center"
-          style={{ zIndex: 1 }}
+          className="relative overflow-visible min-h-screen -mt-28 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] flex items-center justify-center z-20"
+          style={{ zIndex: 20 }}
         >
           {/* Optional dark overlay for readability */}
           <div className="absolute inset-0 bg-black/30 z-0" />
@@ -301,10 +399,15 @@ const Lootopoly = () => {
                 <h4 className="text-center text-yellow-500 text-lg md:text-xl mb-4">
                   Round 3
                 </h4>
-                <div className="flex justify-center mb-3">
-                  <div className="mystery-card relative w-[100%] md:w-[80%] object-contain rounded-lg h-48 md:h-72 mb-8">
-                    <div className="mystery-question absolute inset-0 flex items-center justify-center">
-                      ?
+                <div className="flex justify-center my-16">
+                  <div className="dice-container">
+                    <div className="spinning-dice">
+                      <div className="dice-face front">?</div>
+                      <div className="dice-face back">?</div>
+                      <div className="dice-face right">?</div>
+                      <div className="dice-face left">?</div>
+                      <div className="dice-face top">?</div>
+                      <div className="dice-face bottom">?</div>
                     </div>
                   </div>
                 </div>

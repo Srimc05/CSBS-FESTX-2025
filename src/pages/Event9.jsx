@@ -222,10 +222,12 @@ const Event9 = () => {
                   backdropFilter: "blur(10px)",
                 }}
               >
-                <h3 className="text-lg font-bold text-[#FF4500] mb-4 text-center font-nikkyou underline decoration-[#FF4500] decoration-2 underline-offset-4">
+                <h3 className="text-lg font-bold text-[#FF4500] mb-4 text-center font-[poppins] underline decoration-[#FF4500] decoration-2 underline-offset-4">
                   Event Coordinators
                 </h3>
-                <div className="space-y-3 font-nikkyou">
+
+                {/* Mobile view (default) */}
+                <div className="space-y-3 font-[poppins] lg:hidden">
                   <div className="text-center">
                     <p className="text-[#DADADA] text-lg">
                       <span className="font-semibold text-[#FF4500]">
@@ -244,6 +246,22 @@ const Event9 = () => {
                       <span className="text-[#FF4500]">6369757635</span>
                     </p>
                   </div>
+                </div>
+
+                {/* Large screen view */}
+                <div className="hidden lg:flex justify-center gap-6 font-[poppins] text-[#DADADA] text-lg">
+                  <p>
+                    <span className="font-semibold text-[#FF4500]">
+                      Harish M:
+                    </span>{" "}
+                    7904618631
+                  </p>
+                  <p>
+                    <span className="font-semibold text-[#FF4500]">
+                      Guhan B:
+                    </span>{" "}
+                    6369757635
+                  </p>
                 </div>
               </div>
             </motion.div>

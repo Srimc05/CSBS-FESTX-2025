@@ -137,6 +137,21 @@ export function ExpandableCardDemo() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-12">
+              <div className="relative max-w-md mx-auto">
+                <div className="bg-black/70 backdrop-blur-md font-fell-english border border-yellow-400 text-white rounded-xl shadow-2xl p-6 hover:scale-105 transform transition-transform duration-300">
+                  <h3 className="text-2xl font-bold mb-4 text-yellow-400">
+                    General Instructions
+                  </h3>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>SEC and SIT not allowed</li>
+                    <li>One team should participate in one event</li>
+                    <li>Food and snack will be provided</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </>
         );
       })()}
@@ -146,10 +161,10 @@ export function ExpandableCardDemo() {
 
 const cards = [
   { title: "code-heist", src: "/code_heist.webp" },
-  { title: "gbu", src: "/gbu.webp" },
+  { title: "gbu", src: "/gbu-post.webp" },
   { title: "pitchers-gold", src: "/pitchers_gold.webp" },
   { title: "stellar-quest", src: "/stellar_quest.webp" },
-  { title: "unlockx", src: "/unlockx.webp" },
+  { title: "unlockx", src: "/unlockx-post.webp" },
   { title: "wolf-gambit", src: "/wolf_gambit.webp" },
   { title: "anonymous", src: "/anonymous.webp" },
   { title: "lootopoly", src: "/lootopoly.webp" },

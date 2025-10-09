@@ -1,105 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GoldBackground from "../components/ui/GoldBackground";
-
-const randomKeyPositions = Array.from({ length: 8 }, () => ({
-  top: Math.random() * 80 + 5, // 5% to 85%
-  left: Math.random() * 90 + 2, // 2% to 92%
-  duration: Math.random() * 8 + 6, // 6s to 14s
-  delay: Math.random() * 5, // 0s to 5s
-  scale: Math.random() * 0.7 + 0.5, // 0.5 to 1.2
-}));
 
 const UnlockX = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Security Keys Background - This covers the whole page */}
-      <div className="pointer-events-none select-none absolute inset-0 z-0">
-        {randomKeyPositions.map((pos, i) => (
-          <span
-            key={i}
-            className="absolute security-key-anim"
-            style={{
-              top: `${pos.top}%`,
-              left: `${pos.left}%`,
-              animationDuration: `${pos.duration}s`,
-              animationDelay: `${pos.delay}s`,
-              transform: `scale(${pos.scale})`,
-              opacity: 0.18 + 0.12 * (i % 3),
-            }}
-          >
-            <svg
-              width="38"
-              height="38"
-              viewBox="0 0 38 38"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g filter="url(#glow)">
-                <rect
-                  x="14"
-                  y="2"
-                  width="10"
-                  height="16"
-                  rx="5"
-                  fill="#FFD700"
-                />
-                <rect
-                  x="16.5"
-                  y="18"
-                  width="5"
-                  height="12"
-                  rx="2.5"
-                  fill="#FFD700"
-                />
-                <rect
-                  x="17.5"
-                  y="30"
-                  width="3"
-                  height="6"
-                  rx="1.5"
-                  fill="#FFD700"
-                />
-                <circle cx="19" cy="8" r="2.5" fill="#fff" fillOpacity="0.7" />
-              </g>
-              <defs>
-                <filter
-                  id="glow"
-                  x="0"
-                  y="0"
-                  width="38"
-                  height="38"
-                  filterUnits="userSpaceOnUse"
-                  colorInterpolationFilters="sRGB"
-                >
-                  <feGaussianBlur stdDeviation="2.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-            </svg>
-          </span>
-        ))}
-      </div>
-      <GoldBackground />
+    <div className="min-h-screen relative overflow-hidden bg-black">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/unlockx.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Key floating animation styles */}
-      <style>{`
-        .security-key-anim {
-          animation: float-key-anim linear infinite alternate;
-          will-change: transform, opacity;
-        }
-        @keyframes float-key-anim {
-          0% {
-            transform: translateY(0) scale(var(--scale,1));
-          }
-          100% {
-            transform: translateY(-40px) scale(var(--scale,1));
-          }
-        }
-      `}</style>
+      {/* Dark overlay for better text readability */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black/30 z-10"></div>
 
       {/* Back button */}
       <Link
@@ -123,7 +41,7 @@ const UnlockX = () => {
       </Link>
 
       {/* SECTION 1: Initial Viewport with Logo */}
-      <div className="h-screen flex items-center justify-center relative z-10 flex-col">
+      <div className="h-screen flex items-center justify-center relative z-20 flex-col">
         <img
           src="/UnlockX.webp"
           alt="UnlockX"
@@ -151,7 +69,7 @@ const UnlockX = () => {
       </div>
 
       {/* SECTION 2: Scrollable Content */}
-      <div className="relative z-10 px-6 pb-20">
+      <div className="relative z-20 px-6 pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {/* First Round */}

@@ -98,7 +98,7 @@ const Footer = () => {
                   className="text-yellow-400 group-hover:scale-110 group-hover:text-yellow-300 transition-transform duration-300"
                 />
                 <p className="group-hover:text-white transition-colors duration-300">
-                  festx@sairam.edu.in
+                  festx@sairam.edu.in / sairam.festx25@gmail.com
                 </p>
               </div>
             </div>

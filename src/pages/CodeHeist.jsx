@@ -134,10 +134,12 @@ const CodeHeist = () => {
           {/* Coordinators Section */}
           <div className="flex justify-center mb-16">
             <div className="bg-black/60 backdrop-blur-sm border-2 border-red-500 rounded-2xl p-6 shadow-2xl md:w-96">
-              <h3 className="text-lg font-bold text-red-500 mb-4 text-center font-nikkyou underline decoration-red-500 decoration-2 underline-offset-4">
+              <h3 className="text-lg font-bold text-red-500 mb-4 text-center font-[poppins] underline decoration-red-500 decoration-2 underline-offset-4">
                 Event Coordinators
               </h3>
-              <div className="space-y-3 font-nikkyou">
+
+              {/* Mobile view (stacked) */}
+              <div className="space-y-3 font-[poppins] lg:hidden">
                 <div className="text-center">
                   <p className="text-red-200 text-lg">
                     <span className="font-semibold text-red-300">Tharun K</span>
@@ -155,8 +157,21 @@ const CodeHeist = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Large screen view (inline) */}
+              <div className="hidden lg:flex justify-center text-center gap-6 font-[poppins] text-red-200 text-lg">
+                <p>
+                  <span className="font-semibold text-red-300">Tharun AK</span>{" "}
+                  9940868855
+                </p>
+                <p>
+                  <span className="font-semibold text-red-300">Livinesh L</span>{" "}
+                  9486767685
+                </p>
+              </div>
             </div>
           </div>
+
           {/* Money Heist Dialogue Section */}
           <section
             className="relative z-10 py-20 px-4 text-center bg-cover bg-center bg-no-repeat"
