@@ -146,8 +146,8 @@ export function ExpandableCardDemo() {
                   </h3>
                   <ul className="list-disc list-inside space-y-2">
                     <li>SEC and SIT not allowed</li>
-                    <li>One team should participate in one event</li>
-                    <li>Food and snack will be provided</li>
+                    <li>One team should participate in one event only</li>
+                    <li>Food and snacks will be provided</li>
                   </ul>
                 </div>
               </div>

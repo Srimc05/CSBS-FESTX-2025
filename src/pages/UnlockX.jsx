@@ -69,126 +69,133 @@ const UnlockX = () => {
       </div>
 
       {/* SECTION 2: Scrollable Content */}
-      <div className="relative z-20 px-6 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {/* First Round */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/30 shadow-2xl">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-6 font-alata flex items-center">
-                <span className="mr-3">🤖</span>
+      <div className="relative z-10 px-4 md:px-6 pb-20">
+        <div className="max-w-6xl mx-auto space-y-6">
+          {/* First Round */}
+          <div className="bg-gradient-to-br from-slate-800/60 to-purple-900/40 backdrop-blur-md rounded-2xl p-4 md:p-6 border-2 border-cyan-400/40 shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 hover:scale-[1.01]">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 gap-2">
+              <div className="text-3xl sm:text-4xl animate-bounce">🤖</div>
+              <h2 className="text-xl sm:text-2xl font-bold text-cyan-400 font-alata text-center sm:text-left">
                 First Round: The AI Oracle
               </h2>
-              <div className="space-y-6">
-                <div className="bg-gradient-to-r from-cyan-900/20 to-purple-900/20 rounded-xl p-4 border border-cyan-400/20">
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-3 font-alata">
-                    Akinator-Style Challenge{" "}
-                    <span className="text-gray-300">
-                      - Unlock the identity!
-                    </span>
-                  </h3>
-                  <p className="text-gray-300 mb-4 font-alata">
-                    A custom-built AI chatbot is tuned to "become" a famous
-                    person/entity (e.g., Albert Einstein, Cleopatra, Iron Man,
-                    Mona Lisa, Elon Musk).
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-xs">
-                        ⏱
-                      </div>
-                      <span className="text-gray-300 font-alata">
-                        Limited to 15 questions
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-xs">
-                        🕐
-                      </div>
-                      <span className="text-gray-300 font-alata">
-                        10-15 minutes time limit
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-xs">
-                        💬
-                      </div>
-                      <span className="text-gray-300 font-alata">
-                        AI only answers Yes/No/Maybe
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-yellow-400 font-semibold mt-4 font-alata">
-                    First correct guess (or best accuracy within time limit)
-                    wins!
-                  </p>
-                </div>
-                <p className="text-gray-300 text-sm font-alata">
-                  This round tests strategic questioning, logic, and deductive
-                  reasoning with AI constraints.
-                </p>
+            </div>
+
+            <h3 className="text-lg sm:text-xl font-semibold text-cyan-300 mb-3 font-alata text-center">
+              🎯 Akinator-Style Challenge - Unlock the identity!
+            </h3>
+            <p className="text-gray-200 text-sm sm:text-base mb-4 font-alata text-center">
+              A custom-built AI chatbot is tuned to "become" a famous
+              person/entity (e.g., Albert Einstein, Cleopatra, Iron Man, Mona
+              Lisa, Elon Musk).
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              <div className="bg-black/30 rounded-lg p-3 border border-cyan-500/40 flex flex-col items-center text-center hover:bg-cyan-500/10 transition-all">
+                <div className="text-2xl sm:text-3xl mb-2">⏱️</div>
+                <span className="text-cyan-300 font-bold font-alata text-sm">
+                  15 Questions
+                </span>
+                <span className="text-gray-400 text-xs">Limited chances</span>
+              </div>
+              <div className="bg-black/30 rounded-lg p-3 border border-purple-500/40 flex flex-col items-center text-center hover:bg-purple-500/10 transition-all">
+                <div className="text-2xl sm:text-3xl mb-2">⏰</div>
+                <span className="text-purple-300 font-bold font-alata text-sm">
+                  10-15 Minutes
+                </span>
+                <span className="text-gray-400 text-xs">Time limit</span>
+              </div>
+              <div className="bg-black/30 rounded-lg p-3 border border-pink-500/40 flex flex-col items-center text-center hover:bg-pink-500/10 transition-all">
+                <div className="text-2xl sm:text-3xl mb-2">💬</div>
+                <span className="text-pink-300 font-bold font-alata text-sm">
+                  Yes/No/Maybe
+                </span>
+                <span className="text-gray-400 text-xs">AI responses</span>
               </div>
             </div>
 
-            {/* Second Round */}
-            <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/30 shadow-2xl">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-6 font-alata flex items-center">
-                🔐 Final Round: The AI Guess Chain 🧠
-              </h2>
-              <div className="space-y-6">
-                <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-xl p-4 border border-cyan-400/20">
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-3 font-alata">
-                    Chinese Whisper : AI Edition{" "}
-                    <span className="text-gray-300">
-                      - Unlock the imagination!
-                    </span>
-                  </h3>
-                  <p className="text-gray-300 mb-4 font-alata">
-                    Step into the world where human perception meets AI
-                    imagination! In this creative final round, participants will
-                    play a chain game between human observers and AI generators.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-6 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-xs">
-                        1
-                      </div>
-                      <p className="text-gray-300 font-alata">
-                        One participant will view an image for a short time and
-                        describe it in detail using their own words.
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-xs">
-                        2
-                      </div>
-                      <span className="text-gray-300 font-alata">
-                        Each solved question reveals the key to the next
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center text-black font-bold text-xs">
-                        3
-                      </div>
-                      <span className="text-gray-300 font-alata">
-                        Logic, AI, and programming challenges
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <p className="text-yellow-400 font-semibold mt-4 font-alata">
-                        Teams will be judged based on accuracy, creativity, and
-                        descriptive clarity.
-                      </p>
-                    </div>
-                    {/* Centered Duration Div */}
-                    <div className="w-fit mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-6 py-3 rounded-full font-bold text-lg text-center font-alata">
-                      Duration: 2-2.5 Hours
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg p-3 border border-yellow-400/50">
+              <p className="text-yellow-300 font-bold text-sm sm:text-base font-alata text-center flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <span className="text-lg sm:text-xl">🏆</span>
+                <span>First correct guess or best accuracy wins!</span>
+              </p>
             </div>
+
+            <p className="text-gray-300 text-center font-alata italic text-xs sm:text-sm mt-4 px-2">
+              💡 Tests strategic questioning, logic, and deductive reasoning
+              with AI constraints
+            </p>
           </div>
 
+          {/* Final Round */}
+          <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 backdrop-blur-md rounded-2xl p-4 md:p-6 border-2 border-cyan-400/40 shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 hover:scale-[1.01]">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 gap-2">
+              <div className="text-3xl sm:text-4xl animate-pulse">🔐</div>
+              <h2 className="text-xl sm:text-2xl font-bold text-cyan-400 font-alata text-center sm:text-left">
+                Final Round: The AI Guess Chain
+              </h2>
+              <div className="text-3xl sm:text-4xl animate-pulse">🧠</div>
+            </div>
+
+            <h3 className="text-lg sm:text-xl font-semibold text-cyan-300 mb-3 font-alata text-center">
+              🎨 Chinese Whisper: AI Edition - Unlock the imagination!
+            </h3>
+            <p className="text-gray-200 text-sm sm:text-base mb-4 font-alata text-center leading-relaxed">
+              Step into the world where human perception meets AI imagination!
+              In this creative final round, participants will play a chain game
+              between human observers and AI generators.
+            </p>
+
+            <div className="space-y-3 mb-4">
+              <div className="bg-black/30 rounded-lg p-3 border border-cyan-500/40 flex items-start gap-3 hover:bg-cyan-500/10 transition-all">
+                <div className="text-2xl sm:text-3xl flex-shrink-0">👁️</div>
+                <div>
+                  <span className="text-cyan-300 font-bold text-sm sm:text-base font-alata block mb-1">
+                    Step 1: Observe
+                  </span>
+                  <p className="text-gray-300 font-alata text-xs sm:text-sm">
+                    One participant views an image for a short time and
+                    describes it in detail using their own words.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-black/30 rounded-lg p-3 border border-blue-500/40 flex items-start gap-3 hover:bg-blue-500/10 transition-all">
+                <div className="text-2xl sm:text-3xl flex-shrink-0">🤖</div>
+                <div>
+                  <span className="text-blue-300 font-bold text-sm sm:text-base font-alata block mb-1">
+                    Step 2: AI Generation
+                  </span>
+                  <p className="text-gray-300 font-alata text-xs sm:text-sm">
+                    The description is fed to an AI image generator to recreate
+                    the scene.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-black/30 rounded-lg p-3 border border-purple-500/40 flex items-start gap-3 hover:bg-purple-500/10 transition-all">
+                <div className="text-2xl sm:text-3xl flex-shrink-0">🔄</div>
+                <div>
+                  <span className="text-purple-300 font-bold text-sm sm:text-base font-alata block mb-1">
+                    Step 3: Chain Continues
+                  </span>
+                  <p className="text-gray-300 font-alata text-xs sm:text-sm">
+                    The next participant describes the AI-generated image,
+                    creating a fascinating chain of interpretation!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg p-3 border border-yellow-400/50 mb-4">
+              <p className="text-yellow-300 font-bold text-sm sm:text-base font-alata text-center flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <span className="text-lg sm:text-xl">⭐</span>
+                <span>
+                  Judged on accuracy, creativity, and descriptive clarity
+                </span>
+                <span className="text-lg sm:text-xl hidden sm:inline">⭐</span>
+              </p>
+            </div>
+          </div>
           {/* Call to Action */}
           <div className="text-center flex items-center justify-center gap-6">
             <Link
@@ -198,7 +205,11 @@ const UnlockX = () => {
             >
               Register Now
             </Link>
-            <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4 mb-16">
+            <Link
+              to="https://youtu.be/H0LHVcE7wyw"
+              target="_blank"
+              className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+            >
               Watch Trailer
             </Link>
           </div>
@@ -212,24 +223,38 @@ const UnlockX = () => {
                 </h2>
               </div>
 
-              <div className="space-y-2">
-                <div className="bg-black/20 rounded-lg p-4 border border-amber-400/20">
-                  <h3 className="text-white text-lg font-semibold font-alata mb-2">
-                    Bala Nivasa Vel
-                  </h3>
-                  <p className="text-amber-300 font-medium text-base">
-                    9361603509
+              {/* Mobile view (stacked) */}
+              <div className="space-y-3 lg:hidden">
+                <div className="text-center">
+                  <p className="text-amber-200 text-lg">
+                    <span className="font-semibold text-white">
+                      Bala Nivasa Vel
+                    </span>
+                    <br />
+                    <span className="text-amber-300">9361603509</span>
                   </p>
                 </div>
+                <div className="text-center">
+                  <p className="text-amber-200 text-lg">
+                    <span className="font-semibold text-white">Rogith</span>
+                    <br />
+                    <span className="text-amber-300">9629314051</span>
+                  </p>
+                </div>
+              </div>
 
-                <div className="bg-black/20 rounded-lg p-4 border border-amber-400/20">
-                  <h3 className="text-white text-lg font-semibold font-alata mb-2">
-                    Rogith
-                  </h3>
-                  <p className="text-amber-300 font-medium text-base">
-                    9361603509
-                  </p>
-                </div>
+              {/* Large screen view (inline) */}
+              <div className="hidden lg:flex justify-center text-center gap-6 text-amber-200 text-lg">
+                <p>
+                  <span className="font-semibold text-white">
+                    Bala Nivasa Vel
+                  </span>{" "}
+                  9361603509
+                </p>
+                <p>
+                  <span className="font-semibold text-white">Rogith</span>{" "}
+                  9629314051
+                </p>
               </div>
 
               {/* Decorative element */}

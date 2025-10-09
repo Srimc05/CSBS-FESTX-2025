@@ -154,7 +154,6 @@ const Event9 = () => {
               className="text-2xl md:text-3xl font-bold text-[#FF4500]"
               style={{
                 fontFamily: "'Anton', sans-serif",
-                textShadow: "2px 2px 8px #DADADA",
               }}
             >
               Clutch X Booyah - Pirate Hunt edition
@@ -197,7 +196,7 @@ const Event9 = () => {
                 Register
               </a>
               <a
-                href="#"
+                href="https://youtu.be/1UFP8I7mIkM"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 rounded-md bg-[#FF4500] text-white font-bold transition duration-200 hover:bg-white hover:text-[#FF4500] border-2 border-transparent hover:border-[#FF4500]"

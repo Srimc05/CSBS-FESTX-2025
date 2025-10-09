@@ -125,7 +125,8 @@ export default function AnonymousEventPage() {
               <h3 className="text-lg font-bold text-[#D9B536] mb-4 text-center font-nikkyou underline decoration-[#D9B536] decoration-2 underline-offset-4">
                 Event Coordinators
               </h3>
-              <div className="space-y-3 font-nikkyou">
+              {/* Mobile view (stacked) */}
+              <div className="space-y-3 font-nikkyou lg:hidden">
                 <div className="text-center">
                   <p className="text-[#F5F2E7] text-lg">
                     <span className="font-semibold text-[#D9B536]">
@@ -144,6 +145,22 @@ export default function AnonymousEventPage() {
                     <span className="text-[#D9B536]">6379739380</span>
                   </p>
                 </div>
+              </div>
+
+              {/* Large screen view (inline) */}
+              <div className="hidden lg:flex justify-center text-center gap-6 font-nikkyou text-[#F5F2E7] text-lg mb-16">
+                <p>
+                  <span className="font-semibold text-[#D9B536]">
+                    Madhuvanti
+                  </span>
+                  <br />
+                  <span className="text-[#D9B536]">7358617488</span>
+                </p>
+                <p>
+                  <span className="font-semibold text-[#D9B536]">Rithika</span>
+                  <br />
+                  <span className="text-[#D9B536]">6379739380</span>
+                </p>
               </div>
             </div>
           </div>

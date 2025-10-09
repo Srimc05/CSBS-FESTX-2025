@@ -142,7 +142,9 @@ const CodeHeist = () => {
               <div className="space-y-3 font-[poppins] lg:hidden">
                 <div className="text-center">
                   <p className="text-red-200 text-lg">
-                    <span className="font-semibold text-red-300">Tharun K</span>
+                    <span className="font-semibold text-red-300">
+                      Tharun A K
+                    </span>
                     <br />
                     <span className="text-red-400">9940868855</span>
                   </p>
@@ -153,7 +155,7 @@ const CodeHeist = () => {
                       Livinesh L
                     </span>
                     <br />
-                    <span className="text-red-400">94867685</span>
+                    <span className="text-red-400">9486767685</span>
                   </p>
                 </div>
               </div>

@@ -1,3 +1,5 @@
+//GBU.jsx
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
@@ -32,24 +34,18 @@ const GBU = () => {
     // ✨ --- 1. THE MAIN WRAPPER --- ✨
     // This parent holds everything and creates the stacking context with `relative`.
     <div className="relative min-h-screen bg-black overflow-hidden">
-      <GBUBackground />
+      {/* <GBUBackground /> */}
       {/* Subtle darkening overlay for text readability */}
       <div className="absolute inset-0 bg-black/30 pointer-events-none z-10" />
       {/* ✨ --- 2. THE BACKGROUND LAYER --- ✨ */}
       {/* This is positioned absolutely to fill the parent container. */}
       {/* It holds the gradient and the ember animation. */}
-      <div
-        className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
-        style={{ contain: "layout style paint", willChange: "auto" }}
-      >
+      <div className="absolute top-0 left-0 w-full h-full z-0">
         {/* Radial gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-radial from-orange-900/20 via-black to-black pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-orange-900/20 via-black to-black"></div>
 
         {/* Multiple ember layers for depth */}
-        <div
-          className="ember-container"
-          style={{ contain: "layout style paint size", isolation: "isolate" }}
-        >
+        <div className="ember-container">
           <div className="ember ember-layer-1"></div>
           <div className="ember ember-layer-2"></div>
           <div className="ember ember-layer-3"></div>
@@ -57,41 +53,37 @@ const GBU = () => {
         </div>
 
         {/* Floating sparks */}
-        <div
-          className="sparks-container"
-          style={{ contain: "layout style paint size", isolation: "isolate" }}
-        >
+        <div className="sparks-container">
           <div className="spark"></div>
           <div className="spark"></div>
           <div className="spark"></div>
         </div>
 
         {/* Glowing orbs */}
-        <div
-          className="glow-orbs"
-          style={{ contain: "layout style paint size", isolation: "isolate" }}
-        >
+        <div className="glow-orbs">
           <div className="glow-orb glow-orb-1"></div>
           <div className="glow-orb glow-orb-2"></div>
           <div className="glow-orb glow-orb-3"></div>
         </div>
       </div>
+
       <style>{`
+      
         body { background-color: #000; }
         
         /* 🔥 Enhanced Ember Animations */
         @keyframes animateEmbers {
-          0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 0; }
+          0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 0.8; }
-          100% { transform: translate3d(30px, -120vh, 0) rotate(360deg) scale(0.3); opacity: 0; }
+          100% { transform: translateY(-120vh) translateX(30px) rotate(360deg) scale(0.3); opacity: 0; }
         }
         
         @keyframes animateEmbersAlt {
-          0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 0; }
+          0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 0.8; }
-          100% { transform: translate3d(-30px, -120vh, 0) rotate(-360deg) scale(0.5); opacity: 0; }
+          100% { transform: translateY(-120vh) translateX(-30px) rotate(-360deg) scale(0.5); opacity: 0; }
         }
         
         .ember-container { 
@@ -102,10 +94,6 @@ const GBU = () => {
           height: 100%; 
           overflow: hidden; 
           pointer-events: none;
-          will-change: auto;
-          transform: translate3d(0, 0, 0);
-          isolation: isolate;
-          contain: layout style paint size;
         }
         
         .ember { 
@@ -116,14 +104,7 @@ const GBU = () => {
           border-radius: 50%; 
           bottom: -10px; 
           animation: animateEmbers linear infinite; 
-          animation-fill-mode: both;
-          animation-play-state: running;
           filter: blur(0.5px);
-          will-change: transform, opacity;
-          transform: translate3d(0, 0, 0);
-          backface-visibility: hidden;
-          pointer-events: none;
-          contain: layout style paint;
         }
         
         /* Layer 1 - Small fast particles */
@@ -210,10 +191,10 @@ const GBU = () => {
         
         /* ✨ Floating Sparks */
         @keyframes floatSpark {
-          0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
+          0% { transform: translate(0, 0) scale(1); opacity: 0; }
           10% { opacity: 1; }
-          50% { transform: translate3d(50px, -60vh, 0) scale(1.2); opacity: 0.8; }
-          100% { transform: translate3d(-30px, -120vh, 0) scale(0.5); opacity: 0; }
+          50% { transform: translate(50px, -60vh) scale(1.2); opacity: 0.8; }
+          100% { transform: translate(-30px, -120vh) scale(0.5); opacity: 0; }
         }
         
         .sparks-container {
@@ -224,10 +205,6 @@ const GBU = () => {
           height: 100%;
           overflow: hidden;
           pointer-events: none;
-          will-change: auto;
-          transform: translate3d(0, 0, 0);
-          isolation: isolate;
-          contain: layout style paint size;
         }
         
         .spark {
@@ -238,14 +215,7 @@ const GBU = () => {
           border-radius: 50%;
           bottom: -10px;
           animation: floatSpark linear infinite;
-          animation-fill-mode: both;
-          animation-play-state: running;
           box-shadow: 0 0 8px 2px rgba(255, 215, 0, 0.8);
-          will-change: transform, opacity;
-          transform: translate3d(0, 0, 0);
-          backface-visibility: hidden;
-          pointer-events: none;
-          contain: layout style paint;
         }
         
         .spark:nth-child(1) {
@@ -270,8 +240,8 @@ const GBU = () => {
         
         /* 🌟 Glowing Orbs */
         @keyframes pulseGlow {
-          0%, 100% { transform: scale(1) translate3d(0, 0, 0); opacity: 0.3; }
-          50% { transform: scale(1.3) translate3d(0, -20px, 0); opacity: 0.6; }
+          0%, 100% { transform: scale(1) translateY(0); opacity: 0.3; }
+          50% { transform: scale(1.3) translateY(-20px); opacity: 0.6; }
         }
         
         .glow-orbs {
@@ -282,10 +252,6 @@ const GBU = () => {
           height: 100%;
           overflow: hidden;
           pointer-events: none;
-          will-change: auto;
-          transform: translate3d(0, 0, 0);
-          isolation: isolate;
-          contain: layout style paint size;
         }
         
         .glow-orb {
@@ -293,13 +259,6 @@ const GBU = () => {
           border-radius: 50%;
           filter: blur(40px);
           animation: pulseGlow ease-in-out infinite;
-          animation-fill-mode: both;
-          animation-play-state: running;
-          will-change: transform, opacity;
-          transform: translate3d(0, 0, 0);
-          backface-visibility: hidden;
-          pointer-events: none;
-          contain: layout style paint;
         }
         
         .glow-orb-1 {
@@ -333,20 +292,28 @@ const GBU = () => {
         
         /* GBU Poster animation */
         .gbu-slide-down { 
-          animation: gbuSlideDown 2.5s cubic-bezier(.22,1.2,.36,1) 0.5s both; 
+          animation: gbuSlideDown 2.2s ease-out 0.3s both; 
         }
         
         @keyframes gbuSlideDown { 
-          0% { opacity: 0; transform: translateY(-180px) scale(0.92) skewY(-6deg); filter: blur(8px); } 
-          60% { opacity: 1; transform: translateY(18px) scale(1.04) skewY(2deg); filter: blur(0.5px); } 
-          80% { transform: translateY(-8px) scale(1.01) skewY(-1deg); filter: blur(0px); } 
-          100% { opacity: 1; transform: translateY(0) scale(1) skewY(0deg); filter: blur(0px); } 
+          0% { 
+            opacity: 0; 
+            transform: translateY(-180px) scale(1.5); 
+          } 
+          40% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1.3); 
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1); 
+          } 
         }
       `}</style>
-      Its still not
+
       {/* ✨ --- 3. THE CONTENT LAYER --- ✨ */}
       {/* This is also inside the wrapper and sits on top of the absolute background. */}
-      <div className="relative z-20 pt-12 pb-12 px-6">
+      <div className="relative z-20 pt-28 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
           {/* Back button */}
           <Link
@@ -391,25 +358,105 @@ const GBU = () => {
             variants={containerVariants}
             className="mt-8 space-y-8"
           >
-            {/* All your cards go here and remain unchanged */}
+            {/* About the Event Card */}
             <motion.div
               variants={cardVariants}
-              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center"
+              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 md:p-8 border border-yellow-400/30 shadow-xl"
             >
-              <h2 className="text-3xl font-bold text-yellow-400 mb-4 font-alata">
-                About the Event
+              <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6 font-alata text-center flex items-center justify-center gap-3">
+                <span>🧩</span>
+                Guess Build Unlock
+                <span>⚡</span>
               </h2>
-              <p className="text-lg text-gray-200 mb-6 font-alata">
-                Guess Build Unlock is a fun-filled, brain-twisting challenge
-                where logic meets laughter! 🧠⚡
-                <br />
-                Solve smart crosswords, spot tricky logos, and face a surprise
-                round full of unexpected twists.
-                <br />
-                Team up, think fast, and unlock your way to victory — only the
-                sharpest survive! 😎🔥
-              </p>
+
+              <div className="space-y-5 text-gray-200 font-alata">
+                <p className="text-lg md:text-xl text-center leading-relaxed">
+                  Welcome to{" "}
+                  <span className="text-yellow-300 font-bold">
+                    Guess Build Unlock
+                  </span>{" "}
+                  — a fun-filled, brain-twisting challenge where logic meets
+                  laughter and creativity takes the lead! 🧠💥
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed">
+                  This isn't your ordinary event — it's a battle of wits, words,
+                  and wonders! From solving mind-bending crosswords to
+                  identifying tricky business logos, every round is designed to
+                  test your speed, teamwork, and smart thinking. And just when
+                  you think you've cracked it all — brace yourself for a
+                  surprise round packed with unexpected twists that'll keep you
+                  guessing till the end! 🎭
+                </p>
+
+                <div className="bg-black/30 rounded-xl p-5 border border-yellow-400/20 space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">💡</span>
+                    <p className="text-base">
+                      <strong className="text-yellow-300">
+                        Crack. Create. Conquer.
+                      </strong>{" "}
+                      — each clue you solve brings you one step closer to
+                      victory.
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">🎯</span>
+                    <p className="text-base">
+                      <strong className="text-yellow-300">
+                        Think fast, think smart
+                      </strong>{" "}
+                      — and sometimes even think sideways!
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">🤝</span>
+                    <p className="text-base">
+                      <strong className="text-yellow-300">
+                        Team up, strategize, and sync your minds
+                      </strong>{" "}
+                      — because only perfect coordination can unlock the path to
+                      success.
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">🚀</span>
+                    <p className="text-base">
+                      From brains to banter, expect{" "}
+                      <strong className="text-yellow-300">
+                        laughter, lightbulb moments
+                      </strong>
+                      , and plenty of "aha!" reactions along the way.
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">🎉</span>
+                    <p className="text-base">
+                      Win not just by points, but by{" "}
+                      <strong className="text-yellow-300">
+                        creativity, quick wit, and teamwork
+                      </strong>{" "}
+                      that stand out!
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-base md:text-lg text-center leading-relaxed italic text-yellow-100 mt-6">
+                  Whether you're a puzzle pro or a first-time thinker,{" "}
+                  <span className="text-yellow-300 font-bold">
+                    Guess Build Unlock
+                  </span>{" "}
+                  promises a thrilling mix of fun, logic, and surprises. So get
+                  your team ready, trust your instincts, and unlock your way to
+                  ultimate victory! 🔥
+                </p>
+              </div>
             </motion.div>
+
             {/* Event Rounds Section - Title */}
             <motion.div
               variants={cardVariants}
@@ -479,7 +526,7 @@ const GBU = () => {
             </motion.div>
             <motion.div
               variants={cardVariants}
-              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center max-w-md md:max-w-lg mx-auto"
+              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center"
             >
               <div className="text-gray-100 font-alata">
                 <span className="block text-2xl font-bold text-yellow-400 mb-2">

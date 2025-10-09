@@ -462,7 +462,11 @@ const WolfGambit = () => {
         >
           Register Now
         </Link>
-        <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4 mb-16">
+        <Link
+          to="https://youtu.be/uOJwnaUY3to"
+          target="_blank"
+          className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+        >
           Watch Trailer
         </Link>
       </div>
@@ -472,7 +476,8 @@ const WolfGambit = () => {
           <h3 className="text-lg font-bold text-yellow-400 mb-4 text-center font-nikkyou underline decoration-yellow-400 decoration-2 underline-offset-4">
             Event Coordinators
           </h3>
-          <div className="space-y-3 font-nikkyou">
+          {/* Mobile view (stacked) */}
+          <div className="space-y-3 font-nikkyou lg:hidden">
             <div className="text-center">
               <p className="text-yellow-200 text-lg">
                 <span className="font-semibold text-yellow-300">
@@ -491,6 +496,22 @@ const WolfGambit = () => {
                 <span className="text-yellow-400">8270380071</span>
               </p>
             </div>
+          </div>
+
+          {/* Large screen view (inline) */}
+          <div className="hidden lg:flex justify-center text-center gap-6 font-nikkyou text-yellow-200 text-lg">
+            <p>
+              <span className="font-semibold text-yellow-300">Naveenan V</span>
+              <br />
+              <span className="text-yellow-400">6381653195</span>
+            </p>
+            <p>
+              <span className="font-semibold text-yellow-300">
+                Yogeshwaran Kumar
+              </span>
+              <br />
+              <span className="text-yellow-400">8270380071</span>
+            </p>
           </div>
         </div>
       </div>
