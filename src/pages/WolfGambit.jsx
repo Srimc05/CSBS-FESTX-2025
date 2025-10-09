@@ -456,7 +456,7 @@ const WolfGambit = () => {
       {/* Call to Action */}
       <div className="text-center flex items-center justify-center gap-6">
         <Link
-          to="https://forms.gle/yCyYD9SeNe7CEGke8"
+          to="https://forms.gle/H252KSuXcQEHz1HY8"
           target="_blank"
           className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
         >
