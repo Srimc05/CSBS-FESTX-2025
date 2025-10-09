@@ -84,7 +84,7 @@ const PitchersGold = () => {
                       Example: Byju's – revolutionizing learning through
                       interactive, personalized education.
                     </p>
-                  </div>
+                  </divhttps://forms.gle/H252KSuXcQEHz1HY8>
                 </div>
               </div>
 
@@ -180,7 +180,7 @@ const PitchersGold = () => {
                     </span>
                   </div>
                   <div className="text-center md:text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-orange-400 mb-2 font-bento">
+                    <h3 className="text-xl md:text-2xl font-bold text-orange-400 mb-2 font-nikkyou">
                       Open Innovation
                     </h3>
                     <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
