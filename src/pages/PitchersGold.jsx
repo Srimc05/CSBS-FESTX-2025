@@ -84,7 +84,7 @@ const PitchersGold = () => {
                       Example: Byju's – revolutionizing learning through
                       interactive, personalized education.
                     </p>
-                  </divhttps://forms.gle/H252KSuXcQEHz1HY8>
+                  </div>
                 </div>
               </div>
 
