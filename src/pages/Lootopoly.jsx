@@ -119,7 +119,6 @@ const Lootopoly = () => {
           </svg>
           Back to Events
         </Link>
-
         {/* Centered hero with logo and tagline */}
         <section
           className="relative overflow-visible min-h-screen -mt-28 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] flex items-center justify-center"
@@ -173,7 +172,6 @@ const Lootopoly = () => {
             </div>
           </div>
         </section>
-
         {/* Two-column: left content card, right video placeholder */}
         <section className="relative z-20 max-w-7xl mx-auto px-3 md:px-6 mt-12 md:mt-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -223,7 +221,6 @@ const Lootopoly = () => {
             </div>
           </div>
         </section>
-
         {/* Rounds section with heading */}
         <section className="relative z-20 max-w-7xl mx-auto px-3 md:px-6 mt-14">
           {/* Rounds Heading */}
@@ -295,11 +292,45 @@ const Lootopoly = () => {
             </div>
           </div>
         </section>
+        ``
         {/* Call to Action */}
-        <div className="text-center">
-          <Link to="#" className="treasure-btn px-6 py-2 text-lg mt-8">
+        <div className="text-center flex items-center justify-center gap-6">
+          <Link
+            to="https://forms.gle/yCyYD9SeNe7CEGke8"
+            target="_blank"
+            className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+          >
             Register Now
           </Link>
+          <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4 mb-16">
+            Watch Trailer
+          </Link>
+        </div>
+        {/* Coordinators Section */}
+        <div className="flex justify-center mb-16">
+          <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl md:w-96">
+            <h3 className="text-lg font-bold text-yellow-400 mb-4 text-center font-nikkyou underline decoration-yellow-400 decoration-2 underline-offset-4">
+              Event Coordinators
+            </h3>
+            <div className="space-y-3 font-nikkyou">
+              <div className="text-center">
+                <p className="text-yellow-200 text-lg">
+                  <span className="font-semibold text-yellow-300">
+                    Hemanthraj S
+                  </span>
+                  <br />
+                  <span className="text-yellow-400">9791071221</span>
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-yellow-200 text-lg">
+                  <span className="font-semibold text-yellow-300">Hameem</span>
+                  <br />
+                  <span className="text-yellow-400">6374776339</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

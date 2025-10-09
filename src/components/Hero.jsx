@@ -4,7 +4,10 @@ import { CountdownBanner } from "./ui/countdown";
 
 export function HeroSection() {
   return (
-    <div className="h-screen w-full relative overflow-hidden flex items-center justify-center">
+    <div
+      className="h-screen w-full relative overflow-hidden flex items-center justify-center"
+      style={{ overflowX: "hidden" }}
+    >
       {/* Animated background only for Hero (scoped to hero) */}
       <div className="kenburns-hero" aria-hidden="true"></div>
       {/* Content */}

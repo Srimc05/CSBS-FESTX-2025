@@ -7,6 +7,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+/* Custom Font Face Declarations */
+@font-face {
+  font-family: 'Bento';
+  src: url('/Bento-2OXaW.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NikkyouSans';
+  src: url('/NikkyouSans-mLKax.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Font utility classes to ensure reliable application */
 .font-fell-english {
   font-family: 'IM Fell English', 'IM Fell English SC', serif;
@@ -14,6 +31,15 @@
 
 .font-pirata {
   font-family: 'Pirata One', cursive;
+}
+
+/* Custom fonts */
+.font-bento {
+  font-family: 'Bento', sans-serif;
+}
+
+.font-nikkyou {
+  font-family: 'NikkyouSans', sans-serif;
 }
 
 /* Futuristic / code fonts */
@@ -602,6 +628,7 @@ body{
     scrollbar-width: none; 
     -ms-overflow-style: none; 
     background-color: #000;
+    overflow-x: hidden;
   }
   
   /* Force-hide system cursor globally (except inside cross-origin iframes) */
@@ -615,6 +642,7 @@ body{
   
   html {
     overflow-y: scroll;
+    overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
   -webkit-text-size-adjust: 100%;
@@ -909,20 +937,20 @@ body{
     padding: 0;
     position: fixed;
   top: 8px;
-  right: -10px;
+  right: 0px;
     z-index: 100;
   }
   
   .ship {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
   }
   
   .treasure-container {
-    position: fixed;
-    bottom: 5px;
-    right: 1px;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
     z-index: 100;
   }
   

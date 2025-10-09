@@ -12,6 +12,7 @@ const ContactUs = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Association Members */}
       <h2 className="text-4xl font-semibold text-gray-200 mt-6 mb-8 text-center font-fell-english">
         Association Members
       </h2>
@@ -46,6 +47,36 @@ const ContactUs = () => {
             name="Vijay V"
             role="Joint Treasurer"
             phone="+91 86818 54861"
+          />
+        </div>
+      </div>
+
+      {/* Magic Members */}
+      <h2 className="text-4xl font-semibold text-yellow-400 mt-20 mb-8 text-center font-fell-english">
+        Magic Members
+      </h2>
+      <div className="max-w-7xl mx-auto pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+          <ContactCard
+            name="Sripragadhishwaran S"
+            role="Mastermind"
+            phone="+91 93447 06051"
+          />
+          <ContactCard
+            name="Karthik R"
+            role="Advocate"
+            phone="+91 99524 00229"
+          />
+          <ContactCard name="Akshaya S" role="Guide" phone="+91 87787 27215" />
+          <ContactCard
+            name="Harshithaa T"
+            role="Influencer"
+            phone="+91 93848 48479"
+          />
+          <ContactCard
+            name="Pratibha V"
+            role="Communicator"
+            phone="+91 78710 00274"
           />
         </div>
       </div>

@@ -16,9 +16,6 @@ const PitchersGold = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay for better text readability */}
-      <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-
       {/* Hero Section - First Viewport */}
       <div className="min-h-screen px-6 relative z-50 flex flex-col justify-center items-center text-center">
         {/* Back button */}
@@ -43,11 +40,11 @@ const PitchersGold = () => {
         </Link>
 
         {/* Pitchers Gold Logo */}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center w-full">
           <img
             src="/pitchers-gold-logo.webp"
             alt="Pitchers Gold Logo"
-            className="max-w-md w-full h-auto drop-shadow-2xl"
+            className="h-auto drop-shadow-2xl w-full sm:max-w-2xl md:max-w-4xl lg:max-w-5xl"
           />
         </div>
       </div>
@@ -55,95 +52,148 @@ const PitchersGold = () => {
       {/* Characters & Video Section - Second Viewport */}
       <div className="min-h-screen px-6 relative z-20 flex flex-col justify-center">
         <div className="max-w-6xl mx-auto">
-          {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left Column - Characters */}
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-8 font-fell-english">
-                Characters
-              </h2>
+          {/* Emperors Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-12 text-center font-fell-english">
+              Meet the Emperors
+            </h2>
 
-              {/* First Row - 3 Characters */}
-              <div className="flex justify-center gap-6 mb-6 flex-wrap">
-                <div className="text-center">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg mb-4 bg-yellow-400 p-1">
-                    <img
-                      src="/hat.webp"
-                      alt="Hat Character"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                  <p className="text-yellow-300 font-semibold text-sm md:text-lg">
-                    Hat
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg mb-4 bg-yellow-400 p-1">
+            {/* Emperor Cards - Single Column */}
+            <div className="space-y-8">
+              {/* Technology & EdTech - Kaido */}
+              <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
                     <img
                       src="/kaido.webp"
                       alt="Kaido Character"
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
-                  <p className="text-yellow-300 font-semibold text-sm md:text-lg">
-                    Kaido
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg mb-4 bg-yellow-400 p-1">
-                    <img
-                      src="/white.webp"
-                      alt="White Character"
-                      className="w-full h-full object-cover rounded-full"
-                    />
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-cyan-400 mb-2 font-bento">
+                      Technology & EdTech – Kaido
+                    </h3>
+                    <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
+                      Masters of transformation, they harness AI, cloud, and
+                      learning tech to shape the future of knowledge. From
+                      digital classrooms to automation, their ventures empower
+                      the next generation of thinkers.
+                    </p>
+                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                      Example: Byju's – revolutionizing learning through
+                      interactive, personalized education.
+                    </p>
                   </div>
-                  <p className="text-yellow-300 font-semibold text-sm md:text-lg">
-                    White
-                  </p>
                 </div>
               </div>
 
-              {/* Second Row - 2 Characters */}
-              <div className="flex justify-center gap-6 flex-wrap">
-                <div className="text-center">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg mb-4 bg-yellow-400 p-1">
+              {/* Sports & Entertainment - Whitebeard */}
+              <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
                     <img
-                      src="/big.webp"
-                      alt="Big Character"
+                      src="/white.webp"
+                      alt="Whitebeard Character"
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
-                  <p className="text-yellow-300 font-semibold text-sm md:text-lg">
-                    Big
-                  </p>
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-2 font-bento">
+                      Sports & Entertainment – Whitebeard
+                    </h3>
+                    <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
+                      Where passion meets performance — they invest in ventures
+                      that fuel adrenaline and connect fans. From fantasy
+                      leagues to immersive events, their domain celebrates the
+                      spirit of competition.
+                    </p>
+                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                      Example: Dream11 – turning every sports fan into a
+                      strategist.
+                    </p>
+                  </div>
                 </div>
+              </div>
 
-                <div className="text-center">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-yellow-400 shadow-lg mb-4 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-600">
-                    <span className="text-3xl md:text-4xl font-bold text-black animate-spin">
+              {/* Marketing & Media - Big Mom */}
+              <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
+                    <img
+                      src="/big.webp"
+                      alt="Big Mom Character"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-purple-400 mb-2 font-bento">
+                      Marketing & Media – Big Mom
+                    </h3>
+                    <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
+                      Rulers of storytelling and influence, they craft brands
+                      that echo across digital seas. Their focus lies in
+                      creative marketing, media innovation, and audience
+                      engagement.
+                    </p>
+                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                      Example: Zomato – redefining brand identity through bold
+                      and viral content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Business & Consumer Goods - Luffy */}
+              <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
+                    <img
+                      src="/hat.webp"
+                      alt="Luffy Character"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-red-400 mb-2 font-bento">
+                      Business & Consumer Goods – Luffy
+                    </h3>
+                    <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
+                      Visionaries of commerce who sail through the markets of
+                      demand and delight. They invest in products and startups
+                      that shape everyday life with innovation and trust.
+                    </p>
+                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                      Example: Nykaa – bridging beauty, convenience, and
+                      customer experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Open Innovation - Mystery */}
+              <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-yellow-400 shadow-lg flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-600 flex-shrink-0">
+                    <span className="text-2xl md:text-3xl font-bold text-black animate-spin">
                       ?
                     </span>
                   </div>
-                  <p className="text-yellow-300 font-semibold text-sm md:text-lg">
-                    Mystery
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Video Placeholder */}
-            <div className="flex items-center justify-center">
-              <div className="w-full h-72 md:h-96 border-4 border-violet-400 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl flex items-center justify-center">
-                <div className="text-center text-yellow-300">
-                  <div className="text-6xl mb-4">🎬</div>
-                  <h3 className="text-xl font-bold mb-2 font-fell-english">
-                    Event Briefing
-                  </h3>
-                  <p className="text-gray-400">
-                    YouTube video will be embedded here
-                  </p>
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-orange-400 mb-2 font-bento">
+                      Open Innovation
+                    </h3>
+                    <p className="text-yellow-200 mb-3 leading-relaxed font-nikkyou">
+                      Explorers of limitless ideas, they champion collaboration
+                      across uncharted territories. From deep-tech to social
+                      impact, they invest in creativity that breaks every
+                      boundary.
+                    </p>
+                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                      Example: OpenAI – pushing the frontiers of what's possible
+                      through intelligent innovation.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -222,10 +272,46 @@ const PitchersGold = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center">
-            <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4">
+          <div className="text-center flex items-center justify-center gap-6">
+            <Link
+              to="https://forms.gle/toW85bjKitnsJhGE7"
+              target="_blank"
+              className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+            >
               Register Your Idea
             </Link>
+            <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4 mb-16">
+              Watch Trailer
+            </Link>
+          </div>
+
+          {/* Coordinators Section */}
+          <div className="flex justify-center mb-16">
+            <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl md:w-96">
+              <h3 className="text-lg font-bold text-yellow-400 mb-4 text-center font-nikkyou underline decoration-yellow-400 decoration-2 underline-offset-4">
+                Event Coordinators
+              </h3>
+              <div className="space-y-3 font-nikkyou">
+                <div className="text-center">
+                  <p className="text-yellow-200 text-lg">
+                    <span className="font-semibold text-yellow-300">
+                      Eashwar S
+                    </span>
+                    <br />
+                    <span className="text-yellow-400">7358092685</span>
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-yellow-200 text-lg">
+                    <span className="font-semibold text-yellow-300">
+                      Dhanush B T
+                    </span>
+                    <br />
+                    <span className="text-yellow-400">6379842695</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

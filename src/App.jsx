@@ -17,11 +17,27 @@ import Event9 from "./pages/Event9";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const location = useLocation();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showCustomCursor, setShowCustomCursor] = useState(true);
+
+  // Define individual event page paths
+  const eventPages = [
+    "/code-heist",
+    "/gbu",
+    "/pitchers-gold",
+    "/stellar-quest",
+    "/unlockx",
+    "/wolf-gambit",
+    "/anonymous",
+    "/lootopoly",
+    "/event9",
+  ];
+
+  const isEventPage = eventPages.includes(location.pathname);
 
   useEffect(() => {
     const isCoarsePointer =
@@ -187,11 +203,6 @@ export default function App() {
         />
       </div>
 
-      {/* Treasure at bottom right */}
-      <div className="treasure-container">
-        <img src="/treasure.png" alt="Treasure" className="treasure" />
-      </div>
-
       {/* Anchor with rope */}
       <div className="anchor-container">
         {(() => {
@@ -231,8 +242,10 @@ export default function App() {
           );
         })()}
       </div>
-      <div className="flex flex-col min-h-screen">
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div className="flex flex-col min-h-screen relative">
+        {!isEventPage && (
+          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        )}
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -249,7 +262,12 @@ export default function App() {
             <Route path="/event9" element={<Event9 />} />
           </Routes>
         </main>
-        <Footer />
+        {!isEventPage && <Footer />}
+
+        {/* Treasure at bottom of page content */}
+        <div className="treasure-container">
+          <img src="/treasure.png" alt="Treasure" className="treasure" />
+        </div>
       </div>
     </>
   );

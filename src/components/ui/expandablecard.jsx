@@ -100,7 +100,7 @@ export function ExpandableCardDemo() {
                       <img
                         src={card.src}
                         alt={card.title}
-                        className="block w-full h-full object-contain object-center"
+                        className="block w-full h-full object-cover sm:object-contain object-center"
                       />
                     </div>
                   </div>
@@ -130,7 +130,7 @@ export function ExpandableCardDemo() {
                       <img
                         src={card.src}
                         alt={card.title}
-                        className="block w-full h-full object-contain object-center"
+                        className="block w-full h-full object-cover sm:object-contain object-center"
                       />
                     </div>
                   </div>

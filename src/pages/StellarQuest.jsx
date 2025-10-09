@@ -648,10 +648,46 @@ const StellarQuest = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center">
-            <Link to="#" className="treasure-btn px-6 py-2 text-lg">
+          <div className="text-center flex items-center justify-center gap-6">
+            <Link
+              to="https://forms.gle/LujZtb2uod1mWkUv9"
+              target="_blank"
+              className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+            >
               Register Now
             </Link>
+            <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4 mb-16">
+              Watch Trailer
+            </Link>
+          </div>
+
+          {/* Coordinators Section */}
+          <div className="flex justify-center mb-16">
+            <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl md:w-96">
+              <h3 className="text-lg font-bold text-yellow-400 mb-4 text-center font-nikkyou underline decoration-yellow-400 decoration-2 underline-offset-4">
+                Event Coordinators
+              </h3>
+              <div className="space-y-3 font-nikkyou">
+                <div className="text-center">
+                  <p className="text-yellow-200 text-lg">
+                    <span className="font-semibold text-yellow-300">
+                      Hariharan B
+                    </span>
+                    <br />
+                    <span className="text-yellow-400">7397758672</span>
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-yellow-200 text-lg">
+                    <span className="font-semibold text-yellow-300">
+                      Kaarthic V R
+                    </span>
+                    <br />
+                    <span className="text-yellow-400">7010786974</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
