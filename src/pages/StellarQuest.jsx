@@ -709,18 +709,25 @@ const StellarQuest = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center flex items-center justify-center gap-6">
+          <div className="text-center flex flex-col sm:flex-row items-center justify-center sm:gap-6">
             <Link
               to="https://forms.gle/LujZtb2uod1mWkUv9"
               target="_blank"
-              className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+              className="treasure-btn px-6 py-2 text-lg sm:my-4 mb-4 sm:mb-16"
             >
               Register Now
             </Link>
             <Link
               to="https://youtu.be/MXTXajxMUrc"
               target="_blank"
-              className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+              className="treasure-btn px-6 py-2 text-lg sm:my-4 mb-4 sm:mb-16"
+            >
+              Watch Glimpse
+            </Link>
+            <Link
+              to="https://youtu.be/mrHgt_Ab0io"
+              target="_blank"
+              className="treasure-btn px-6 py-2 text-lg sm:my-4 mb-4 sm:mb-16"
             >
               Watch Trailer
             </Link>
