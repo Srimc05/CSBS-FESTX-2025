@@ -108,7 +108,7 @@ export function ExpandableCardDemo() {
               ))}
             </ul>
 
-            <h2 className="relative text-4xl font-semibold text-gray-200 mt-6 mb-8 text-center font-fell-english">
+            <h2 className="relative text-4xl font-semibold text-gray-200 mt-40 mb-8 text-center font-fell-english">
               Non Technical Events
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 lg:gap-10">

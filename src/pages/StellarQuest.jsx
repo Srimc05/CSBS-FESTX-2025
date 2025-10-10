@@ -1,9 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const StellarQuest = () => {
   const canvasRef = useRef(null);
   const rafRef = useRef(0);
+
+  // List of assets to preload for StellarQuest page
+  const assetsToLoad = ["/stellar_quest.webp"];
+
+  const isLoading = useAssetLoader(assetsToLoad);
 
   useEffect(() => {
     // Hide centered navbar while on this single event page
@@ -323,6 +330,10 @@ const StellarQuest = () => {
     return () =>
       cards.forEach((el) => el.removeEventListener("click", onClick));
   }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="min-h-screen relative overflow-hidden">

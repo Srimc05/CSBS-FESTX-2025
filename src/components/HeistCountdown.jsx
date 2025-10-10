@@ -35,20 +35,19 @@ export function HeistCountdown() {
   return (
     <div className="flex flex-col items-center gap-2 text-center">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#DADADA] tracking-widest">
-       CIA'S Closing In
+        CIA'S Closing In
       </h2>
-      <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-4 justify-center text-4xl sm:text-5xl md:text-7xl font-[poppins] text-[#971414]">
+      <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-4 justify-center text-3xl sm:text-5xl md:text-7xl font-[poppins] text-[#971414]">
         <div>{days}D</div>
-         <span className="">:</span>
+        <span className="">:</span>
         <div>{hrs}</div>
-          
-        
+
         {/* <motion.div
           initial={{ opacity: 0.6 }}
           animate={{ opacity: [1, 0.6, 1] }}
           transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
         > */}
-          
+
         {/* </motion.div> */}
         <span className="">:</span>
         <div>{mins}</div>

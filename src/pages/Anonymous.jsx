@@ -1,8 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function AnonymousEventPage() {
+  // List of assets to preload for Anonymous page
+  const assetsToLoad = [
+    "https://ik.imagekit.io/sri05/Group%20195.png",
+    "/anonymous.webp",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div
       className="min-h-screen text-white bg-cover bg-center bg-no-repeat relative overflow-hidden"
@@ -101,7 +115,11 @@ export default function AnonymousEventPage() {
                 </motion.button>
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://youtu.be/Dh8C7yhxZGg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <motion.button
                   whileHover={{
                     scale: 1.05,
@@ -148,7 +166,7 @@ export default function AnonymousEventPage() {
               </div>
 
               {/* Large screen view (inline) */}
-              <div className="hidden lg:flex justify-center text-center gap-6 font-nikkyou text-[#F5F2E7] text-lg mb-16">
+              <div className="hidden lg:flex justify-center text-center gap-6 font-nikkyou text-[#F5F2E7] text-lg">
                 <p>
                   <span className="font-semibold text-[#D9B536]">
                     Madhuvanti

@@ -1,7 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Lootopoly = () => {
+  // List of assets to preload for Lootopoly page
+  const assetsToLoad = [
+    "/lootopoly.webp",
+    "/lootopoly_logo.webp",
+    "/monopoly.webp",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
   useEffect(() => {
     document.body.classList.add("hide-centered-nav");
     return () => document.body.classList.remove("hide-centered-nav");
@@ -96,6 +107,11 @@ const Lootopoly = () => {
       clearInterval(interval);
     };
   }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className="min-h-screen pt-28 pb-12 px-6 relative">
       {/* Thunderstorm Background Effect */}

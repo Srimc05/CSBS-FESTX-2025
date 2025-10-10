@@ -5,7 +5,23 @@ import { CanvasRevealEfctDemo3 } from "../components/Heistcard";
 import { CanvasRevealEffect3 } from "../components/Hiestround1";
 import { CanvasRevealEffectDemo3 } from "../components/Heistthree";
 import { HeistCountdown } from "../components/HeistCountdown";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 const CodeHeist = () => {
+  // List of assets to preload for CodeHeist page
+  const assetsToLoad = [
+    "https://ik.imagekit.io/sri05/heustttt.jpg?updatedAt=1759858469115",
+    "https://ik.imagekit.io/sri05/Group%205.png",
+    "https://ik.imagekit.io/sri05/mmamamma.jpg?updatedAt=1759902138441",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
+  // Show loading spinner while assets are loading
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className="min-h-screen pt-5 pb-12 px-6">
       <div className="">

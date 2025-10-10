@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import "tailwindcss";
 
 /* Custom Font Face Declarations */
@@ -14,6 +15,10 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+.font-alata {
+  font-family: 'Alata', sans-serif;
 }
 
 @font-face {
@@ -1748,5 +1753,234 @@ body{
   95% {
     background: radial-gradient(circle at 20% 80%, rgba(255, 255, 0, 0.22) 0%, rgba(255, 255, 0, 0.1) 35%, #000 100%);
     box-shadow: inset 0 0 130px rgba(255, 255, 0, 0.18);
+  }
+}
+
+/* Fire Sparkles for GBU Page */
+.fire-sparkles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fire-sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: -10px;
+  opacity: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* Individual sparkle positions and colors */
+.sparkle-1 {
+  background: #ff4500;
+  left: 10%;
+  animation: sparklefall 4s ease-in infinite;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  background: #ff6500;
+  left: 15%;
+  animation: sparklefall 3.8s ease-in infinite;
+  animation-delay: 0.5s;
+}
+
+.sparkle-3 {
+  background: #ffaa00;
+  left: 20%;
+  animation: sparklefall 4.2s ease-in infinite;
+  animation-delay: 1s;
+}
+
+.sparkle-4 {
+  background: #ff7500;
+  left: 25%;
+  animation: sparklefall 3.9s ease-in infinite;
+  animation-delay: 1.5s;
+}
+
+.sparkle-5 {
+  background: #ffcc00;
+  left: 30%;
+  animation: sparklefall 4.1s ease-in infinite;
+  animation-delay: 2s;
+}
+
+.sparkle-6 {
+  background: #ff5500;
+  left: 35%;
+  animation: sparklefall 3.7s ease-in infinite;
+  animation-delay: 2.5s;
+}
+
+.sparkle-7 {
+  background: #ff8500;
+  left: 40%;
+  animation: sparklefall 4.3s ease-in infinite;
+  animation-delay: 3s;
+}
+
+.sparkle-8 {
+  background: #ffdd00;
+  left: 45%;
+  animation: sparklefall 3.6s ease-in infinite;
+  animation-delay: 3.5s;
+}
+
+.sparkle-9 {
+  background: #ff4500;
+  left: 50%;
+  animation: sparklefall 4s ease-in infinite;
+  animation-delay: 4s;
+}
+
+.sparkle-10 {
+  background: #ff9500;
+  left: 55%;
+  animation: sparklefall 3.8s ease-in infinite;
+  animation-delay: 0.2s;
+}
+
+.sparkle-11 {
+  background: #ffaa00;
+  left: 60%;
+  animation: sparklefall 4.2s ease-in infinite;
+  animation-delay: 0.7s;
+}
+
+.sparkle-12 {
+  background: #ff6500;
+  left: 65%;
+  animation: sparklefall 3.9s ease-in infinite;
+  animation-delay: 1.2s;
+}
+
+.sparkle-13 {
+  background: #ffbb00;
+  left: 70%;
+  animation: sparklefall 4.1s ease-in infinite;
+  animation-delay: 1.7s;
+}
+
+.sparkle-14 {
+  background: #ff7500;
+  left: 75%;
+  animation: sparklefall 3.7s ease-in infinite;
+  animation-delay: 2.2s;
+}
+
+.sparkle-15 {
+  background: #ff8500;
+  left: 80%;
+  animation: sparklefall 4.3s ease-in infinite;
+  animation-delay: 2.7s;
+}
+
+.sparkle-16 {
+  background: #ffcc00;
+  left: 85%;
+  animation: sparklefall 3.6s ease-in infinite;
+  animation-delay: 3.2s;
+}
+
+.sparkle-17 {
+  background: #ff5500;
+  left: 90%;
+  animation: sparklefall 4s ease-in infinite;
+  animation-delay: 3.7s;
+}
+
+.sparkle-18 {
+  background: #ff9500;
+  left: 12%;
+  animation: sparklefall 3.8s ease-in infinite;
+  animation-delay: 0.3s;
+}
+
+.sparkle-19 {
+  background: #ffdd00;
+  left: 22%;
+  animation: sparklefall 4.2s ease-in infinite;
+  animation-delay: 0.8s;
+}
+
+.sparkle-20 {
+  background: #ff4500;
+  left: 32%;
+  animation: sparklefall 3.9s ease-in infinite;
+  animation-delay: 1.3s;
+}
+
+.sparkle-21 {
+  background: #ff7500;
+  left: 42%;
+  animation: sparklefall 4.1s ease-in infinite;
+  animation-delay: 1.8s;
+}
+
+.sparkle-22 {
+  background: #ffaa00;
+  left: 52%;
+  animation: sparklefall 3.7s ease-in infinite;
+  animation-delay: 2.3s;
+}
+
+.sparkle-23 {
+  background: #ff8500;
+  left: 62%;
+  animation: sparklefall 4.3s ease-in infinite;
+  animation-delay: 2.8s;
+}
+
+.sparkle-24 {
+  background: #ffbb00;
+  left: 72%;
+  animation: sparklefall 3.6s ease-in infinite;
+  animation-delay: 3.3s;
+}
+
+.sparkle-25 {
+  background: #ff6500;
+  left: 82%;
+  animation: sparklefall 4s ease-in infinite;
+  animation-delay: 3.8s;
+}
+
+@keyframes sparklefall {
+  0% {
+    transform: translateY(-20px) translateX(0px) scale(1);
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.9;
+    transform: translateY(10vh) translateX(5px) scale(0.9);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateY(25vh) translateX(-8px) scale(0.8);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(50vh) translateX(12px) scale(0.6);
+  }
+  75% {
+    opacity: 0.3;
+    transform: translateY(75vh) translateX(-6px) scale(0.4);
+  }
+  90% {
+    opacity: 0.1;
+    transform: translateY(90vh) translateX(3px) scale(0.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) translateX(0px) scale(0.1);
   }
 }

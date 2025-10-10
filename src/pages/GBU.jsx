@@ -5,8 +5,15 @@ import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import GBUBackground from "../components/ui/GBUbackground/GBUbackground";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const GBU = () => {
+  // List of assets to preload for GBU page
+  const assetsToLoad = ["/GBU.webp", "/gbutagline.webp"];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
   // All your hooks and variants remain the same
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -30,6 +37,10 @@ const GBU = () => {
     },
   };
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     // ✨ --- 1. THE MAIN WRAPPER --- ✨
     // This parent holds everything and creates the stacking context with `relative`.
@@ -41,6 +52,13 @@ const GBU = () => {
       {/* This is positioned absolutely to fill the parent container. */}
       {/* It holds the gradient and the ember animation. */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
+        {/* Fire Sparkles falling from top to bottom */}
+        <div className="fire-sparkles-container">
+          {[...Array(25)].map((_, i) => (
+            <div key={i} className={`fire-sparkle sparkle-${i + 1}`}></div>
+          ))}
+        </div>
+
         {/* Radial gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-radial from-orange-900/20 via-black to-black"></div>
 
@@ -563,7 +581,10 @@ const GBU = () => {
             >
               Register Now
             </Link>
-            <Link to="#" className="treasure-btn px-6 py-2 text-lg my-16 mb-16">
+            <Link
+              to="https://youtu.be/1XI0JW4bJII"
+              className="treasure-btn px-6 py-2 text-lg my-16 mb-16"
+            >
               Watch Trailer
             </Link>
           </div>

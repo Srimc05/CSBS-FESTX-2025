@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 // Generate random positions for floating dots
 const floatingDots = Array.from({ length: 500 }, (_, i) => ({
@@ -12,6 +14,16 @@ const floatingDots = Array.from({ length: 500 }, (_, i) => ({
 }));
 
 const WolfGambit = () => {
+  // List of assets to preload for WolfGambit page
+  const assetsToLoad = [
+    "/wolf_gambit.webp",
+    "/WolfsGambit.webp",
+    "/wolfsgambit-tagline.webp",
+    "/WGambit1.webp",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
   // Animation variants for cards
   const cardVariants = {
     hidden: {
@@ -68,6 +80,10 @@ const WolfGambit = () => {
       },
     },
   };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="min-h-screen relative font-alata overflow-hidden bg-black">

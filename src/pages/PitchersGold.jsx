@@ -1,7 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const PitchersGold = () => {
+  // List of assets to preload for PitchersGold page
+  const assetsToLoad = [
+    "/pitchers-gold-bg.webm",
+    "/pitchers_gold.webp",
+    "/pitchers-gold-logo.webp",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className="relative">
       {/* Video Background */}
@@ -280,7 +295,11 @@ const PitchersGold = () => {
             >
               Register Your Idea
             </Link>
-            <Link to="#" className="treasure-btn px-6 py-2 text-lg my-4 mb-16">
+            <Link
+              to="https://drive.google.com/file/d/1b2RZ9faO40UAVUuy1Rp69qshrrcBCLxH/view?usp=sharing"
+              target="_blank"
+              className="treasure-btn px-6 py-2 text-lg my-4 mb-16"
+            >
               Watch Trailer
             </Link>
           </div>

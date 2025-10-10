@@ -1,9 +1,22 @@
 import React, { useRef, useEffect } from "react";
 import { HeroSection } from "../components/Hero";
 import About from "../components/About";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Home = () => {
   const videoRef = useRef(null);
+
+  // List of assets to preload for Home page
+  const assetsToLoad = [
+    "/FESTX.webp",
+    "/bg2.webp",
+    "/ship1.png",
+    "/treasure.png",
+    "/Date_Reveal.webm",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -33,6 +46,12 @@ const Home = () => {
       observer.disconnect();
     };
   }, []);
+
+  // Show loading spinner while assets are loading
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <>
       <HeroSection />

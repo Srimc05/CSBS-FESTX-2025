@@ -1,7 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAssetLoader } from "../hooks/useAssetLoader";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const UnlockX = () => {
+  // List of assets to preload for UnlockX page
+  const assetsToLoad = [
+    "/unlockx.webm",
+    "/UnlockX.webp",
+    "/unlockxcontent.webp",
+  ];
+
+  const isLoading = useAssetLoader(assetsToLoad);
+
+  // Show loading spinner while assets are loading
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className="min-h-screen relative overflow-hidden bg-black">
       {/* Background Video */}
