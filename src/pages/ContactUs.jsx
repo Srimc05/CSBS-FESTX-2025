@@ -33,9 +33,21 @@ const ContactUs = () => {
             role="Secretary"
             phone="+91 63800 69629"
           />
-          <ContactCard name="Rithika R" role="Treasurer" phone="" />
-          <ContactCard name="Sanjay S P" role="Joint Secretary" phone="" />
-          <ContactCard name="Vijay V" role="Joint Treasurer" phone="" />
+          <ContactCard
+            name="Rithika R"
+            role="Treasurer"
+            phone="+91 99400 43890"
+          />
+          <ContactCard
+            name="Sanjay S P"
+            role="Joint Secretary"
+            phone="+91 94444 77574"
+          />
+          <ContactCard
+            name="Vijay V"
+            role="Joint Treasurer"
+            phone="+91 86818 54861"
+          />
         </div>
       </div>
 
