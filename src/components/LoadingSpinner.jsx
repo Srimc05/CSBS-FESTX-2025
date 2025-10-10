@@ -7,7 +7,10 @@ const LoadingSpinner = () => {
       <div className="compass">
         <div className="compass-outer-ring"></div>
         <div className="compass-inner-ring"></div>
-        <div className="compass-needle"></div>
+        <div className="compass-needles">
+          <div className="needle-red"></div>
+          <div className="needle-grey"></div>
+        </div>
         <div className="compass-center"></div>
         <div className="compass-directions">
           <span className="direction north">N</span>
@@ -40,12 +43,18 @@ const LoadingSpinner = () => {
           justify-content: center;
           z-index: 9999;
           font-family: "Arial", sans-serif;
-          background: linear-gradient(
-            135deg,
-            #0f172a 0%,
-            #1e293b 50%,
-            #334155 100%
-          );
+          background: radial-gradient(
+              ellipse at center,
+              rgba(139, 69, 19, 0.1) 0%,
+              transparent 70%
+            ),
+            linear-gradient(
+              135deg,
+              #1a1a1a 0%,
+              #2d1b0e 30%,
+              #1a1a1a 70%,
+              #0d0d0d 100%
+            );
           backdrop-filter: blur(10px);
         }
 
@@ -55,81 +64,133 @@ const LoadingSpinner = () => {
           height: 180px;
           margin-bottom: 30px;
           z-index: 2;
+          transform: rotate(5deg);
         }
 
         .compass-outer-ring {
           position: absolute;
           width: 100%;
           height: 100%;
-          border: 4px solid #fbbf24;
+          border: 6px solid #8b4513;
           border-radius: 50%;
-          box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+          box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.8),
+            0 0 30px rgba(139, 69, 19, 0.4), 0 0 0 2px #654321,
+            0 0 0 4px #3d2914;
+          background: linear-gradient(
+            145deg,
+            #deb887 0%,
+            #d2691e 30%,
+            #8b4513 70%,
+            #654321 100%
+          );
         }
 
         .compass-inner-ring {
           position: absolute;
-          top: 10px;
-          left: 10px;
-          width: calc(100% - 20px);
-          height: calc(100% - 20px);
-          border: 2px solid #94a3b8;
+          top: 15px;
+          left: 15px;
+          width: calc(100% - 30px);
+          height: calc(100% - 30px);
+          border: 3px solid #2f1b14;
           border-radius: 50%;
           background: radial-gradient(
             circle,
-            rgba(15, 23, 42, 0.8) 0%,
-            rgba(30, 41, 59, 0.6) 100%
+            rgba(222, 184, 135, 0.9) 0%,
+            rgba(160, 82, 45, 0.8) 40%,
+            rgba(101, 67, 33, 0.9) 100%
           );
+          box-shadow: inset 0 0 15px rgba(47, 27, 20, 0.6),
+            inset 0 0 25px rgba(139, 69, 19, 0.3);
         }
 
-        .compass-needle {
+        .compass-needles {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 6px;
-          height: 90px;
-          transform-origin: center bottom;
-          transform: translate(-50%, -100%) rotate(0deg);
+          width: 100%;
+          height: 100%;
+          transform: translate(-50%, -50%);
           animation: compassSpin 4s ease-in-out infinite;
+          pointer-events: none;
         }
 
-        .compass-needle::before {
-          content: "";
+        .needle-red {
           position: absolute;
-          top: 0;
+          top: 20px;
           left: 50%;
-          transform: translateX(-50%);
           width: 0;
           height: 0;
-          border-left: 9px solid transparent;
-          border-right: 9px solid transparent;
-          border-bottom: 45px solid #ef4444;
-          border-radius: 2px;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-bottom: 70px solid #dc2626;
+          transform: translateX(-50%);
+          filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+          z-index: 3;
         }
 
-        .compass-needle::after {
-          content: "";
+        .needle-grey {
           position: absolute;
-          bottom: 0;
+          bottom: 20px;
           left: 50%;
-          transform: translateX(-50%);
           width: 0;
           height: 0;
-          border-left: 9px solid transparent;
-          border-right: 9px solid transparent;
-          border-top: 45px solid #64748b;
-          border-radius: 2px;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 70px solid #6b7280;
+          transform: translateX(-50%);
+          filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+          z-index: 2;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+          .compass {
+            width: 150px;
+            height: 150px;
+          }
+
+          .needle-red {
+            top: 15px;
+            border-left-width: 10px;
+            border-right-width: 10px;
+            border-bottom-width: 55px;
+          }
+
+          .needle-grey {
+            bottom: 15px;
+            border-left-width: 10px;
+            border-right-width: 10px;
+            border-top-width: 55px;
+          }
+
+          .compass-center {
+            width: 18px;
+            height: 18px;
+          }
+
+          .direction {
+            font-size: 18px;
+          }
         }
 
         .compass-center {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 18px;
-          height: 18px;
-          background: #fbbf24;
+          width: 24px;
+          height: 24px;
+          background: radial-gradient(
+            circle,
+            #f4a460 0%,
+            #cd853f 50%,
+            #8b4513 100%
+          );
+          border: 2px solid #654321;
           border-radius: 50%;
           transform: translate(-50%, -50%);
-          box-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
+          box-shadow: 0 0 10px rgba(139, 69, 19, 0.6),
+            inset 0 0 8px rgba(101, 67, 33, 0.4);
+          z-index: 10;
         }
 
         .compass-directions {
@@ -140,9 +201,11 @@ const LoadingSpinner = () => {
 
         .direction {
           position: absolute;
-          color: #fbbf24;
+          color: #deb887;
           font-weight: bold;
-          font-size: 20px;
+          font-size: 22px;
+          font-family: "Times New Roman", serif;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
           transform: translate(-50%, -50%);
         }
 
@@ -170,12 +233,15 @@ const LoadingSpinner = () => {
         }
 
         .loading-text {
-          color: white;
-          font-size: 18px;
-          font-weight: 600;
-          margin-top: 20px;
+          color: #deb887;
+          font-size: 32px;
+          font-weight: 1000;
+          font-family: "Times New Roman", serif;
+          margin-top: 25px;
           display: flex;
           align-items: center;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          letter-spacing: 1px;
         }
 
         .dots {
@@ -189,19 +255,22 @@ const LoadingSpinner = () => {
 
         @keyframes compassSpin {
           0% {
-            transform: translate(-50%, -100%) rotate(-15deg);
+            transform: translate(-50%, -50%) rotate(-20deg);
           }
-          25% {
-            transform: translate(-50%, -100%) rotate(10deg);
+          20% {
+            transform: translate(-50%, -50%) rotate(15deg);
           }
-          50% {
-            transform: translate(-50%, -100%) rotate(-5deg);
+          40% {
+            transform: translate(-50%, -50%) rotate(-10deg);
           }
-          75% {
-            transform: translate(-50%, -100%) rotate(20deg);
+          60% {
+            transform: translate(-50%, -50%) rotate(25deg);
+          }
+          80% {
+            transform: translate(-50%, -50%) rotate(-5deg);
           }
           100% {
-            transform: translate(-50%, -100%) rotate(-15deg);
+            transform: translate(-50%, -50%) rotate(-20deg);
           }
         }
 
