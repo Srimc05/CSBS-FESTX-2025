@@ -33,21 +33,9 @@ const ContactUs = () => {
             role="Secretary"
             phone="+91 63800 69629"
           />
-          <ContactCard
-            name="Rithika R"
-            role="Treasurer"
-            phone="+91 99400 43890"
-          />
-          <ContactCard
-            name="Sanjay S P"
-            role="Joint Secretary"
-            phone="+91 94444 77574"
-          />
-          <ContactCard
-            name="Vijay V"
-            role="Joint Treasurer"
-            phone="+91 86818 54861"
-          />
+          <ContactCard name="Rithika R" role="Treasurer" phone="" />
+          <ContactCard name="Sanjay S P" role="Joint Secretary" phone="" />
+          <ContactCard name="Vijay V" role="Joint Treasurer" phone="" />
         </div>
       </div>
 
@@ -90,17 +78,17 @@ const ContactUs = () => {
           <ContactCard
             name="Dr. Naresh Kumar A"
             role="Head Of The Department"
-            phone="+91 9841653088"
+            phone=""
           />
           <ContactCard
             name="Mrs. Saraswathy S"
-            role="Symposium CO-Ordinator"
-            phone="+91 98416 43808"
+            role="Assistant Professor"
+            phone=""
           />
           <ContactCard
             name="Mrs. ArunaDevi R"
-            role="Symposium CO-Ordinator"
-            phone="+91 87545 88827"
+            role="Assistant Professor"
+            phone=""
           />
         </div>
       </div>
