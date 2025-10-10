@@ -109,7 +109,8 @@ const CodeHeist = () => {
                 Join Heist
               </a>
               <a
-                href="#"
+                href="https://youtu.be/YEyRXWooOmI"
+                target="_blank"
                 className="px-4 md:px-8  font-[poppins] py-4 border border-red-600 hover:bg-red-600 hover:text-white rounded-lg text-lg font-semibold transition-all duration-300"
               >
                 Watch Heist
