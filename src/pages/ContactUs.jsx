@@ -98,7 +98,7 @@ const ContactUs = () => {
             phone=""
           />
           <ContactCard
-            name="Mrs. Arunadevi D"
+            name="Mrs. Arunadevi R"
             role="Assistant Professor"
             phone=""
           />
