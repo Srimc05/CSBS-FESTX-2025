@@ -59,7 +59,7 @@ const PitchersGold = () => {
           <img
             src="/pitchers-gold-logo.webp"
             alt="Pitchers Gold Logo"
-            className="h-auto drop-shadow-2xl w-full sm:max-w-2xl md:max-w-4xl lg:max-w-5xl"
+            className="h-auto drop-shadow-2xl w-full sm:max-w-2xl md:max-w-3xl lg:max-w-3xl"
           />
         </div>
       </div>
