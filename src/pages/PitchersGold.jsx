@@ -95,7 +95,7 @@ const PitchersGold = () => {
                       digital classrooms to automation, their ventures empower
                       the next generation of thinkers.
                     </p>
-                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                    <p className="text-white font-semibold italic font-nikkyou">
                       Example: Byju's – revolutionizing learning through
                       interactive, personalized education.
                     </p>
@@ -123,7 +123,7 @@ const PitchersGold = () => {
                       leagues to immersive events, their domain celebrates the
                       spirit of competition.
                     </p>
-                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                    <p className="text-white fon fot-semibold italic font-nikkyou">
                       Example: Dream11 – turning every sports fan into a
                       strategist.
                     </p>
@@ -151,7 +151,7 @@ const PitchersGold = () => {
                       creative marketing, media innovation, and audience
                       engagement.
                     </p>
-                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                    <p className="text-white font-semibold italic font-nikkyou">
                       Example: Zomato – redefining brand identity through bold
                       and viral content.
                     </p>
@@ -178,7 +178,7 @@ const PitchersGold = () => {
                       demand and delight. They invest in products and startups
                       that shape everyday life with innovation and trust.
                     </p>
-                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                    <p className="text-white font-semibold italic font-nikkyou">
                       Example: Nykaa – bridging beauty, convenience, and
                       customer experience.
                     </p>
@@ -204,7 +204,7 @@ const PitchersGold = () => {
                       impact, they invest in creativity that breaks every
                       boundary.
                     </p>
-                    <p className="text-yellow-400 font-semibold italic font-nikkyou">
+                    <p className="text-white font-semibold italic font-nikkyou">
                       Example: OpenAI – pushing the frontiers of what's possible
                       through intelligent innovation.
                     </p>

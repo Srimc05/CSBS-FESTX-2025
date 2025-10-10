@@ -262,9 +262,7 @@ const UnlockX = () => {
               {/* Large screen view (inline) */}
               <div className="hidden lg:flex justify-center text-center gap-6 text-amber-200 text-lg">
                 <p>
-                  <span className="font-semibold text-white">
-                    Bala Nivasa Vel
-                  </span>{" "}
+                  <span className="font-semibold text-white no-wrap">Bala</span>{" "}
                   9361603509
                 </p>
                 <p>

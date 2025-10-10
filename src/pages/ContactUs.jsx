@@ -52,7 +52,7 @@ const ContactUs = () => {
       </div>
 
       {/* Magic Members */}
-      <h2 className="text-4xl font-semibold text-yellow-400 mt-20 mb-8 text-center font-fell-english">
+      <h2 className="text-4xl font-semibold text-gray-200 mt-20 mb-8 text-center font-fell-english">
         Magic Members
       </h2>
       <div className="max-w-7xl mx-auto pb-12">
@@ -77,6 +77,30 @@ const ContactUs = () => {
             name="Pratibha V"
             role="Communicator"
             phone="+91 78710 00274"
+          />
+        </div>
+      </div>
+
+      {/* Magic Members */}
+      <h2 className="text-4xl font-semibold text-gray-200 mt-20 mb-8 text-center font-fell-english">
+        Staff Members
+      </h2>
+      <div className="max-w-7xl mx-auto pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+          <ContactCard
+            name="Dr. Naresh Kumar A"
+            role="Head Of The Department"
+            phone="+91 9841653088"
+          />
+          <ContactCard
+            name="Mrs. Saraswathy S"
+            role="Symposium CO-Ordinator"
+            phone="+91 98416 43808"
+          />
+          <ContactCard
+            name="Mrs. ArunaDevi R"
+            role="Symposium CO-Ordinator"
+            phone="+91 87545 88827"
           />
         </div>
       </div>

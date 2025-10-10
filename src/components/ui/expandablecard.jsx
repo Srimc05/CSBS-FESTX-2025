@@ -138,7 +138,7 @@ export function ExpandableCardDemo() {
               ))}
             </ul>
 
-            <div className="mt-12">
+            {/* <div className="mt-12">
               <div className="relative max-w-md mx-auto">
                 <div className="bg-black/70 backdrop-blur-md font-fell-english border border-yellow-400 text-white rounded-xl shadow-2xl p-6 hover:scale-105 transform transition-transform duration-300">
                   <h3 className="text-2xl font-bold mb-4 text-yellow-400">
@@ -151,7 +151,7 @@ export function ExpandableCardDemo() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </>
         );
       })()}
