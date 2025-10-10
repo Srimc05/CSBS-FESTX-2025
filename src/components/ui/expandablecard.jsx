@@ -16,7 +16,7 @@ export function ExpandableCardDemo() {
       "wolf-gambit": "/wolf-gambit",
       anonymous: "/anonymous",
       lootopoly: "/lootopoly",
-      "the-last-zone": "/event9",
+      "the-last-zone": "/the-last-zone",
     };
     const route = routeMap[card.title];
     if (route) navigate(route);

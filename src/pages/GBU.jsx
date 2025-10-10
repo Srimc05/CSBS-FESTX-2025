@@ -331,43 +331,47 @@ const GBU = () => {
 
       {/* ✨ --- 3. THE CONTENT LAYER --- ✨ */}
       {/* This is also inside the wrapper and sits on top of the absolute background. */}
-      <div className="relative z-20 pt-28 pb-12 px-6">
+
+      {/* Back button - positioned fixed to stay in place */}
+      <Link
+        to="/events"
+        className="fixed z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-5 md:top-7 left-3 md:left-6"
+      >
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Back to Events
+      </Link>
+
+      {/* Centered logo section - takes full viewport height */}
+      <div className="relative z-20 min-h-screen flex flex-col items-center justify-center">
+        <div className="max-w-5xl text-center">
+          <img
+            src="/GBU.webp"
+            alt="Guess Build Unlock"
+            className="w-full max-w-md scale-150 sm:scale-200 mx-auto gbu-slide-down"
+          />
+          <img
+            src="/gbutagline.webp"
+            alt="Every guess brings you closer to gold!"
+            className="w-100 h-18 mx-auto mt-16 sm:mt-32 animate-pulse max-w-sm"
+          />
+        </div>
+      </div>
+
+      {/* Content section - separate from centered logo */}
+      <div className="relative z-20 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Back button */}
-          <Link
-            to="/events"
-            className="fixed z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-5 md:top-7 left-3 md:left-6"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Back to Events
-          </Link>
-
-          {/* This logo will be visible initially */}
-          <div className="min-h-screen flex flex-col items-center justify-center">
-            <img
-              src="/GBU.webp"
-              alt="Guess Build Unlock"
-              className="w-full mx-auto gbu-slide-down"
-            />
-            <img
-              src="/gbutagline.webp"
-              alt="Every guess brings you closer to gold!"
-              className="w-100 h-18 mx-auto mt-6 animate-pulse"
-            />
-          </div>
-
           {/* Animated Cards Container */}
           <motion.div
             ref={ref}

@@ -35,7 +35,7 @@ export default function App() {
     "/wolf-gambit",
     "/anonymous",
     "/lootopoly",
-    "/event9",
+    "/the-last-zone",
   ];
 
   const isEventPage = eventPages.includes(location.pathname);
@@ -281,7 +281,7 @@ export default function App() {
             <Route path="/wolf-gambit" element={<WolfGambit />} />
             <Route path="/anonymous" element={<Anonymous />} />
             <Route path="/lootopoly" element={<Lootopoly />} />
-            <Route path="/event9" element={<Event9 />} />
+            <Route path="/the-last-zone" element={<Event9 />} />
           </Routes>
         </main>
         {!isEventPage && <Footer />}

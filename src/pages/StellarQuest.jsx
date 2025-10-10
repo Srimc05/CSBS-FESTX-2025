@@ -722,7 +722,7 @@ const StellarQuest = () => {
               target="_blank"
               className="treasure-btn px-6 py-2 text-lg sm:my-4 mb-4 sm:mb-16"
             >
-              Watch Glimpse
+              Watch Teaser
             </Link>
             <Link
               to="https://youtu.be/mrHgt_Ab0io"
