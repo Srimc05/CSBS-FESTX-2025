@@ -8,9 +8,16 @@ const StellarQuest = () => {
   const rafRef = useRef(0);
 
   // List of assets to preload for StellarQuest page
-  const assetsToLoad = ["/stellar_quest.webp"];
+  const assetsToLoad = [
+    "/stellar_quest.webp",
+    "/atlas.webp",
+    "/ironclad.webp",
+    "/runestone.webp",
+  ];
 
-  const isLoading = useAssetLoader(assetsToLoad);
+  // Temporarily disable asset loader to debug
+  // const isLoading = useAssetLoader(assetsToLoad);
+  const isLoading = false;
 
   useEffect(() => {
     // Hide centered navbar while on this single event page
@@ -19,10 +26,18 @@ const StellarQuest = () => {
   }, []);
 
   useEffect(() => {
+    console.log("StellarQuest canvas effect running");
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      console.log("Canvas ref not found");
+      return;
+    }
     const ctx = canvas.getContext("2d", { alpha: true });
-    if (!ctx) return;
+    if (!ctx) {
+      console.log("Canvas context not available");
+      return;
+    }
+    console.log("Canvas and context ready");
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const resize = () => {
@@ -396,7 +411,7 @@ const StellarQuest = () => {
             <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 place-items-center">
               {/* Card 1 */}
               <div
-                className="triangle-face w-[100%] h-[100%] slide-in-from-corner char-card"
+                className="triangle-face w-full slide-in-from-corner char-card in-view"
                 style={{ transitionDelay: "0s" }}
               >
                 <div className="triangle-content">
@@ -404,13 +419,15 @@ const StellarQuest = () => {
                     src="/atlas.webp"
                     alt="Engineer Character"
                     className="w-full h-full object-contain"
+                    onLoad={() => console.log("Atlas image loaded")}
+                    onError={() => console.log("Atlas image failed to load")}
                   />
                 </div>
               </div>
 
               {/* Card 2 */}
               <div
-                className="triangle-face w-[100%] h-[100%] slide-in-from-corner char-card"
+                className="triangle-face w-full slide-in-from-corner char-card in-view"
                 style={{ transitionDelay: "0.12s" }}
               >
                 <div className="triangle-content">
@@ -418,6 +435,8 @@ const StellarQuest = () => {
                     src="/ironclad.webp"
                     alt="Navigator Character"
                     className="w-full h-full object-contain"
+                    onLoad={() => console.log("Ironclad image loaded")}
+                    onError={() => console.log("Ironclad image failed to load")}
                   />
                 </div>
               </div>
@@ -425,7 +444,7 @@ const StellarQuest = () => {
               {/* Card 3 centered in second row */}
               <div className="md:col-span-2 flex justify-center">
                 <div
-                  className="triangle-face w-[100%] h-[100%] md:w-[50%] md:h-[50%] slide-in-from-corner char-card"
+                  className="triangle-face w-full sm:w-[50%] slide-in-from-corner char-card in-view"
                   style={{ transitionDelay: "0.24s" }}
                 >
                   <div className="triangle-content">
@@ -433,6 +452,10 @@ const StellarQuest = () => {
                       src="/runestone.webp"
                       alt="Decoder Character"
                       className="w-full h-full object-contain"
+                      onLoad={() => console.log("Runestone image loaded")}
+                      onError={() =>
+                        console.log("Runestone image failed to load")
+                      }
                     />
                   </div>
                 </div>
