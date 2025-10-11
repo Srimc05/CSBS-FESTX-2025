@@ -151,10 +151,7 @@ const Event9 = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
-              className="text-2xl md:text-3xl font-bold text-[#FF4500]"
-              style={{
-                fontFamily: "'Anton', sans-serif",
-              }}
+              className="text-2xl md:text-5xl font-bold text-[#FF4500] jersey-25"
             >
               Clutch X Booyah - Pirate Hunt edition
             </motion.h2>
@@ -165,11 +162,7 @@ const Event9 = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"
-              style={{
-                fontFamily: "'Anton', sans-serif",
-                color: "#DADADA",
-              }}
+              className="text-2xl md:text-3xl leading-relaxed max-w-3xl mx-auto jersey-26 text-white"
             >
               It’s time for the veetula mass BOOYAH! 4-member squad only, Your
               room = Bermuda map, Wi-Fi = life, Amma = hype commentator .
@@ -184,14 +177,13 @@ const Event9 = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.6 }}
               viewport={{ once: true }}
-              className="flex justify-center gap-6 flex-wrap mt-8"
+              className="flex justify-center gap-6 flex-wrap mt-8 jersey-25"
             >
               <a
                 href="https://forms.gle/EpEBVkJW1Dsu77s89"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-md bg-[#FF4500] text-white font-bold transition duration-200 hover:bg-white hover:text-[#FF4500] border-2 border-transparent hover:border-[#FF4500]"
-                style={{ fontFamily: "'Anton', sans-serif" }}
+                className="px-4 py-3 text-xl md:text-3xl rounded-md bg-[#FF4500] text-white font-bold transition duration-200 hover:bg-white hover:text-[#FF4500] border-2 border-transparent hover:border-[#FF4500]"
               >
                 Register
               </a>
@@ -199,8 +191,7 @@ const Event9 = () => {
                 href="https://youtu.be/1UFP8I7mIkM"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-md bg-[#FF4500] text-white font-bold transition duration-200 hover:bg-white hover:text-[#FF4500] border-2 border-transparent hover:border-[#FF4500]"
-                style={{ fontFamily: "'Anton', sans-serif" }}
+                className="px-4 py-3 text-xl md:text-3xl rounded-md bg-[#FF4500] text-white font-bold transition duration-200 hover:bg-white hover:text-[#FF4500] border-2 border-transparent hover:border-[#FF4500]"
               >
                 Watch Trailer
               </a>
