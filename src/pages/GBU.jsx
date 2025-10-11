@@ -556,20 +556,20 @@ const GBU = () => {
                   Event Coordinators:
                 </span>
 
-                <span className="block mt-4">
+                <span className="block mt-4 text-nowrap">
                   👤 Gautham S –{" "}
                   <a
                     href="tel:9342652208"
-                    className="underline text-yellow-200 hover:text-yellow-300"
+                    className="underline text-2xl sm:text-4xl text-yellow-200 hover:text-yellow-300"
                   >
                     93426 52208
                   </a>
                 </span>
-                <span className="block">
+                <span className="block text-nowrap">
                   👤 Goutham K –{" "}
                   <a
                     href="tel:9629648678"
-                    className="underline text-yellow-200 hover:text-yellow-300"
+                    className="underline text-2xl sm:text-4xl text-yellow-200 hover:text-yellow-300"
                   >
                     96296 48678
                   </a>
