@@ -551,7 +551,59 @@ const GBU = () => {
               variants={cardVariants}
               className="relative text-3xl z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center"
             >
-              <div className="text-gray-100 font-alata gbu-coordinators">
+              {/* Mobile view (stacked) */}
+              <div className="space-y-3 lg:hidden gbu-coordinators">
+                <span className="block text-4xl font-bold text-yellow-400 mb-2">
+                  Event Coordinators:
+                </span>
+                <div className="text-center">
+                  <p className="text-amber-200 text-lg">
+                    <span className="font-semibold text-2xl text-yellow-400">
+                      👤 Gautham S
+                    </span>
+                    <br />
+                    <span className="text-2xl sm:text-4xl text-yellow-200 hover:text-yellow-300 underline">
+                      93426 52208
+                    </span>
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-amber-200 text-lg">
+                    <span className="font-semibold text-2xl text-yellow-400">
+                      👤 Goutham K
+                    </span>
+                    <br />
+                    <span className="text-2xl sm:text-4xl text-yellow-200 hover:text-yellow-300 underline">
+                      96296 48678
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Large screen view (inline) */}
+              <div className="hidden lg:flex justify-center text-center gap-6 text-amber-200 text-lg gbu-coordinators">
+                <span className="block text-4xl mt-5 font-bold text-yellow-400 mb-2">
+                  Event Coordinators:
+                </span>
+                <p>
+                  <div className="text-nowrap font-semibold text-4xl text-yellow-400">
+                    👤 Gautham S
+                  </div>
+                  <div className="mt-2 ml-4 text-2xl sm:text-4xl text-yellow-200 hover:text-yellow-300 underline">
+                    93426 52208
+                  </div>
+                </p>
+                <p>
+                  <div className="text-nowrap font-semibold text-4xl text-yellow-400">
+                    👤 Goutham K
+                  </div>
+                  <div className="mt-2 ml-4 text-2xl sm:text-4xl text-yellow-200 hover:text-yellow-300 underline">
+                    96296 48678
+                  </div>
+                </p>
+              </div>
+
+              {/* <div className="text-gray-100 font-alata gbu-coordinators">
                 <span className="block text-4xl font-bold text-yellow-400 mb-2">
                   Event Coordinators:
                 </span>
@@ -574,7 +626,7 @@ const GBU = () => {
                     96296 48678
                   </a>
                 </span>
-              </div>
+              </div> */}
             </motion.div>
           </motion.div>
 
