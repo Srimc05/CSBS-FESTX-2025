@@ -69,7 +69,7 @@ export default function AnonymousEventPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="text-5xl md:text-7xl text-[#D9B536] font-bold font-[ewert] drop-shadow-lg"
+              className="text-5xl md:text-9xl text-[#D9B536] font-bold font-[ewert] drop-shadow-lg"
             >
               ANONYMOUS
             </motion.h1>
@@ -78,7 +78,7 @@ export default function AnonymousEventPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="mt-4 text-lg md:text-xl text-[#D97A36] font-light italic"
+              className="mt-4 font-bold text-lg md:text-xl text-[#D97A36] italic"
             >
               “Kathai Thiraikathai Vasanam Iyakkam”
             </motion.p>
@@ -87,7 +87,7 @@ export default function AnonymousEventPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 1 }}
-              className="mt-4 text-[#F5F2E7] text-base md:text-lg font-[poppins] leading-7"
+              className="mt-4 text-[#F5F2E7] text-base md:text-lg font-[poppins] leading-7 font-semibold"
             >
               Hii Chellam! Step into ANONYMOUS — a wild ride through Kollywood’s
               movies, music, and madness! Expect mind-bending games, mystery
