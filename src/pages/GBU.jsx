@@ -44,8 +44,11 @@ const GBU = () => {
   return (
     // ✨ --- 1. THE MAIN WRAPPER --- ✨
     // This parent holds everything and creates the stacking context with `relative`.
-    <div className="relative min-h-screen bg-black overflow-hidden">
-      {/* <GBUBackground /> */}
+    <div
+      className="relative min-h-screen bg-black overflow-hidden gbu-page-root"
+      style={{ fontFamily: "Josefin Sans, sans-serif" }}
+    >
+      <GBUBackground particleCount={140} />
       {/* Subtle darkening overlay for text readability */}
       <div className="absolute inset-0 bg-black/30 pointer-events-none z-10" />
       {/* ✨ --- 2. THE BACKGROUND LAYER --- ✨ */}
@@ -331,67 +334,65 @@ const GBU = () => {
 
       {/* ✨ --- 3. THE CONTENT LAYER --- ✨ */}
       {/* This is also inside the wrapper and sits on top of the absolute background. */}
-
-      {/* Back button - positioned fixed to stay in place */}
-      <Link
-        to="/events"
-        className="fixed z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-5 md:top-7 left-3 md:left-6"
-      >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      {/* <div className="relative z-20 pt-20 md:pt-28 pb-12 px-4 md:px-6"> */}
+      <div className="max-w-4xl mx-auto">
+        {/* Back button */}
+        <Link
+          to="/events"
+          className="fixed z-50 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-yellow-400 bg-black/40 backdrop-blur-sm text-yellow-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-300 shadow-lg transition-all top-4 sm:top-5 md:top-7 left-2 sm:left-3 md:left-6"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-        Back to Events
-      </Link>
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+          Back to Events
+        </Link>
 
-      {/* Centered logo section - takes full viewport height */}
-      <div className="relative z-20 min-h-screen flex flex-col items-center justify-center">
-        <div className="max-w-5xl text-center">
-          <img
-            src="/GBU.webp"
-            alt="Guess Build Unlock"
-            className="w-full max-w-md scale-150 sm:scale-200 mx-auto gbu-slide-down"
-          />
-          <img
-            src="/gbutagline.webp"
-            alt="Every guess brings you closer to gold!"
-            className="w-100 h-18 mx-auto mt-16 sm:mt-32 animate-pulse max-w-sm"
-          />
+        {/* This logo will be visible initially */}
+        <div className="relative z-20 min-h-screen mt-10 flex flex-col items-center justify-center">
+          <div className="max-w-5xl text-center">
+            <img
+              src="/GBU.webp"
+              alt="Guess Build Unlock"
+              className="w-full max-w-md scale-150 sm:scale-200 mx-auto gbu-slide-down"
+            />
+            <img
+              src="/gbutagline.webp"
+              alt="Every guess brings you closer to gold!"
+              className="w-100 h-18 mx-auto mt-16 sm:mt-32 animate-pulse max-w-sm"
+            />
+          </div>
         </div>
-      </div>
-
-      {/* Content section - separate from centered logo */}
-      <div className="relative z-20 pb-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="relative z-20 pb-12 px-6">
           {/* Animated Cards Container */}
           <motion.div
             ref={ref}
             initial="hidden"
             animate={controls}
             variants={containerVariants}
-            className="mt-8 space-y-8"
+            className="mt-6 space-y-6"
           >
             {/* About the Event Card */}
             <motion.div
               variants={cardVariants}
-              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 md:p-8 border border-yellow-400/30 shadow-xl"
+              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-4 sm:p-6 md:p-8 border border-yellow-400/30 shadow-xl"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6 font-alata text-center flex items-center justify-center gap-3">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-alata text-center flex items-center justify-center gap-3 gbu-heading">
                 <span>🧩</span>
                 Guess Build Unlock
                 <span>⚡</span>
               </h2>
 
-              <div className="space-y-5 text-gray-200 font-alata">
+              <div className="space-y-5 text-gray-200">
                 <p className="text-lg md:text-xl text-center leading-relaxed">
                   Welcome to{" "}
                   <span className="text-yellow-300 font-bold">
@@ -484,22 +485,22 @@ const GBU = () => {
               variants={cardVariants}
               className="relative z-30 text-center"
             >
-              <h3 className="text-3xl font-bold text-yellow-400 mb-6 font-alata">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 gbu-heading">
                 Event Rounds
               </h3>
             </motion.div>
 
-            {/* Event Rounds - Three Cards in Flex Row */}
+            {/* Event Rounds - Grid Responsive */}
             <motion.div
               variants={cardVariants}
-              className="relative z-30 flex flex-col md:flex-row gap-6 justify-center items-stretch"
+              className="relative z-30 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             >
               {/* Round 1 Card */}
               <div className="flex-1 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center">
-                <div className="text-4xl mb-4 font-alata font-bold text-blue-400">
+                <div className="text-4xl mb-4 font-alata font-bold gbu-heading text-blue-400">
                   Guess
                 </div>
-                <h4 className="text-xl font-bold text-yellow-200 mb-3 font-alata">
+                <h4 className="text-xl font-bold mb-3 font-alata">
                   Round 1 – Crossword Clash 🧩
                 </h4>
                 <p className="text-gray-200 font-alata">
@@ -510,7 +511,7 @@ const GBU = () => {
 
               {/* Round 2 Card */}
               <div className="flex-1 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center">
-                <div className="text-4xl mb-4 font-alata font-bold text-blue-400">
+                <div className="text-4xl mb-4 font-alata font-bold gbu-heading text-blue-400">
                   Build
                 </div>
                 <h4 className="text-xl font-bold text-yellow-200 mb-3 font-alata">
@@ -524,7 +525,7 @@ const GBU = () => {
 
               {/* Round 3 Card */}
               <div className="flex-1 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center">
-                <div className="text-4xl mb-4 font-alata font-bold text-blue-400">
+                <div className="text-4xl mb-4 font-alata font-bold gbu-heading text-blue-400">
                   Unlock
                 </div>
                 <h4 className="text-xl font-bold text-yellow-200 mb-3 font-alata">
@@ -542,19 +543,20 @@ const GBU = () => {
               variants={cardVariants}
               className="relative z-30 text-center"
             >
-              <div className="italic text-yellow-300 font-semibold text-lg font-alata">
+              <div className="italic text-yellow-300 font-semibold text-lg">
                 "Business ragasiyam kedacha athisiyam"
               </div>
             </motion.div>
             <motion.div
               variants={cardVariants}
-              className="relative z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center"
+              className="relative text-3xl z-30 bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-2xl p-6 border border-yellow-400/30 shadow-xl text-center"
             >
-              <div className="text-gray-100 font-alata">
-                <span className="block text-2xl font-bold text-yellow-400 mb-2">
+              <div className="text-gray-100 font-alata gbu-coordinators">
+                <span className="block text-4xl font-bold text-yellow-400 mb-2">
                   Event Coordinators:
                 </span>
-                <span className="block">
+
+                <span className="block mt-4">
                   👤 Gautham S –{" "}
                   <a
                     href="tel:9342652208"
@@ -581,7 +583,7 @@ const GBU = () => {
             <Link
               to="https://forms.gle/r2EH5Tmtg6Cq1SV97"
               target="_blank"
-              className="treasure-btn px-6 py-2 text-lg my-4 my-16"
+              className="treasure-btn px-6 py-2 text-lg my-16"
             >
               Register Now
             </Link>
@@ -594,6 +596,7 @@ const GBU = () => {
           </div>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };

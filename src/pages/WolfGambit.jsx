@@ -109,9 +109,63 @@ const WolfGambit = () => {
           alt="Among Us Character"
           className="amongus-character"
         />
+
+        {/* <img
+          src="/amongus.webp"
+          alt="Among Us Character"
+          className="amongus-character mb-30"
+        />
+
+        <img
+          src="/amongus.webp"
+          alt="Among Us Character"
+          className="amongus-character mt-30"
+        /> */}
       </div>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Metal+Mania&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rye&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        /* Apply imported Google font to card content */
+        .relative.z-10 {
+          font-family: 'Josefin Sans', sans-serif;
+        }
+        .font-josefin { font-family: 'Josefin Sans', sans-serif; }
+        /* Glassmorphic Card Base */
+        .wolf-card {
+          background: rgba(255,255,255,0.1);
+          backdrop-filter: blur(10px);
+          border-radius: 1rem;
+          border: 1px solid rgba(255,255,255,0.2);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wolf-card:hover {
+          transform: translateY(-5px) scale(1.02);
+          box-shadow: 0 8px 32px rgba(255,255,255,0.6);
+        }
+        /* Card typography */
+        .wolf-card h2 {
+          font-family: 'Metal Mania', cursive;
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          color: #FFD700;
+        }
+        .wolf-card p {
+          font-family: 'Josefin Sans', sans-serif;
+          font-size: 1.125rem;
+          line-height: 1.6;
+          color: #DDD;
+        }
+        .wolf-card h3 {
+          font-family: 'Metal Mania', cursive;
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: #FFD700;
+        }
+        /* Override subheadings in Event Flow rounds to normal font */
+        .wolf-card .space-y-6 h3 {
+          font-family: inherit;
+        }
         .floating-dot {
           position: absolute;
           background-color: white;
@@ -218,6 +272,37 @@ const WolfGambit = () => {
             /* ... (keyframes are unchanged) ... */
         }
         /* --- END OF MODIFIED SECTION --- */
+        /* Card hover effects */
+        .wg-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wg-card:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 20px 40px rgba(255,69,0,0.4);
+        }
+        /* Title gradient text effect */
+  /* Title gradient text effect */
+  .wg-title {
+          background: linear-gradient(90deg, #FF4500, #FFD700, #FF4500);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: wg-gradient 4s ease infinite;
+        }
+  @keyframes wg-gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        /* Card hover accent */
+        .wg-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wg-card:hover {
+          transform: translateY(-8px) scale(1.03);
+          box-shadow: 0 20px 50px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 255, 0, 0.3);
+        }
       `}</style>
 
       {/* Back button */}
@@ -249,7 +334,7 @@ const WolfGambit = () => {
         animate="visible"
       >
         {/* Electric Fire Effect Wrapper */}
-        <div className="electric-fire-container animate-none">
+        <div className="animate-none">
           {/* === MODIFIED IMAGE === */}
           <img
             src="/WGambit1.webp"
@@ -260,7 +345,7 @@ const WolfGambit = () => {
 
         {/* <img src="/Logos/WolfsGambit.webp" alt="Wolf Gambit Logo" className="w-auto h-24 mt-6 animate-pulse duration-75"/> */}
         <p
-          className="text-3xl sm:text-5xl lg:text-8xl m-2 sm:m-4 text-white font-black text-center tracking-widest uppercase px-4"
+          className="text-white text-3xl sm:text-5xl lg:text-8xl m-2 sm:m-4 font-black text-center tracking-widest uppercase px-4 wg-title"
           style={{
             fontFamily: 'Impact, "Arial Black", sans-serif',
             letterSpacing: "0.15em",
@@ -287,19 +372,25 @@ const WolfGambit = () => {
           {/* Introduction Card */}
           <motion.div
             variants={cardVariants}
-            className="group bg-gradient-to-br from-gray-900/60 via-red-950/40 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border-2 border-red-500/30 shadow-2xl transition-all duration-500 hover:border-red-400/60 hover:shadow-red-500/20 hover:scale-[1.01] relative overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ scale: 1.03 }}
+            className="wolf-card group p-6 md:p-8 relative overflow-hidden"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-500/0 via-rose-500/0 to-red-700/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
 
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-red-400 to-rose-500 bg-clip-text text-transparent">
+            <div className="relative z-10 font-josefin">
+              <h2 className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-red-400 to-rose-500 bg-clip-text text-transparent">
                 Introduction
               </h2>
-              <p className="text-gray-100 text-lg text-center leading-relaxed group-hover:text-white transition-colors duration-300">
+              <p className="text-gray-100 text-3xl text-center leading-relaxed group-hover:text-white transition-colors duration-300">
                 Welcome to{" "}
-                <span className="text-red-400 font-bold">Wolf's Gambit</span>, a
-                fun twist on technical treasure-hunting with a mix of logic 🧠,
-                bluffing 😏, and teamwork 🤝. Some of you will be{" "}
+                <span className="text-red-400 font-bold font-josefin">
+                  Wolf's Gambit
+                </span>
+                , a fun twist on technical treasure-hunting with a mix of logic
+                🧠, bluffing 😏, and teamwork 🤝. Some of you will be{" "}
                 <strong className="text-yellow-400">Sheep 🐑</strong> solving
                 the puzzle, while a few hidden{" "}
                 <strong className="text-red-500">Wolves 🐺</strong> will try to
@@ -309,59 +400,18 @@ const WolfGambit = () => {
             </div>
           </motion.div>
 
-          {/* Instructions Card */}
-          <motion.div
-            variants={cardVariants}
-            className="group bg-gradient-to-br from-gray-900/60 via-purple-950/40 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border-2 border-purple-500/30 shadow-2xl transition-all duration-500 hover:border-purple-400/60 hover:shadow-purple-500/20 hover:scale-[1.01] relative overflow-hidden"
-          >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/0 via-pink-500/0 to-purple-700/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
-
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Instructions
-              </h2>
-              <div className="space-y-4">
-                <div className=" group-hover:border-red-400/50 transition-all duration-300 flex items-center gap-3">
-                  <span className="text-3xl">📱</span>
-                  <p className="text-gray-200 text-lg">
-                    <strong className="text-red-400">
-                      Mobile Phones: ❌ Not allowed
-                    </strong>{" "}
-                    during the event
-                  </p>
-                </div>
-
-                <div className="group-hover:border-yellow-400/50 transition-all duration-300 flex items-center gap-3">
-                  <span className="text-3xl">⚡</span>
-                  <p className="text-gray-200 text-lg">
-                    Event organizers'{" "}
-                    <strong className="text-yellow-400">
-                      decision is final
-                    </strong>
-                  </p>
-                </div>
-
-                <div className="group-hover:border-blue-400/50 transition-all duration-300 flex items-center gap-3">
-                  <span className="text-3xl">⏳</span>
-                  <p className="text-gray-200 text-lg">
-                    Respect{" "}
-                    <strong className="text-blue-400">time limits</strong> and
-                    maintain{" "}
-                    <strong className="text-green-400">fair play 🤝</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Event Flow Card */}
           <motion.div
             variants={cardVariants}
-            className="group bg-gradient-to-br from-gray-900/60 via-indigo-950/40 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border-2 border-indigo-500/30 shadow-2xl transition-all duration-500 hover:border-indigo-400/60 hover:shadow-indigo-500/20 hover:scale-[1.01] relative overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ scale: 1.03 }}
+            className="wolf-card group p-6 md:p-8 relative overflow-hidden"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/0 via-purple-500/0 to-indigo-700/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 font-josefin">
               <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
                 Event Flow
               </h2>
@@ -372,7 +422,7 @@ const WolfGambit = () => {
                 <div className="flex items-start gap-4">
                   <div className="text-4xl flex-shrink-0">💡</div>
                   <div>
-                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2 leading-relaxed">
                       Hints
                     </h3>
                     <p className="text-gray-200 text-lg leading-relaxed">
@@ -418,17 +468,73 @@ const WolfGambit = () => {
             </div>
           </motion.div>
 
+          {/* Event Flow Card */}
+          {/* 
+
+          {/* Instructions Card */}
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ scale: 1.03 }}
+            className="wolf-card group p-6 md:p-8 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/0 via-pink-500/0 to-purple-700/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
+
+            <div className="relative z-10 font-josefin">
+              <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                Instructions
+              </h2>
+              <div className="space-y-4">
+                <div className="group-hover:border-red-400/50 transition-all duration-300 flex items-center gap-3">
+                  <span className="text-3xl">📱</span>
+                  <p className="text-gray-200 text-lg">
+                    <strong className="text-red-400">
+                      Mobile Phones: ❌ Not allowed
+                    </strong>{" "}
+                    during the event
+                  </p>
+                </div>
+
+                <div className="group-hover:border-yellow-400/50 transition-all duration-300 flex items-center gap-3">
+                  <span className="text-3xl">⚡</span>
+                  <p className="text-gray-200 text-lg">
+                    Event organizers'{" "}
+                    <strong className="text-yellow-400">
+                      decision is final
+                    </strong>
+                  </p>
+                </div>
+
+                <div className="group-hover:border-blue-400/50 transition-all duration-300 flex items-center gap-3">
+                  <span className="text-3xl">⏳</span>
+                  <p className="text-gray-200 text-lg">
+                    Respect{" "}
+                    <strong className="text-blue-400">time limits</strong> and
+                    maintain{" "}
+                    <strong className="text-green-400">fair play 🤝</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Team Details and Scoring - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Team Details Card */}
             <motion.div
               variants={cardVariants}
-              className="group bg-gradient-to-br from-yellow-900/40 via-orange-950/30 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border-2 border-yellow-500/30 shadow-2xl transition-all duration-500 hover:border-yellow-400/60 hover:shadow-yellow-500/20 hover:scale-[1.01] relative overflow-hidden"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ scale: 1.03 }}
+              className="wolf-card group p-6 md:p-8 relative overflow-hidden"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/0 via-orange-500/0 to-yellow-700/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
 
-              <div className="relative z-10">
-                <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              <div className="relative z-10 font-josefin">
+                <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                   Team Details
                 </h2>
                 <div className="flex justify-center">
@@ -442,17 +548,31 @@ const WolfGambit = () => {
                     </p>
                   </div>
                 </div>
+                <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mt-3">
+                  Duration
+                </h2>
+                <div className="flex justify-center">
+                  <div className="group-hover:border-yellow-300/60 transition-all duration-300">
+                    <p className="text-yellow-300 text-xl font-bold text-center">
+                      Time: 2-2.5 hours
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
             {/* Scoring Card */}
             <motion.div
               variants={cardVariants}
-              className="group bg-gradient-to-br from-green-900/40 via-emerald-950/30 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border-2 border-green-500/30 shadow-2xl transition-all duration-500 hover:border-green-400/60 hover:shadow-green-500/20 hover:scale-[1.01] relative overflow-hidden"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ scale: 1.03 }}
+              className="wolf-card group p-6 md:p-8 relative overflow-hidden"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-500/0 via-emerald-500/0 to-green-700/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
 
-              <div className="relative z-10 text-center">
+              <div className="relative z-10 text-center font-josefin">
                 <div className="text-5xl mb-4">🏆</div>
                 <h2 className="text-3xl font-bold text-green-400 mb-4 group-hover:text-green-300 transition-colors">
                   Scoring
@@ -486,6 +606,7 @@ const WolfGambit = () => {
           Watch Trailer
         </Link>
       </div>
+
       {/* Coordinators Section */}
       <div className="flex justify-center mb-16">
         <div className="bg-black/60 backdrop-blur-sm border-2 border-yellow-400 rounded-2xl p-6 shadow-2xl md:w-96">
