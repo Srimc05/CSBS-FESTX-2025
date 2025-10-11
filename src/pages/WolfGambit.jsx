@@ -16,10 +16,10 @@ const floatingDots = Array.from({ length: 500 }, (_, i) => ({
 const WolfGambit = () => {
   // List of assets to preload for WolfGambit page
   const assetsToLoad = [
-    "/wolf_gambit.webp",
-    "/WolfsGambit.webp",
-    "/wolfsgambit-tagline.webp",
-    "/WGambit1.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/wolf_gambit.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/WolfsGambit.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/wolfsgambit-tagline.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/WGambit1.webp",
   ];
 
   const isLoading = useAssetLoader(assetsToLoad);
@@ -105,19 +105,19 @@ const WolfGambit = () => {
 
         {/* Among Us Character Floating */}
         <img
-          src="/amongus.webp"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/amongus.webp"
           alt="Among Us Character"
           className="amongus-character"
         />
 
         {/* <img
-          src="/amongus.webp"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/amongus.webp"
           alt="Among Us Character"
           className="amongus-character mb-30"
         />
 
         <img
-          src="/amongus.webp"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/amongus.webp"
           alt="Among Us Character"
           className="amongus-character mt-30"
         /> */}
@@ -337,7 +337,7 @@ const WolfGambit = () => {
         <div className="animate-none">
           {/* === MODIFIED IMAGE === */}
           <img
-            src="/WGambit1.webp"
+            src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/WGambit1.webp"
             alt="Wolf Gambit Character"
             className="w-50 h-50 md:w-80 md:h-80 rounded-full object-cover relative z-10"
           />
@@ -354,7 +354,7 @@ const WolfGambit = () => {
           Wolf's Gambit
         </p>
         <img
-          src="/wolfsgambit-tagline.webp"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/wolfsgambit-tagline.webp"
           alt="Wolf Gambit Tagline"
           className="h-6 sm:h-8 lg:h-10 w-auto animate-bounce mx-4"
         />

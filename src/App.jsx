@@ -61,7 +61,8 @@ export default function App() {
       setShowCustomCursor(false);
       document.body.classList.add("show-default-cursor");
     };
-    cursorImg.src = "/hook.webp";
+    cursorImg.src =
+      "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/hook.webp";
 
     const updateCursorPosition = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -204,7 +205,7 @@ export default function App() {
           }}
         >
           <img
-            src="/hook.webp"
+            src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/hook.webp"
             alt="Custom cursor"
             onError={() => {
               setCursorImageLoaded(false);
@@ -218,7 +219,7 @@ export default function App() {
       {/* Ship at top right */}
       <div className="ship-container">
         <img
-          src="/ship1.png"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/ship1.png"
           alt="Ship"
           className="ship cursor-pointer hover:scale-105 transition-transform duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -241,7 +242,7 @@ export default function App() {
                 }}
               />
               <img
-                src="/anchor.png"
+                src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/anchor.png"
                 alt="Anchor"
                 className="anchor"
                 style={{
@@ -288,7 +289,11 @@ export default function App() {
 
         {/* Treasure at bottom of page content */}
         <div className="treasure-container">
-          <img src="/treasure.png" alt="Treasure" className="treasure" />
+          <img
+            src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/treasure.png"
+            alt="Treasure"
+            className="treasure"
+          />
         </div>
       </div>
     </>

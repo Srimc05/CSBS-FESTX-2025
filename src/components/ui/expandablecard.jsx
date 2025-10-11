@@ -160,13 +160,40 @@ export function ExpandableCardDemo() {
 }
 
 const cards = [
-  { title: "code-heist", src: "/code_heist.webp" },
-  { title: "gbu", src: "/gbu-post.webp" },
-  { title: "pitchers-gold", src: "/pitchers_gold.webp" },
-  { title: "stellar-quest", src: "/stellar_quest.webp" },
-  { title: "unlockx", src: "/unlockx-post.webp" },
-  { title: "wolf-gambit", src: "/wolf_gambit.webp" },
-  { title: "anonymous", src: "/anonymous.webp" },
-  { title: "lootopoly", src: "/lootopoly.webp" },
-  { title: "the-last-zone", src: "/the_last_zone.webp" },
+  {
+    title: "code-heist",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/code_heist.webp",
+  },
+  {
+    title: "gbu",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/gbu-post.webp",
+  },
+  {
+    title: "pitchers-gold",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/pitchers_gold.webp",
+  },
+  {
+    title: "stellar-quest",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/stellar_quest.webp",
+  },
+  {
+    title: "unlockx",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/unlockx-post.webp",
+  },
+  {
+    title: "wolf-gambit",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/wolf_gambit.webp",
+  },
+  {
+    title: "anonymous",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/anonymous.webp",
+  },
+  {
+    title: "lootopoly",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/lootopoly.webp",
+  },
+  {
+    title: "the-last-zone",
+    src: "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/the_last_zone.webp",
+  },
 ];

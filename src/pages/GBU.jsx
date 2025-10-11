@@ -10,7 +10,10 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 const GBU = () => {
   // List of assets to preload for GBU page
-  const assetsToLoad = ["/GBU.webp", "/gbutagline.webp"];
+  const assetsToLoad = [
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/GBU.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/gbutagline.webp",
+  ];
 
   const isLoading = useAssetLoader(assetsToLoad);
 
@@ -361,12 +364,12 @@ const GBU = () => {
         <div className="relative z-20 min-h-screen mt-10 flex flex-col items-center justify-center">
           <div className="max-w-5xl text-center">
             <img
-              src="/GBU.webp"
+              src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/GBU.webp"
               alt="Guess Build Unlock"
               className="w-full max-w-md scale-150 sm:scale-200 mx-auto gbu-slide-down"
             />
             <img
-              src="/gbutagline.webp"
+              src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/gbutagline.webp"
               alt="Every guess brings you closer to gold!"
               className="w-100 h-18 mx-auto mt-16 sm:mt-32 animate-pulse max-w-sm"
             />

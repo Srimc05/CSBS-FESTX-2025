@@ -6,10 +6,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function AnonymousEventPage() {
   // List of assets to preload for Anonymous page
-  const assetsToLoad = [
-    "https://ik.imagekit.io/sri05/Group%20195.png",
-    "/anonymous.webp",
-  ];
+  const assetsToLoad = ["https://ik.imagekit.io/sri05/Group%20195.png"];
 
   const isLoading = useAssetLoader(assetsToLoad);
 

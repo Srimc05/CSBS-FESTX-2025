@@ -9,10 +9,10 @@ const StellarQuest = () => {
 
   // List of assets to preload for StellarQuest page
   const assetsToLoad = [
-    "/stellar_quest.webp",
-    "/atlas.webp",
-    "/ironclad.webp",
-    "/runestone.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/stellar_quest.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/atlas.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/ironclad.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/runestone.webp",
   ];
 
   // Temporarily disable asset loader to debug
@@ -416,7 +416,7 @@ const StellarQuest = () => {
               >
                 <div className="triangle-content">
                   <img
-                    src="/atlas.webp"
+                    src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/atlas.webp"
                     alt="Engineer Character"
                     className="w-full h-full object-contain"
                     onLoad={() => console.log("Atlas image loaded")}
@@ -432,7 +432,7 @@ const StellarQuest = () => {
               >
                 <div className="triangle-content">
                   <img
-                    src="/ironclad.webp"
+                    src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/ironclad.webp"
                     alt="Navigator Character"
                     className="w-full h-full object-contain"
                     onLoad={() => console.log("Ironclad image loaded")}
@@ -449,7 +449,7 @@ const StellarQuest = () => {
                 >
                   <div className="triangle-content">
                     <img
-                      src="/runestone.webp"
+                      src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/runestone.webp"
                       alt="Decoder Character"
                       className="w-full h-full object-contain"
                       onLoad={() => console.log("Runestone image loaded")}

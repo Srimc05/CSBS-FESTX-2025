@@ -15,7 +15,8 @@ const ContactUs = () => {
       <div
         className="pt-24 min-h-screen px-6 pb-0"
         style={{
-          backgroundImage: "url(/bg2.webp)",
+          backgroundImage:
+            "url(https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/bg2.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

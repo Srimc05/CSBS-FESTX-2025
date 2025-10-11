@@ -7,14 +7,14 @@ import { Helmet } from "react-helmet-async";
 const EventsPage = () => {
   // List of assets to preload for Events page
   const assetsToLoad = [
-    "/unlockx-post.webp",
-    "/gbu-post.webp",
-    "/code_heist.webp",
-    "/stellar_quest.webp",
-    "/wolf_gambit.webp",
-    "/anonymous.webp",
-    "/lootopoly.webp",
-    "/pitchers_gold.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/unlockx-post.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/gbu-post.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/code_heist.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/stellar_quest.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/wolf_gambit.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/anonymous.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/lootopoly.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/pitchers_gold.webp",
   ];
 
   const isLoading = useAssetLoader(assetsToLoad);

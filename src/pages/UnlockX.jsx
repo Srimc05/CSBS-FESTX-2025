@@ -6,9 +6,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 const UnlockX = () => {
   // List of assets to preload for UnlockX page
   const assetsToLoad = [
-    "/unlockx.webm",
-    "/UnlockX.webp",
-    "/unlockxcontent.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/unlockx.webm",
   ];
 
   const isLoading = useAssetLoader(assetsToLoad);
@@ -28,7 +26,10 @@ const UnlockX = () => {
         playsInline
         className="fixed top-0 left-0 w-full h-full object-cover z-0"
       >
-        <source src="/unlockx.webm" type="video/webm" />
+        <source
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/unlockx.webm"
+          type="video/webm"
+        />
         Your browser does not support the video tag.
       </video>
 
@@ -59,12 +60,12 @@ const UnlockX = () => {
       {/* SECTION 1: Initial Viewport with Logo */}
       <div className="h-screen flex items-center justify-center relative z-20 flex-col">
         <img
-          src="/UnlockX.webp"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/UnlockX.webp"
           alt="UnlockX"
           className="w-full h-auto max-w-[80%] md:max-w-[40%] animate-pulse" // Added max-width for responsiveness
         />
         <img
-          src="/unlockxcontent.webp"
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/unlockxcontent.webp"
           alt="UnlockX"
           className="w-full h-auto max-w-[90%] md:max-w-md animate-pulse" // Added max-width for responsiveness
         />

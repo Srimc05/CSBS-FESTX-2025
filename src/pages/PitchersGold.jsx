@@ -6,9 +6,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 const PitchersGold = () => {
   // List of assets to preload for PitchersGold page
   const assetsToLoad = [
-    "/pitchers-gold-bg.webm",
-    "/pitchers_gold.webp",
-    "/pitchers-gold-logo.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/pitchers-gold-bg.webm",
   ];
 
   const isLoading = useAssetLoader(assetsToLoad);
@@ -27,7 +25,10 @@ const PitchersGold = () => {
         playsInline
         className="fixed top-0 left-0 w-full h-full object-cover z-0"
       >
-        <source src="/pitchers-gold-bg.webm" type="video/webm" />
+        <source
+          src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/pitchers-gold-bg.webm"
+          type="video/webm"
+        />
         Your browser does not support the video tag.
       </video>
 
@@ -57,7 +58,7 @@ const PitchersGold = () => {
         {/* Pitchers Gold Logo */}
         <div className="flex justify-center items-center w-full">
           <img
-            src="/pitchers-gold-logo.webp"
+            src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/pitchers-gold-logo.webp"
             alt="Pitchers Gold Logo"
             className="h-auto drop-shadow-2xl w-full sm:max-w-2xl md:max-w-3xl lg:max-w-3xl"
           />
@@ -80,7 +81,7 @@ const PitchersGold = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
                     <img
-                      src="/kaido.webp"
+                      src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/kaido.webp"
                       alt="Kaido Character"
                       className="w-full h-full object-cover rounded-full"
                     />
@@ -108,7 +109,7 @@ const PitchersGold = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
                     <img
-                      src="/white.webp"
+                      src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/white.webp"
                       alt="Whitebeard Character"
                       className="w-full h-full object-cover rounded-full"
                     />
@@ -136,7 +137,7 @@ const PitchersGold = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
                     <img
-                      src="/big.webp"
+                      src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/big.webp"
                       alt="Big Mom Character"
                       className="w-full h-full object-cover rounded-full"
                     />
@@ -164,7 +165,7 @@ const PitchersGold = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg bg-yellow-400 p-1 flex-shrink-0">
                     <img
-                      src="/hat.webp"
+                      src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/hat.webp"
                       alt="Luffy Character"
                       className="w-full h-full object-cover rounded-full"
                     />

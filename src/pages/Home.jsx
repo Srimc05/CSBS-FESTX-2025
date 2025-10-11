@@ -9,11 +9,11 @@ const Home = () => {
 
   // List of assets to preload for Home page
   const assetsToLoad = [
-    "/FESTX.webp",
-    "/bg2.webp",
-    "/ship1.png",
-    "/treasure.png",
-    "/Date_Reveal.webm",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/FESTX.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/bg2.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/ship1.png",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/treasure.png",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/Date_Reveal.webm",
   ];
 
   const isLoading = useAssetLoader(assetsToLoad);
@@ -75,7 +75,10 @@ const Home = () => {
                 muted
                 playsInline
               >
-                <source src="/Date_Reveal.webm" type="video/webm" />
+                <source
+                  src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/Date_Reveal.webm"
+                  type="video/webm"
+                />
                 Your browser does not support the video tag.
               </video>
 

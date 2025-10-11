@@ -6,9 +6,9 @@ import LoadingSpinner from "../components/LoadingSpinner";
 const Lootopoly = () => {
   // List of assets to preload for Lootopoly page
   const assetsToLoad = [
-    "/lootopoly.webp",
-    "/lootopoly_logo.webp",
-    "/monopoly.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/lootopoly.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/lootopoly_logo.webp",
+    "https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/monopoly.webp",
   ];
 
   // const isLoading = useAssetLoader(assetsToLoad);
@@ -283,7 +283,7 @@ const Lootopoly = () => {
             <div className="relative text-center z-30">
               <div className="relative inline-block">
                 <img
-                  src="/lootopoly_logo.webp"
+                  src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/lootopoly_logo.webp"
                   alt="Loot-O-Poly"
                   className="mx-auto w-64 md:w-80 logo-glow"
                 />
@@ -410,7 +410,7 @@ const Lootopoly = () => {
                   </h4>
                   <div className="flex justify-center mb-8">
                     <img
-                      src="/monopoly.webp"
+                      src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/monopoly.webp"
                       alt="Monopoly Board"
                       className="w-[100%] md:w-[80%] object-contain rounded-lg"
                     />

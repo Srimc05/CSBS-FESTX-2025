@@ -27,7 +27,7 @@ export function HeroSection() {
         {/* Logo */}
         <div className="flex items-center justify-center mt-3">
           <img
-            src="/FESTX.webp"
+            src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/FESTX.webp"
             alt="FESTX'25"
             className="h-28 md:h-40 object-contain drop-shadow-lg"
           />
