@@ -18,21 +18,12 @@ const Lootopoly = () => {
     return () => document.body.classList.remove("hide-centered-nav");
   }, []);
 
-  // Log asset loading status
-  // useEffect(() => {
-  //   console.log("Lootopoly: Asset loading status:", isLoading);
-  //   if (!isLoading) {
-  //     console.log("Lootopoly: All assets loaded, page ready to render");
-  //   }
-  // }, [isLoading]);
-
   const emitterRef = useRef(null);
 
   useEffect(() => {
     const host = emitterRef.current;
     if (!host) return;
 
-    console.log("Lootopoly: Starting coin flow animation");
     const coins = [];
     let animationId;
 
@@ -72,8 +63,6 @@ const Lootopoly = () => {
         duration,
         startTime,
       });
-
-      console.log("Created flowing coin", coins.length);
     };
 
     const animate = (currentTime) => {

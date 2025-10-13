@@ -100,7 +100,7 @@ export default function App() {
     const handleMouseLeave = () => setShowCustomCursor(false);
     const handleMouseEnter = () => setShowCustomCursor(true);
 
-    // Mobile horizontal swipe panning for background image
+    // Mobile moving background image
     let touchStartX = null;
     let startBgX = 50;
     let bgRafId = null;
@@ -248,17 +248,8 @@ export default function App() {
                 style={{
                   top: `${anchorTop}px`,
                 }}
-                onLoad={(e) => {
-                  console.log("Anchor image loaded successfully");
-                  console.log("Anchor element:", e.target);
-                  console.log(
-                    "Anchor position:",
-                    e.target.getBoundingClientRect()
-                  );
-                }}
                 onError={(e) => {
                   e.target.style.display = "none";
-                  console.log("Anchor image failed to load");
                 }}
               />
             </>

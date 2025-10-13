@@ -26,18 +26,14 @@ const StellarQuest = () => {
   }, []);
 
   useEffect(() => {
-    console.log("StellarQuest canvas effect running");
     const canvas = canvasRef.current;
     if (!canvas) {
-      console.log("Canvas ref not found");
       return;
     }
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) {
-      console.log("Canvas context not available");
       return;
     }
-    console.log("Canvas and context ready");
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const resize = () => {
@@ -419,8 +415,6 @@ const StellarQuest = () => {
                     src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/atlas.webp"
                     alt="Engineer Character"
                     className="w-full h-full object-contain"
-                    onLoad={() => console.log("Atlas image loaded")}
-                    onError={() => console.log("Atlas image failed to load")}
                   />
                 </div>
               </div>
@@ -435,8 +429,6 @@ const StellarQuest = () => {
                     src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/ironclad.webp"
                     alt="Navigator Character"
                     className="w-full h-full object-contain"
-                    onLoad={() => console.log("Ironclad image loaded")}
-                    onError={() => console.log("Ironclad image failed to load")}
                   />
                 </div>
               </div>
@@ -452,10 +444,6 @@ const StellarQuest = () => {
                       src="https://raw.githubusercontent.com/madesh02104/Festx-Assets/main/runestone.webp"
                       alt="Decoder Character"
                       className="w-full h-full object-contain"
-                      onLoad={() => console.log("Runestone image loaded")}
-                      onError={() =>
-                        console.log("Runestone image failed to load")
-                      }
                     />
                   </div>
                 </div>
